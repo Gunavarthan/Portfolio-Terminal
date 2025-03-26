@@ -1,0 +1,34 @@
+body
+{
+    background-color:#191a22 ;
+}
+
+.spinner:after {
+    animation: changeContent 0.8s linear infinite;
+    content: "⠋";
+  }
+  
+  @keyframes changeContent {
+    10% { content: "⠙"; }
+    20% { content: "⠹"; }
+    30% { content: "⠸"; }
+    40% { content: "⠼"; }
+    50% { content: "⠴"; }
+    60% { content: "⠦"; }
+    70% { content: "⠧"; }
+    80% { content: "⠇"; }
+    90% { content: "⠏"; }
+  }
+
+.loader:after {
+    animation: changeContent1 0.8s linear infinite;
+    content: ".";
+  }
+  
+  @keyframes changeContent1 {
+    20% { content: ".."; }
+    40% { content: "..."; }
+    60% { content: "...."; }
+    80% { content: "..."; }
+    90% { content: ".."; }
+  }
