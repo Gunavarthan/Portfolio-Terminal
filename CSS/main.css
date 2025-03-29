@@ -1,8 +1,27 @@
 body
 {
-    background-color:#191a22 ;
+  background-color:#191a22 ;
 }
 
+.illegalcommand
+{
+  color: rgb(165, 7, 7);
+}
+
+.help
+{
+  color: rgb(221, 221, 18);
+}
+
+.command
+{
+  color: rgb(10, 96, 146);
+}
+
+.discription
+{
+  color: rgb(108, 10, 146);
+}
 .spinner:after {
     animation: changeContent 0.8s linear infinite;
     content: "⠋";

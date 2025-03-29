@@ -11,11 +11,14 @@ function isMediumViewport() {
 }
 
 function isSmallViewport() {
-    return window.innerWidth <= 600; // Adjust breakpoint as needed
+    return window.innerWidth <= 600 && window.innerWidth >= 330 ; // Adjust breakpoint as needed
 }
 
-const state ={  username: 'root',hostname:'web' };
-const commands = [{c:'about',d:'About Gunavarthan'},{c:'help',d:'Display all commands'},{c:'whoami',d:'Current user'},{c:'education',d:'Education Qualification'},{c:'projects',d:'Projects Worked on'},{c:'welcome',d:'Hero Section'},{c:'history',d:'List all exicuted Commands'},{c:'theme',d:'Change theme'},{c:'clear',d:'Clear Screen'},{c:'socials',d:'Chech out me here'},{c:'switchuser',d:'Switch Current User'},{c:'email',d:'Contact me'}];
+function isVerySmallViewport() {
+    return window.innerWidth <= 330 ; // Adjust breakpoint as needed
+}
+const state ={  username: 'visitor',hostname:'web' };
+const commands = [{c:'about',d:'About Gunavarthan'},{c:'help',d:'Display all commands'},{c:'whoami',d:'Current user'},{c:'education',d:'Education Qualification'},{c:'projects',d:'Projects Worked on'},{c:'welcome',d:'Hero Section'},{c:'history',d:'List all exicuted Commands'},{c:'theme',d:'Change theme'},{c:'clear',d:'Clear Screen'},{c:'socials',d:'Chech out me here'},{c:'switchuser',d:'Switch Current User'},{c:'email',d:'Contact me'},{c:'echo',d:'Print a String in termnial'},{c:'typo',d:'try it'},{c:'whatis',d:'Not from me'}];
 
 function ask() {
     term.writeln(`\n┌[${state.username}@${state.hostname}]`);
@@ -23,6 +26,9 @@ function ask() {
     term.resume();
     term.focus(); 
 }
+
+var about = `Hi, I’m <b>Gunavarthan</b>, \n\n a software developer passionate about technology, problem-solving, and exploring innovative solutions\n\n And as a PC hardware enthusiast, I stay curious and eager to grow in the tech industry.  
+`;
 
 function handleInput(command) {
     switch (command) {
@@ -35,7 +41,7 @@ function handleInput(command) {
             console.log(history);
             for (var a in history)
             {
-                term.writeln(`${(parseInt(a) + 1).toString().padEnd(3, ' ')}: ${history[a]}`);
+                term.writeln(`${(parseInt(  a) + 1).toString().padEnd(3, ' ')}: ${history[a]}`);
             }
             break;
 
@@ -46,12 +52,25 @@ function handleInput(command) {
         case 'help':
             for (var a in commands)
             {
-                term.writeln(`${commands[a].c.padEnd(15,' ')} - ${commands[a].d}`);
+                term.writeln(`<lable class='command'>${commands[a].c.padEnd(15,' ')} </lable><lable class="discription">- ${commands[a].d}</lable>`);
             }
             break;
-
+        
+        case 'whoami':
+            term.writeln(`<i>${state.username}</i>`);
+            break;
+        
+        case 'about':
+            term.write(about);
+            break;
+        
         default:
-            term.writeln(`Illegal Command : '${command}'`);
+            let commandList = commands.map(cmd => cmd.c);
+            if (commandList.includes(command)) {
+                term.writeln(`Command '${command}' is not fully implemented yet`);
+            } else {
+                term.writeln(`<lable class='illegalcommand' >Illegal Command : '${command}'`);
+            }
             break;
     }
     ask();
@@ -72,7 +91,7 @@ function welcome()
 
 Welcome to my Terminal Portfolio => Terfolip  <3
 ---
-<i>For list of available Commads type</i> <b>'help'</b>
+<i>For list of available Commads type</i> <b class="help">'help'</b>
 ---
 
 `;
@@ -88,7 +107,7 @@ Welcome to my Terminal Portfolio => Terfolip  <3
                                                 
 Welcome to my Terminal Portfolio => Terfolip  <3
 ---
-<i>For list of available Commads type</i> <b>'help'</b>
+<i class="spinner">For list of available Commads type</i> <b class="help">'help'</b>
 ---
         `
     };
@@ -97,19 +116,34 @@ Welcome to my Terminal Portfolio => Terfolip  <3
     {
         message = String.raw`  
                                                
- _____                         _   _           
+._____                         _   _           
 |   __|_ _ ___ ___ _ _ ___ ___| |_| |_ ___ ___ 
 |  |  | | |   | .'| | | .'|  _|  _|   | .'|   |
 |_____|___|_|_|__,|\_/|__,|_| |_| |_|_|__,|_|_|
                                                
 Welcome to my Terminal Portfolio => Terfolip  <3
 ---
-<i>For list of available Commads type</i> <b>'help'</b>
+<i>For list of available Commads type</i> <b class="help">'help'</b>
 ---
 
 `
     } 
+    if (isVerySmallViewport())
+    {
+        message = String.raw`
+.__                              
+/__   __  _     _  ___|_|_  _ __ 
+\_||_|| |(_|\_/(_| |  |_| |(_|| |
+
+Welcome to my Terminal Portfolio => Terfolip  <3
+---
+<i>For list of available Commads type</i> <b class="help">'help'</b>
+---
+
+`
+    }
     term.write(message);
+
 
 }
 
