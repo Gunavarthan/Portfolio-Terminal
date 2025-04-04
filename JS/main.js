@@ -2,21 +2,22 @@ const term = new XTerminal()
 term.mount('#app');
 //term.write('Hello World!\n$ ');
 
-function islargeViewport() {
-    return window.innerWidth >= 930; // Adjust breakpoint as needed
-}
-
-function isMediumViewport() {
-    return window.innerWidth <= 930 && window.innerWidth >= 600 ; // Adjust breakpoint as needed
+function isExtraSmallViewport() {
+    return window.innerWidth < 576;
 }
 
 function isSmallViewport() {
-    return window.innerWidth <= 600 && window.innerWidth >= 330 ; // Adjust breakpoint as needed
+    return window.innerWidth >= 576 && window.innerWidth < 768;
 }
 
-function isVerySmallViewport() {
-    return window.innerWidth <= 330 ; // Adjust breakpoint as needed
+function isMediumViewport() {
+    return window.innerWidth >= 768 && window.innerWidth < 992;
 }
+
+function isLargeViewport() {
+    return window.innerWidth >= 992;
+}
+
 const state ={  username: 'visitor',hostname:'web' };
 const commands = [{c:'about',d:'About Gunavarthan'},{c:'help',d:'Display all commands'},{c:'whoami',d:'Current user'},{c:'education',d:'Education Qualification'},{c:'projects',d:'Projects Worked on'},{c:'welcome',d:'Hero Section'},{c:'history',d:'List all exicuted Commands'},{c:'theme',d:'Change theme'},{c:'clear',d:'Clear Screen'},{c:'socials',d:'Chech out me here'},{c:'switchuser',d:'Switch Current User'},{c:'email',d:'Contact me'},{c:'echo',d:'Print a String in termnial'},{c:'typo',d:'try it'},{c:'whatis',d:'Not from me'}];
 var theme = 'DEFAULT';
@@ -159,16 +160,16 @@ function handleInput(command) {
 
 function welcome()
 {
-    var message = String.raw`
-  ______                                                               __      __                           
-./      \                                                             |  \    |  \                          
-|  $$$$$$\ __    __  _______    ______  __     __  ______    ______  _| $$_   | $$____    ______   _______  
-| $$ __\$$|  \  |  \|       \  |      \|  \   /  \|      \  /      \|   $$ \  | $$    \  |      \ |       \ 
-| $$|    \| $$  | $$| $$$$$$$\  \$$$$$$\\$$\ /  $$ \$$$$$$\|  $$$$$$\\$$$$$$  | $$$$$$$\  \$$$$$$\| $$$$$$$\
-| $$ \$$$$| $$  | $$| $$  | $$ /      $$ \$$\  $$ /      $$| $$   \$$ | $$ __ | $$  | $$ /      $$| $$  | $$
-| $$__| $$| $$__/ $$| $$  | $$|  $$$$$$$  \$$ $$ |  $$$$$$$| $$       | $$|  \| $$  | $$|  $$$$$$$| $$  | $$
- .\$$    $$ \$$    $$| $$  | $$ \$$    $$   \$$$   \$$    $$| $$        \$$  $$| $$  | $$ \$$    $$| $$  | $$
-  \$$$$$$   \$$$$$$  \$$   \$$  \$$$$$$$    \$     \$$$$$$$ \$$         \$$$$  \$$   \$$  \$$$$$$$ \$$   \$$
+    var message = String.raw`                                                                                            
+  ______                                                               __      __                            \n        
+./      \                                                             |  \    |  \                           \n  
+|  $$$$$$\ __    __  _______    ______  __     __  ______    ______  _| $$_   | $$____    ______   _______   \n
+| $$ __\$$|  \  |  \|       \  |      \|  \   /  \|      \  /      \|   $$ \  | $$    \  |      \ |       \  \n
+| $$|    \| $$  | $$| $$$$$$$\  \$$$$$$\\$$\ /  $$ \$$$$$$\|  $$$$$$\\$$$$$$  | $$$$$$$\  \$$$$$$\| $$$$$$$\ \n
+| $$ \$$$$| $$  | $$| $$  | $$ /      $$ \$$\  $$ /      $$| $$   \$$ | $$ __ | $$  | $$ /      $$| $$  | $$ \n
+| $$__| $$| $$__/ $$| $$  | $$|  $$$$$$$  \$$ $$ |  $$$$$$$| $$       | $$|  \| $$  | $$|  $$$$$$$| $$  | $$ \n
+ .\$$    $$ \$$    $$| $$  | $$ \$$    $$   \$$$   \$$    $$| $$        \$$  $$| $$  | $$ \$$    $$| $$  | $$\n
+  \$$$$$$   \$$$$$$  \$$   \$$  \$$$$$$$    \$     \$$$$$$$ \$$         \$$$$  \$$   \$$  \$$$$$$$ \$$   \$$ \n
 
 Welcome to my Terminal Portfolio => Terfolip  <3
 ---
@@ -179,12 +180,12 @@ Welcome to my Terminal Portfolio => Terfolip  <3
     if (isMediumViewport())
     {
         message = String.raw`                                                                      
-._______                                           _                 
-(_______)                                      _  | |                
- ._   ___ _   _ ____  _____ _   _ _____  ____ _| |_| |__  _____ ____  
-| | (_  | | | |  _ \(____ | | | (____ |/ ___|_   _)  _ \(____ |  _ \ 
-| |___) | |_| | | | / ___ |\ V // ___ | |     | |_| | | / ___ | | | |
-.\_____/|____/|_| |_\_____| \_/ \_____|_|      \__)_| |_\_____|_| |_|                                                                                                                                                                                                                                 
+._______                                           _                 \n                    
+(_______)                                      _  | |                \n
+ ._   ___ _   _ ____  _____ _   _ _____  ____ _| |_| |__  _____ ____ \n 
+| | (_  | | | |  _ \(____ | | | (____ |/ ___|_   _)  _ \(____ |  _ \ \n
+| |___) | |_| | | | / ___ |\ V // ___ | |     | |_| | | / ___ | | | |\n
+.\_____/|____/|_| |_\_____| \_/ \_____|_|      \__)_| |_\_____|_| |_|\n                                                                                                                                                                                                                                 
                                                 
 Welcome to my Terminal Portfolio => Terfolip  <3
 ---
@@ -197,10 +198,10 @@ Welcome to my Terminal Portfolio => Terfolip  <3
     {
         message = String.raw`  
                                                
-._____                         _   _           
-|   __|_ _ ___ ___ _ _ ___ ___| |_| |_ ___ ___ 
-|  |  | | |   | .'| | | .'|  _|  _|   | .'|   |
-|_____|___|_|_|__,|\_/|__,|_| |_| |_|_|__,|_|_|
+._____                         _   _           \n
+|   __|_ _ ___ ___ _ _ ___ ___| |_| |_ ___ ___ \n
+|  |  | | |   | .'| | | .'|  _|  _|   | .'|   |\n
+|_____|___|_|_|__,|\_/|__,|_| |_| |_|_|__,|_|_|\n
                                                
 Welcome to my Terminal Portfolio => Terfolip  <3
 ---
@@ -209,12 +210,12 @@ Welcome to my Terminal Portfolio => Terfolip  <3
 
 `
     } 
-    if (isVerySmallViewport())
+    if (isExtraSmallViewport())
     {
         message = String.raw`
-.__                              
-/__   __  _     _  ___|_|_  _ __ 
-\_||_|| |(_|\_/(_| |  |_| |(_|| |
+.__                              \n
+/__   __  _     _  ___|_|_  _ __ \n
+\_||_|| |(_|\_/(_| |  |_| |(_|| |\n
 
 Welcome to my Terminal Portfolio => Terfolip  <3
 ---
