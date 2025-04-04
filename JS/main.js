@@ -19,59 +19,140 @@ function isVerySmallViewport() {
 }
 const state ={  username: 'visitor',hostname:'web' };
 const commands = [{c:'about',d:'About Gunavarthan'},{c:'help',d:'Display all commands'},{c:'whoami',d:'Current user'},{c:'education',d:'Education Qualification'},{c:'projects',d:'Projects Worked on'},{c:'welcome',d:'Hero Section'},{c:'history',d:'List all exicuted Commands'},{c:'theme',d:'Change theme'},{c:'clear',d:'Clear Screen'},{c:'socials',d:'Chech out me here'},{c:'switchuser',d:'Switch Current User'},{c:'email',d:'Contact me'},{c:'echo',d:'Print a String in termnial'},{c:'typo',d:'try it'},{c:'whatis',d:'Not from me'}];
+var theme = 'DEFAULT';
 
 function ask() {
-    term.writeln(`\n┌[${state.username}@${state.hostname}]`);
-    term.write('└$ ');
+    switch(theme)
+    {
+        case 'PS':
+            term.write(`PS C:\\${state.username}\\${state.hostname}>`);
+            break;
+        case 'SQL':
+            term.write('SQL>');
+            break;
+        case 'DELIGHT':
+            term.write('▲ ~ ');
+            break;
+        case 'CLASIC':
+            term.write(`>`);
+            break;
+        case 'TERMINAL':
+            term.write(`${state.username}@${state.hostname}:~$`);
+            break;
+        case 'DEFAULT':
+            term.writeln(`\n┌[${state.username}@${state.hostname}]`);
+            term.write('└$ ');
+            break;
+        case 'UBUNTU':
+            term.write(`${state.username}@ubuntu:~${state.hostname}$`)
+            break;
+
+    }
     term.resume();
-    term.focus(); 
+    term.focus();
 }
 
-var about = `Hi, I’m <b>Gunavarthan</b>, \n\n a software developer passionate about technology, problem-solving, and exploring innovative solutions\n\n And as a PC hardware enthusiast, I stay curious and eager to grow in the tech industry.  
-`;
+var about = `<lable class="about">Hi, I’m <b>Gunavarthan</b>, \n\n a software developer passionate about technology, problem-solving, and exploring innovative solutions\n\n And as a PC hardware enthusiast, I stay curious and eager to grow in the tech industry.  
+</lable>`;
+var lsttheme = ['SQL','UBUNTU','MATRIX','WHITE','DEFAULT','TERMINAL','CLASIC','PS'];
 
 function handleInput(command) {
-    switch (command) {
-        case 'clear':
-            term.clear();
-            break;
-
-        case 'history':
-            let history = term.history; 
-            console.log(history);
-            for (var a in history)
-            {
-                term.writeln(`${(parseInt(  a) + 1).toString().padEnd(3, ' ')}: ${history[a]}`);
-            }
-            break;
-
-        case 'welcome':
-            term.clear();
-            welcome();
-
-        case 'help':
-            for (var a in commands)
-            {
-                term.writeln(`<lable class='command'>${commands[a].c.padEnd(15,' ')} </lable><lable class="discription">- ${commands[a].d}</lable>`);
-            }
-            break;
+    var cmd = command.split(' '); 
+    if (cmd.length == 1)
+    {
+        switch (command) {
+            case 'clear':
+                term.clear();
+                break;
+    
+            case 'history':
+                let history = term.history; 
+                console.log(history);
+                for (var a in history)
+                {
+                    term.writeln(`${(parseInt(  a) + 1).toString().padEnd(3, ' ')}: ${history[a]}`);
+                }
+                break;
+    
+            case 'welcome':
+                term.clear();
+                welcome();
+                break;
+    
+            case 'help':
+                for (var a in commands)
+                {
+                    term.writeln(`<lable class='command'>${commands[a].c.padEnd(15,' ')} </lable><lable class="discription">- ${commands[a].d}</lable>`);
+                }
+                break;
+            
+            case 'whoami':
+                term.writeln(`<i>${state.username}</i>`);
+                break;
+            
+            case 'about':
+                term.write(about);
+                break;
+            
+            case 'theme':
+                term.writeln('To change the theme use:\n\n\t<b>set theme &lt;theme name&gt;</b>\n\nList all themes: \n\n\t<b>lst themes</b>');
+                break;
+            
+            default:
+                let commandList = commands.map(cmd => cmd.c);
+                if (commandList.includes(command)) {
+                    term.writeln(`Command '${command}' is not fully implemented yet`);
+                } else {
+                    term.writeln(`<lable class='illegalcommand' >Illegal Command : '${command}'`);
+                }
+                break;
+        }
         
-        case 'whoami':
-            term.writeln(`<i>${state.username}</i>`);
-            break;
-        
-        case 'about':
-            term.write(about);
-            break;
-        
-        default:
-            let commandList = commands.map(cmd => cmd.c);
-            if (commandList.includes(command)) {
-                term.writeln(`Command '${command}' is not fully implemented yet`);
-            } else {
-                term.writeln(`<lable class='illegalcommand' >Illegal Command : '${command}'`);
-            }
-            break;
+    }
+    else if(cmd.length >= 2)
+    {
+        switch (cmd[0]) { 
+            case 'lst':
+                if (cmd[1] == 'theme')
+                {
+                    term.writeln    ('theme names :'); 
+                    for (var a in lsttheme)
+                    {
+                        term.write(`${lsttheme[a]}\t`);
+                    }
+                }  
+                else
+                {
+                    term.writeln('BRUH (-_-!)');
+                }
+                break;
+
+            case 'set':
+                if(cmd[1]==='theme')
+                {
+                    setTheme(cmd[2]);
+                }
+                break;
+            
+            case 'echo':
+                let match = command.match(/'([^']*)'/);
+                if (match) {
+                    term.writeln(match[1]);
+                } else {
+                    term.writeln('Usage: echo \'your text here\'');
+                }
+                break;
+                
+            
+            default:
+                let commandList = commands.map(cmd => cmd.c);
+                if (commandList.includes(command)) {
+                    term.writeln(`Command '${command}' is not fully implemented yet`);
+                } else {
+                    term.writeln(`<lable class='illegalcommand' >Illegal Command : '${command}'`);
+                }
+                break;
+        }
     }
     ask();
 }
@@ -107,7 +188,7 @@ Welcome to my Terminal Portfolio => Terfolip  <3
                                                 
 Welcome to my Terminal Portfolio => Terfolip  <3
 ---
-<i class="spinner">For list of available Commads type</i> <b class="help">'help'</b>
+<i >For list of available Commads type</i> <b class="cmd">'help'</b>
 ---
         `
     };
@@ -152,6 +233,18 @@ ask();
 
 term.on('data', handleInput);
 
+
+function setTheme(newTheme) {
+    if (!lsttheme.includes(newTheme)) {
+        term.writeln('Use <b>lst theme</b> for a list of themes.');
+        return;
+    }
+
+    theme = newTheme;
+    document.body.classList.remove(...lsttheme.map(t => `theme-${t.toLowerCase()}`));
+    document.body.classList.add(`theme-${newTheme.toLowerCase()}`);
+
+}
 
 
 /*term.on('start', (id) => {
