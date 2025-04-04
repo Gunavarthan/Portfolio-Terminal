@@ -99,10 +99,38 @@ body
   background-color: #000080;
 }
 
-/* Ubuntu Theme */
+
+  /*****************/
+ /* Ubuntu Theme  */
+/*****************/
 .theme-ubuntu {
   background-color: #300a24;
-  color: #f8f8f2;
+  --xt-bg: #300a24;
+  --xt-fg: #f8f8f2;
+}
+
+.theme-ubuntu .cmd {                    /* help tag */
+  color: #50fa7b;
+}
+
+.theme-ubuntu .command {                /* help command name */
+  color: #ff79c6;
+}
+
+.theme-ubuntu .discription {            /* help command description */
+  color: #bd93f9;
+}
+
+.theme-ubuntu .hero {                   /* hero section */
+  color: #89f045;
+}
+
+.theme-ubuntu .prmt1 {                  /* prompt part1 */
+  color: #89f045;
+}
+
+.theme-ubuntu .prmt2 {                  /* prompt part2 */
+  color: #8be9fd;
 }
 
 /* Matrix Theme */

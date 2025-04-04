@@ -26,26 +26,26 @@ function ask() {
     switch(theme)
     {
         case 'PS':
-            term.write(`PS C:\\${state.username}\\${state.hostname}>`);
+            term.write(`\nPS C:\\${state.username}\\${state.hostname}>`);
             break;
         case 'SQL':
-            term.write('<lable class="prmt1">SQL> </lable>');
+            term.write('\n<lable class="prmt1">SQL> </lable>');
             break;
         case 'DELIGHT':
-            term.write('▲ ~ ');
+            term.write('\n▲ ~ ');
             break;
         case 'CLASIC':
-            term.write(`> `);
+            term.write(`\n> `);
             break;
         case 'TERMINAL':
-            term.write(`<lable class="prmt1">${state.username}</lable><lable class="prmt1">@</lable><lable class="prmt1">${state.hostname}</lable><lable class="prmt1">:~$ </lable>`);
+            term.write(`\n<lable class="prmt1">${state.username}</lable><lable class="prmt1">@</lable><lable class="prmt1">${state.hostname}</lable><lable class="prmt1">:~$ </lable> `);
             break;
         case 'DEFAULT':
             term.writeln(`\n<lable class="prmt1">┌[</lable><lable class="prmt2">${state.username}</lable><lable class="prmt1">@</lable><lable class="prmt2">${state.hostname}</lable><lable class="prmt1">]</lable>`);
             term.write('<lable class="prmt1">└$ </lable>');
             break;
         case 'UBUNTU':
-            term.write(`<lable class="prmt1">${state.username}</lable><lable class="prmt2">@ubuntu:~</lable><lable class="prmt1">${state.hostname}</lable><lable class="prmt2">$</lable>`)
+            term.write(`\n<lable class="prmt1">${state.username}@ubuntu:~</lable><lable class="prmt2">${state.hostname}</lable>$ `)
             break;
 
     }
@@ -161,15 +161,15 @@ function handleInput(command) {
 function welcome()
 {
     var message = String.raw`                                                                                            
-  ______                                                               __      __                            \n        
-./      \                                                             |  \    |  \                           \n  
-|  $$$$$$\ __    __  _______    ______  __     __  ______    ______  _| $$_   | $$____    ______   _______   \n
-| $$ __\$$|  \  |  \|       \  |      \|  \   /  \|      \  /      \|   $$ \  | $$    \  |      \ |       \  \n
-| $$|    \| $$  | $$| $$$$$$$\  \$$$$$$\\$$\ /  $$ \$$$$$$\|  $$$$$$\\$$$$$$  | $$$$$$$\  \$$$$$$\| $$$$$$$\ \n
-| $$ \$$$$| $$  | $$| $$  | $$ /      $$ \$$\  $$ /      $$| $$   \$$ | $$ __ | $$  | $$ /      $$| $$  | $$ \n
-| $$__| $$| $$__/ $$| $$  | $$|  $$$$$$$  \$$ $$ |  $$$$$$$| $$       | $$|  \| $$  | $$|  $$$$$$$| $$  | $$ \n
- .\$$    $$ \$$    $$| $$  | $$ \$$    $$   \$$$   \$$    $$| $$        \$$  $$| $$  | $$ \$$    $$| $$  | $$\n
-  \$$$$$$   \$$$$$$  \$$   \$$  \$$$$$$$    \$     \$$$$$$$ \$$         \$$$$  \$$   \$$  \$$$$$$$ \$$   \$$ \n
+  ______                                                               __      __                                    
+./      \                                                             |  \    |  \                             
+|  $$$$$$\ __    __  _______    ______  __     __  ______    ______  _| $$_   | $$____    ______   _______   
+| $$ __\$$|  \  |  \|       \  |      \|  \   /  \|      \  /      \|   $$ \  | $$    \  |      \ |       \  
+| $$|    \| $$  | $$| $$$$$$$\  \$$$$$$\\$$\ /  $$ \$$$$$$\|  $$$$$$\\$$$$$$  | $$$$$$$\  \$$$$$$\| $$$$$$$\ 
+| $$ \$$$$| $$  | $$| $$  | $$ /      $$ \$$\  $$ /      $$| $$   \$$ | $$ __ | $$  | $$ /      $$| $$  | $$ 
+| $$__| $$| $$__/ $$| $$  | $$|  $$$$$$$  \$$ $$ |  $$$$$$$| $$       | $$|  \| $$  | $$|  $$$$$$$| $$  | $$ 
+ .\$$    $$ \$$    $$| $$  | $$ \$$    $$   \$$$   \$$    $$| $$        \$$  $$| $$  | $$ \$$    $$| $$  | $$
+  \$$$$$$   \$$$$$$  \$$   \$$  \$$$$$$$    \$     \$$$$$$$ \$$         \$$$$  \$$   \$$  \$$$$$$$ \$$   \$$ 
 
 Welcome to my Terminal Portfolio => Terfolip  <3
 ---
@@ -180,12 +180,12 @@ Welcome to my Terminal Portfolio => Terfolip  <3
     if (isMediumViewport())
     {
         message = String.raw`                                                                      
-._______                                           _                 \n                    
-(_______)                                      _  | |                \n
- ._   ___ _   _ ____  _____ _   _ _____  ____ _| |_| |__  _____ ____ \n 
-| | (_  | | | |  _ \(____ | | | (____ |/ ___|_   _)  _ \(____ |  _ \ \n
-| |___) | |_| | | | / ___ |\ V // ___ | |     | |_| | | / ___ | | | |\n
-.\_____/|____/|_| |_\_____| \_/ \_____|_|      \__)_| |_\_____|_| |_|\n                                                                                                                                                                                                                                 
+._______                                           _                                     
+(_______)                                      _  | |                
+ ._   ___ _   _ ____  _____ _   _ _____  ____ _| |_| |__  _____ ____  
+| | (_  | | | |  _ \(____ | | | (____ |/ ___|_   _)  _ \(____ |  _ \ 
+| |___) | |_| | | | / ___ |\ V // ___ | |     | |_| | | / ___ | | | |
+.\_____/|____/|_| |_\_____| \_/ \_____|_|      \__)_| |_\_____|_| |_|                                                                                                                                                                                                                                 
                                                 
 Welcome to my Terminal Portfolio => Terfolip  <3
 ---
@@ -198,10 +198,10 @@ Welcome to my Terminal Portfolio => Terfolip  <3
     {
         message = String.raw`  
                                                
-._____                         _   _           \n
-|   __|_ _ ___ ___ _ _ ___ ___| |_| |_ ___ ___ \n
-|  |  | | |   | .'| | | .'|  _|  _|   | .'|   |\n
-|_____|___|_|_|__,|\_/|__,|_| |_| |_|_|__,|_|_|\n
+._____                         _   _           
+|   __|_ _ ___ ___ _ _ ___ ___| |_| |_ ___ ___ 
+|  |  | | |   | .'| | | .'|  _|  _|   | .'|   |
+|_____|___|_|_|__,|\_/|__,|_| |_| |_|_|__,|_|_|
                                                
 Welcome to my Terminal Portfolio => Terfolip  <3
 ---
@@ -213,9 +213,9 @@ Welcome to my Terminal Portfolio => Terfolip  <3
     if (isExtraSmallViewport())
     {
         message = String.raw`
-.__                              \n
-/__   __  _     _  ___|_|_  _ __ \n
-\_||_|| |(_|\_/(_| |  |_| |(_|| |\n
+.__                              
+/__   __  _     _  ___|_|_  _ __ 
+\_||_|| |(_|\_/(_| |  |_| |(_|| |
 
 Welcome to my Terminal Portfolio => Terfolip  <3
 ---
