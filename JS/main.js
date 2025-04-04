@@ -28,23 +28,23 @@ function ask() {
             term.write(`PS C:\\${state.username}\\${state.hostname}>`);
             break;
         case 'SQL':
-            term.write('SQL>');
+            term.write('<lable class="prmt1">SQL> </lable>');
             break;
         case 'DELIGHT':
             term.write('▲ ~ ');
             break;
         case 'CLASIC':
-            term.write(`>`);
+            term.write(`> `);
             break;
         case 'TERMINAL':
-            term.write(`${state.username}@${state.hostname}:~$`);
+            term.write(`<lable class="prmt1">${state.username}</lable><lable class="prmt1">@</lable><lable class="prmt1">${state.hostname}</lable><lable class="prmt1">:~$ </lable>`);
             break;
         case 'DEFAULT':
-            term.writeln(`\n┌[${state.username}@${state.hostname}]`);
-            term.write('└$ ');
+            term.writeln(`\n<lable class="prmt1">┌[</lable><lable class="prmt2">${state.username}</lable><lable class="prmt1">@</lable><lable class="prmt2">${state.hostname}</lable><lable class="prmt1">]</lable>`);
+            term.write('<lable class="prmt1">└$ </lable>');
             break;
         case 'UBUNTU':
-            term.write(`${state.username}@ubuntu:~${state.hostname}$`)
+            term.write(`<lable class="prmt1">${state.username}</lable><lable class="prmt2">@ubuntu:~</lable><lable class="prmt1">${state.hostname}</lable><lable class="prmt2">$</lable>`)
             break;
 
     }
@@ -223,7 +223,7 @@ Welcome to my Terminal Portfolio => Terfolip  <3
 
 `
     }
-    term.write(message);
+    term.write(`<lable class='hero'>${message}</lable>`);
 
 
 }

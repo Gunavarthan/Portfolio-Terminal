@@ -22,46 +22,81 @@ body
 {
   color: rgb(108, 10, 146);
 }
-.spinner:after {
-    animation: changeContent 0.8s linear infinite;
-    content: "⠋";
-  }
-  
-  @keyframes changeContent {
-    10% { content: "⠙"; }
-    20% { content: "⠹"; }
-    30% { content: "⠸"; }
-    40% { content: "⠼"; }
-    50% { content: "⠴"; }
-    60% { content: "⠦"; }
-    70% { content: "⠧"; }
-    80% { content: "⠇"; }
-    90% { content: "⠏"; }
-  }
 
-.loader:after {
-    animation: changeContent1 0.8s linear infinite;
-    content: ".";
-  }
-  
-  @keyframes changeContent1 {
-    20% { content: ".."; }
-    40% { content: "..."; }
-    60% { content: "...."; }
-    80% { content: "..."; }
-    90% { content: ".."; }
-  }
-
-  /* Default Theme */
-.theme-default {
-  background-color: black;
-  color: white;
+.hero
+{
+  color:rgb(255, 191, 0);
 }
 
+.prmt1
+{
+  color: rgb(170, 103, 52);
+}
+
+.prmt2
+{
+  color: rgb(52, 143, 170);
+}
+
+
+  /*****************/
+ /* Default Theme */
+/*****************/
+.theme-default
+{
+  --xt-bg:#191a22;
+  --xt-fg:rgb(255, 255, 255);
+}
+
+.theme-default body 
+{
+  background-color:#191a22;
+}
+
+.theme-default .cmd                          /* help tag */                            
+{
+  color: rgb(221, 221, 18);
+}
+
+.theme-default .command                      /* help command name */
+{
+  color: rgb(255, 255, 255);
+}
+
+.theme-default .discription                  /* help command discription */
+{
+  color: rgb(192, 192, 192);
+}
+
+.theme-default .hero                         /* hero section */
+{
+  color:rgb(255, 255, 255);
+}
+
+.theme-default .prmt1                          /* prompt part1 */
+{
+  color: rgb(192, 192, 192);
+}
+
+.theme-default .prmt2                          /* prompt part2 */
+{
+  color: rgb(52, 143, 170);
+}
+
+
 /* SQL Theme */
-.theme-sql {
-  background-color: navy;
-  color: yellow;
+.theme-sql 
+{
+  background-color: #000080;
+  --xt-bg: #000080;  /* Navy Blue Background */
+  --xt-fg: #FFFF00;  /* Yellow Text */
+  --xt-cursor: #FFA500; /* Orange Cursor */
+  --xt-error: #FF0000; /* Red for errors */
+  --xt-font-family: "Consolas", "Courier New", monospace;
+}
+.theme-sql body 
+{
+  background-color: #000080;
 }
 
 /* Ubuntu Theme */
