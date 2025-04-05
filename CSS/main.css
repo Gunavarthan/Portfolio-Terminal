@@ -3,9 +3,15 @@ body
   background-color:#191a22 ;
 }
 
+#matrixCanvas
+{
+  display: none; /* initially hidden */
+
+}
+
 .illegalcommand
 {
-  color: rgb(165, 7, 7);
+  color: rgb(165, 78, 7);
 }
 
 .cmd
@@ -37,6 +43,19 @@ body
 {
   color: rgb(52, 143, 170);
 }
+  /**************/
+ /* Hack theme */
+/**************/
+.theme-hack
+{
+  background-color: #000000;
+  --xt-bg:#000000;
+  --xt-fg: #03b903;
+}
+
+.theme-hack .xt>.xt-stdout>.xt-cursor {
+  display: none;
+}
 
 
   /*****************/
@@ -53,7 +72,7 @@ body
   background-color:#191a22;
 }
 
-.theme-default .cmd                          /* help tag */                            
+.theme-default .help                          /* help tag */                            
 {
   color: rgb(221, 221, 18);
 }
@@ -84,20 +103,58 @@ body
 }
 
 
-/* SQL Theme */
+  /*****************/
+ /*   SQL Theme   */
+/*****************/
 .theme-sql 
 {
-  background-color: #000080;
-  --xt-bg: #000080;  /* Navy Blue Background */
-  --xt-fg: #FFFF00;  /* Yellow Text */
-  --xt-cursor: #FFA500; /* Orange Cursor */
+  background-color: #010114;
+  --xt-bg: #010114;  /* Navy Blue Background */
+  --xt-fg: #f5f5ee;  /* Yellow Text */
+  --xt-cursor: #f5f5ee; /* Orange Cursor */
   --xt-error: #FF0000; /* Red for errors */
-  --xt-font-family: "Consolas", "Courier New", monospace;
+  --xt-font-family: "Consolas", "Courier New", monospace; 
 }
-.theme-sql body 
+
+.theme-sql .xt>.xt-stdout>.xt-cursor {
+  border: none;
+  border-bottom: 5px solid var(--xt-fg);
+  background: transparent;
+  color: var(--xt-fg);
+  display: inline;
+  line-height: 1;
+}
+
+.theme-sql .help                          /* help tag */                            
 {
-  background-color: #000080;
+  color: rgb(221, 221, 18);
 }
+
+.theme-sql .command                      /* help command name */
+{
+  color: rgb(255, 255, 255);
+}
+
+.theme-sql .discription                  /* help command discription */
+{
+  color: rgb(192, 192, 192);
+}
+
+.theme-sql .hero                         /* hero section */
+{
+  color:rgb(255, 255, 255);
+}
+
+.theme-sql .prmt1                          /* prompt part1 */
+{
+  color:#f5f5ee;
+}
+
+.theme-sql .prmt2                          /* prompt part2 */
+{
+  color: rgb(52, 143, 170);
+}
+
 
 
   /*****************/
@@ -109,7 +166,7 @@ body
   --xt-fg: #f8f8f2;
 }
 
-.theme-ubuntu .cmd {                    /* help tag */
+.theme-ubuntu .help {                    /* help tag */
   color: #50fa7b;
 }
 
@@ -133,11 +190,48 @@ body
   color: #8be9fd;
 }
 
-/* Matrix Theme */
+/*****************/
+/* Matrix Theme  */
+/*****************/
 .theme-matrix {
   background-color: black;
-  color: lime;
+  --xt-bg: black;
+  --xt-fg: #03b903; /* classic lime green */
+  color: var(--xt-fg);
 }
+.theme-matrix .xt>.xt-stdout>.xt-cursor {
+  border: none;
+  border-bottom: 5px solid var(--xt-fg);
+  background: transparent;
+  color: var(--xt-fg);
+  display: inline;
+  line-height: 1;
+}
+
+.theme-matrix .help {                    /* help tag */
+  color: #00cc00;
+}
+
+.theme-matrix .command {                /* help command name */
+  color: #00ff00;
+}
+
+.theme-matrix .discription {            /* help command description */
+  color: #33ff33;
+}
+
+.theme-matrix .hero {                   /* hero section */
+  color: #66ff66;
+}
+
+.theme-matrix .prmt1 {                  /* prompt part1 */
+  color: #00cc00;
+}
+
+.theme-matrix .prmt2 {                  /* prompt part2 */
+  color: #99ff99;
+}
+
 
 /* White Theme */
 .theme-white {

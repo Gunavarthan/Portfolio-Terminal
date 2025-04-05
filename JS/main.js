@@ -1,5 +1,6 @@
 const term = new XTerminal()
 term.mount('#app');
+var interval_id
 //term.write('Hello World!\n$ ');
 
 function isExtraSmallViewport() {
@@ -19,8 +20,9 @@ function isLargeViewport() {
 }
 
 const state ={  username: 'visitor',hostname:'web' };
-const commands = [{c:'about',d:'About Gunavarthan'},{c:'help',d:'Display all commands'},{c:'whoami',d:'Current user'},{c:'education',d:'Education Qualification'},{c:'projects',d:'Projects Worked on'},{c:'welcome',d:'Hero Section'},{c:'history',d:'List all exicuted Commands'},{c:'theme',d:'Change theme'},{c:'clear',d:'Clear Screen'},{c:'socials',d:'Chech out me here'},{c:'switchuser',d:'Switch Current User'},{c:'email',d:'Contact me'},{c:'echo',d:'Print a String in termnial'},{c:'typo',d:'try it'},{c:'whatis',d:'Not from me'}];
+const commands = [{c:'about',d:'About Gunavarthan'},{c:'help',d:'Display all commands'},{c:'hack',d:'Just a Screen Saver'},{c:'whoami',d:'Current user'},{c:'education',d:'Education Qualification'},{c:'projects',d:'Projects Worked on'},{c:'welcome',d:'Hero Section'},{c:'history',d:'List all exicuted Commands'},{c:'theme',d:'Change theme'},{c:'clear',d:'Clear Screen'},{c:'socials',d:'Chech out me here'},{c:'switchuser',d:'Switch Current User'},{c:'email',d:'Contact me'},{c:'echo',d:'Print a String in termnial'},{c:'typo',d:'try it'},{c:'whatis',d:'Not from me'}];
 var theme = 'DEFAULT';
+var old_theme = theme;
 
 function ask() {
     switch(theme)
@@ -53,15 +55,32 @@ function ask() {
     term.focus();
 }
 
+term.on('draw-hack',() => {
+    interval_id = setInterval(draw, 50);
+});
+
 var about = `<lable class="about">Hi, I’m <b>Gunavarthan</b>, \n\n a software developer passionate about technology, problem-solving, and exploring innovative solutions\n\n And as a PC hardware enthusiast, I stay curious and eager to grow in the tech industry.  
 </lable>`;
-var lsttheme = ['SQL','UBUNTU','MATRIX','WHITE','DEFAULT','TERMINAL','CLASIC','PS'];
+var lsttheme = ['SQL','UBUNTU','MATRIX','WHITE','DEFAULT','TERMINAL','CLASIC','PS','hack'];
 
 function handleInput(command) {
+    if (theme === 'hack')
+    {
+        clearInterval(interval_id);
+        canvas.style.display = "none";
+        setTheme(old_theme);
+    }
     var cmd = command.split(' '); 
     if (cmd.length == 1)
     {
         switch (command) {
+            case 'hack':
+                term.clear();
+                canvas.style.display = "block";
+                old_theme = theme;
+                setTheme(cmd[0]);
+                term.emit('draw-hack');
+                break
             case 'clear':
                 term.clear();
                 break;
@@ -69,10 +88,26 @@ function handleInput(command) {
             case 'history':
                 let history = term.history; 
                 console.log(history);
-                for (var a in history)
+                if (theme == 'SQL')
                 {
-                    term.writeln(`${(parseInt(  a) + 1).toString().padEnd(3, ' ')}: ${history[a]}`);
+                    term.write("\n+-----+----------------+\n")
+                    term.write("| SNO |     COMMAND    |\n")
+                    term.write("+-----+----------------+\n")
+                    for (var a in history)
+                    {
+                        term.writeln(`|${(parseInt(  a) + 1).toString().toUpperCase().padEnd(5, ' ')}| ${history[a].toString().toUpperCase().padEnd(15, ' ')}|`);
+                    } 
+                    term.write("+-----+----------------+\n")
                 }
+                else
+                {
+                    for (var a in history)
+                    {
+                        term.writeln(`${(parseInt(  a) + 1).toString().padEnd(3, ' ')}: ${history[a]}`);
+                    }
+                }
+                
+                term.writeln('')
                 break;
     
             case 'welcome':
@@ -81,9 +116,25 @@ function handleInput(command) {
                 break;
     
             case 'help':
-                for (var a in commands)
+                if (theme == 'SQL')
                 {
-                    term.writeln(`<lable class='command'>${commands[a].c.padEnd(15,' ')} </lable><lable class="discription">- ${commands[a].d}</lable>`);
+                    term.write("\n+------------------+-------------------------------+\n")
+                    term.write("|     COMMANDS     |           DESCRIPTION         |\n")
+                    term.write("+------------------+-------------------------------+\n")
+                    for (var a in commands)
+                    {
+                        term.writeln(`|  <lable class='command'>${commands[a].c.toUpperCase().padEnd(15,' ')} </lable>|<lable class="discription"> ${commands[a].d.toUpperCase().padEnd(30,' ')}</lable>|`);
+                    }
+                    term.write("+------------------+-------------------------------+\n")
+                    term.writeln(`${commands.length } rows affected; \n`)    
+                }
+                else
+                {   
+                    for (var a in commands)
+                    {
+                        term.writeln(`<lable class='command'>${commands[a].c.padEnd(15,' ')} </lable><lable class="discription">- ${commands[a].d}</lable>`);
+                    }
+                    term.writeln('')
                 }
                 break;
             
@@ -92,7 +143,7 @@ function handleInput(command) {
                 break;
             
             case 'about':
-                term.write(about);
+                term.writeln(about);
                 break;
             
             case 'theme':
@@ -104,7 +155,7 @@ function handleInput(command) {
                 if (commandList.includes(command)) {
                     term.writeln(`Command '${command}' is not fully implemented yet`);
                 } else {
-                    term.writeln(`<lable class='illegalcommand' >Illegal Command : '${command}'`);
+                    term.writeln(`<lable class='illegalcommand' >Illegal Command : '${command}'</lable>\n to list all commands type <lable class="help">help</lable>`);
                 }
                 break;
         }
@@ -114,11 +165,12 @@ function handleInput(command) {
     {
         switch (cmd[0]) { 
             case 'lst':
-                if (cmd[1] == 'theme')
+                if (cmd[1] == 'themes')
                 {
                     term.writeln    ('theme names :'); 
                     for (var a in lsttheme)
                     {
+                        if(a != lsttheme.length -1)
                         term.write(`${lsttheme[a]}\t`);
                     }
                 }  
@@ -150,7 +202,7 @@ function handleInput(command) {
                 if (commandList.includes(command)) {
                     term.writeln(`Command '${command}' is not fully implemented yet`);
                 } else {
-                    term.writeln(`<lable class='illegalcommand' >Illegal Command : '${command}'`);
+                    term.writeln(`<lable class='illegalcommand' >Illegal Command : '${command}'</lable>\n to list all commands type <lable class="help">help</lable>`);
                 }
                 break;
         }
@@ -189,7 +241,7 @@ Welcome to my Terminal Portfolio => Terfolip  <3
                                                 
 Welcome to my Terminal Portfolio => Terfolip  <3
 ---
-<i >For list of available Commads type</i> <b class="cmd">'help'</b>
+<i >For list of available Commads type</i> <b class="help">'help'</b>
 ---
         `
     };
@@ -247,6 +299,50 @@ function setTheme(newTheme) {
 
 }
 
+
+// matrix canvas element
+
+const canvas = document.getElementById("matrixCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const binary = "01";
+const fontSize = 14;
+const columns = Math.floor(canvas.width / fontSize);
+
+const drops = new Array(columns).fill(1);
+
+function draw()
+{
+    console.log("HELLO")
+    // BG on opacity 
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00ff00"; 
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+        const text = binary[Math.floor(Math.random() * binary.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975)
+        {
+          drops[i] = 0;
+        }
+
+        drops[i]++;
+      }
+    }
+
+    
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
 
 /*term.on('start', (id) => {
     term.writeln(`\n\nstarted...${id}`);        
