@@ -54,7 +54,7 @@ body
 }
 
 .theme-hack .xt>.xt-stdout>.xt-cursor {
-  display: none;
+  color: var(--xt-fg);
 }
 
 
