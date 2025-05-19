@@ -70,13 +70,13 @@ var edu = `<label class="edu">
 
   <label class="header1">Higher Secondary Education (HSC)</label><br>
   <label class="header2">Institution :</label> Mahatma Akkamma CBSE ,Madurai
-  <label class="header2">Year        :</label> XXXX
+  <label class="header2">Year        :</label> 2023
   <label class="header2">Percentage  :</label> 86%<br>
 
   <label class="header1">Secondary School Education (SSLC)</label>
   <label class="header2">Institution :</label> Lakshmi School ICSE ,Madurai
-  <label class="header2">Year        :</label> XXXX
-  <label class="header2">Percentage  :</label> XX%
+  <label class="header2">Year        :</label> 2020
+  <label class="header2">Percentage  :</label> 75%
 </label>
 `;
 
