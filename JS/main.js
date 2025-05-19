@@ -61,6 +61,26 @@ term.on('draw-hack',() => {
 
 var about = `<lable class="about">Hi, I’m <b>Gunavarthan</b>, \n\n a software developer passionate about technology, problem-solving, and exploring innovative solutions\n\n And as a PC hardware enthusiast, I stay curious and eager to grow in the tech industry.  
 </lable>`;
+
+var edu = `<label class="edu">
+  <label class="header1">Master of Science in Software Systems</label><br>
+  <label class="header2">Institution :</label> Coimbatore Institute of Technology
+  <label class="header2">Duration    :</label> 2023 - 2025
+  <label class="header2">CGPA        :</label> 8.35 / 10<br>
+
+  <label class="header1">Higher Secondary Education (HSC)</label><br>
+  <label class="header2">Institution :</label> Mahatma Akkamma CBSE ,Madurai
+  <label class="header2">Year        :</label> XXXX
+  <label class="header2">Percentage  :</label> 86%<br>
+
+  <label class="header1">Secondary School Education (SSLC)</label>
+  <label class="header2">Institution :</label> Lakshmi School ICSE ,Madurai
+  <label class="header2">Year        :</label> XXXX
+  <label class="header2">Percentage  :</label> XX%
+</label>
+`;
+
+
 var lsttheme = ['SQL','UBUNTU','MATRIX','WHITE','DEFAULT','TERMINAL','CLASIC','PS','hack'];
 
 function handleInput(command) {
@@ -145,6 +165,10 @@ function handleInput(command) {
             case 'about':
                 term.writeln(about);
                 break;
+
+            case 'education':
+                term.writeln(edu);
+                break;
             
             case 'theme':
                 term.writeln('To change the theme use:\n\n\t<b>set theme &lt;theme name&gt;</b>\n\nList all themes: \n\n\t<b>lst themes</b>');
@@ -165,7 +189,7 @@ function handleInput(command) {
     {
         switch (cmd[0]) { 
             case 'lst':
-                if (cmd[1] == 'themes')
+                if (cmd[1] == 'themes' || 'theme')
                 {
                     term.writeln    ('theme names :'); 
                     for (var a in lsttheme)
@@ -183,7 +207,7 @@ function handleInput(command) {
             case 'set':
                 if(cmd[1]==='theme')
                 {
-                    setTheme(cmd[2]);
+                    setTheme(cmd[2].toUpperCase());
                 }
                 break;
             
@@ -192,7 +216,13 @@ function handleInput(command) {
                 if (match) {
                     term.writeln(match[1]);
                 } else {
-                    term.writeln('Usage: echo \'your text here\'');
+                    match = command.match(/"([^']*)"/);
+                    if(match) {
+                        term.writeln(match[1]);
+                    }
+                    else{
+                        term.writeln('Usage: echo \'TEXT HERE\'');
+                    }
                 }
                 break;
                 

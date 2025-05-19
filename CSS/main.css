@@ -102,6 +102,16 @@ body
   color: rgb(52, 143, 170);
 }
 
+.theme-default .edu .header1 {
+  color: rgb(52, 143, 170);     /* Same as .prmt2 for consistency */
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.theme-default .edu .header2 {
+  color: rgb(192, 192, 192);    /* Matches .discription and .prmt1 */
+  font-weight: 600;
+}
 
   /*****************/
  /*   SQL Theme   */
@@ -155,6 +165,17 @@ body
   color: rgb(52, 143, 170);
 }
 
+.theme-sql .edu .header1 {
+  color: rgb(52, 143, 170); /* same as .prmt2 */
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.theme-sql .edu .header2 {
+  color: rgb(192, 192, 192); /* same as .discription */
+  font-weight: 600;
+}
+
 
 
   /*****************/
@@ -188,6 +209,17 @@ body
 
 .theme-ubuntu .prmt2 {                  /* prompt part2 */
   color: #8be9fd;
+}
+
+.theme-ubuntu .edu .header1 {
+  color: #8be9fd; /* same as .prmt2 */
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.theme-ubuntu .edu .header2 {
+  color: #bd93f9; /* same as .discription */
+  font-weight: 600;
 }
 
 /*****************/
@@ -230,6 +262,17 @@ body
 
 .theme-matrix .prmt2 {                  /* prompt part2 */
   color: #99ff99;
+}
+
+.theme-matrix .edu .header1 {
+  color: #99ff99;                     /* Eduaction Header */
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.theme-matrix .edu .header2 {
+  color: #33ff33;                     /* sub header */
+  font-weight: 600;
 }
 
 
