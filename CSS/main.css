@@ -113,6 +113,18 @@ body
   font-weight: 600;
 }
 
+.theme-default .socials .social-header {
+  text-transform: uppercase;
+  color: rgb(52, 143, 170);
+  font-weight: 800;
+}
+
+.theme-default .socials .social-label {
+  text-transform: uppercase;
+  color: rgb(192, 192, 192);
+  font-weight: 600;
+}
+
   /*****************/
  /*   SQL Theme   */
 /*****************/

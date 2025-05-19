@@ -80,6 +80,18 @@ var edu = `<label class="edu">
 </label>
 `;
 
+var social = `<div class="socials">
+  <label class="social-header">SOCIALS</label>
+  <label><span class="social-label">GitHub    :</span> <a href="https://github.com/Gunavarthan" target="_blank">github.com/Gunavarthan</a></label>
+  <label><span class="social-label">LinkedIn  :</span> <a href="https://www.linkedin.com/in/gunavarthan-s-757213282/" target="_blank">linkedin.com/in/yourprofile</a></label>
+  <label><span class="social-label">Portfolio :</span> <a href="https://gunavarthan.github.io/Portfolio-Terminal/" target="_blank">terfolio.com</a></label>
+</div>
+`;
+
+var email = `<a href="https://mail.google.com/mail/?view=cm&fs=1&to=gunavarthan832@gmail.com" target="_blank">
+Click here and Contact Me
+</a>
+`;
 
 var lsttheme = ['SQL','UBUNTU','MATRIX','WHITE','DEFAULT','TERMINAL','CLASIC','PS','hack'];
 
@@ -168,6 +180,14 @@ function handleInput(command) {
 
             case 'education':
                 term.writeln(edu);
+                break;
+
+            case 'socials':
+                term.writeln(social);
+                break;
+
+            case 'email':
+                term.writeln(email);
                 break;
             
             case 'theme':
