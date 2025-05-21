@@ -3,6 +3,10 @@ body
   background-color:#191a22 ;
 }
 
+a {
+  color: white;
+}
+
 #matrixCanvas
 {
   display: none; /* initially hidden */
@@ -32,6 +36,7 @@ body
 .hero
 {
   color:rgb(255, 191, 0);
+  font-weight: 700;
 }
 
 .prmt1
@@ -90,6 +95,7 @@ body
 .theme-default .hero                         /* hero section */
 {
   color:rgb(255, 255, 255);
+  font-weight: 700;
 }
 
 .theme-default .prmt1                          /* prompt part1 */
@@ -165,6 +171,7 @@ body
 .theme-sql .hero                         /* hero section */
 {
   color:rgb(255, 255, 255);
+  font-weight: 700;
 }
 
 .theme-sql .prmt1                          /* prompt part1 */
@@ -213,6 +220,7 @@ body
 
 .theme-ubuntu .hero {                   /* hero section */
   color: #89f045;
+  font-weight: 700;
 }
 
 .theme-ubuntu .prmt1 {                  /* prompt part1 */
@@ -234,8 +242,18 @@ body
   font-weight: 600;
 }
 
-/*****************/
-/* Matrix Theme  */
+.theme-ubuntu .socials .social-header {
+  text-transform: capitalize;
+  color: #8be9fd; /* Ubuntu Orange */
+}
+
+.theme-ubuntu .socials .social-label {
+  text-transform: capitalize;
+  color: #bd93f9; /* Ubuntu gray tone */
+}
+
+  /*****************/
+ /* Matrix Theme  */
 /*****************/
 .theme-matrix {
   background-color: black;
@@ -266,6 +284,7 @@ body
 
 .theme-matrix .hero {                   /* hero section */
   color: #66ff66;
+  font-weight: 700;
 }
 
 .theme-matrix .prmt1 {                  /* prompt part1 */
@@ -288,26 +307,326 @@ body
 }
 
 
-/* White Theme */
+  /*****************/
+ /* White Theme   */
+/*****************/
 .theme-white {
-  background-color: white;
-  color: black;
+  background-color: rgb(245, 228, 220);
+  --xt-bg: rgb(245, 228, 220);
+  --xt-fg: #4e342e;
+  color: var(--xt-fg);
 }
 
-/* Terminal Theme */
+.theme-white a {
+  color:  #4e342e;
+}
+
+.theme-white .help {                    /* help tag */
+  color: #ff7043;                       /* soft orange */
+}
+
+.theme-white .command {                /* help command name */
+  color: #d84315;                       /* deeper orange */
+}
+
+.theme-white .discription {            /* help command description */
+  color: #6d4c41;                       /* warm brown */
+}
+
+.theme-white .hero {                   /* hero section */
+  color: #d84315;
+  font-weight: 700;
+}
+
+.theme-white .prmt1 {                  /* prompt part1 */
+  color: #d84315;
+}
+
+.theme-white .prmt2 {                  /* prompt part2 */
+  color: #4e342e;                       /* dark warm brown */
+}
+
+.theme-white .edu .header1 {
+  color: #4e342e;                       /* same as .prmt2 */
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.theme-white .edu .header2 {
+  color: #6d4c41;                       /* same as .discription */
+  font-weight: 600;
+}
+
+.theme-white .socials .social-header {
+  text-transform: capitalize;
+  color: #d84315;                       /* soft Ubuntu-like orange */
+  font-weight: 700;
+}
+
+.theme-white .socials .social-label {
+  text-transform: capitalize;
+  color: #6d4c41;                       /* warm grayish-brown tone */
+  font-weight: 500;
+}
+
+
+  /********************/
+ /* Terminal Theme   */
+/********************/
 .theme-terminal {
-  background-color: #333;
-  color: lightgreen;
+  background-color: #1e1e1e;             /* near-black background */
+  --xt-bg: #1e1e1e;
+  --xt-fg: #90ee90;                      /* lightgreen */
+  --xt-a: #00ff00;                       /* neon green for links */
+  color: var(--xt-fg);
 }
 
-/* Classic Theme */
-.theme-clasic {
-  background-color: gray;
-  color: white;
+.theme-terminal a {
+  color: var(--xt-a);
+  text-decoration: none;
 }
 
-/* PowerShell (PS) Theme */
+.theme-terminal a:hover {
+  text-decoration: underline;
+}
+
+.theme-terminal .help {                 /* help tag */
+  color: #7CFC00;                        /* lawn green */
+}
+
+.theme-terminal .command {             /* help command name */
+  color: #00fa9a;                        /* medium spring green */
+}
+
+.theme-terminal .discription {         /* help command description */
+  color: #98fb98;                        /* pale green */
+}
+
+.theme-terminal .hero {                /* hero section */
+  color: #00ff00;                        /* bright green */
+  font-weight: 700;
+}
+
+.theme-terminal .prmt1 {               /* prompt part1 */
+  color: #90ee90;
+}
+
+.theme-terminal .prmt2 {               /* prompt part2 */
+  color: #32cd32;                        /* lime green */
+}
+
+.theme-terminal .edu .header1 {
+  color: #00ff00;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.theme-terminal .edu .header2 {
+  color: #7fff00;
+  font-weight: 600;
+}
+
+.theme-terminal .socials .social-header {
+  text-transform: capitalize;
+  color: #00ff7f;
+  font-weight: 700;
+  font-family: monospace;
+}
+
+.theme-terminal .socials .social-label {
+  text-transform: capitalize;
+  color: #90ee90;
+  font-weight: 500;
+  font-family: monospace;
+}
+
+
+  /*******************/
+ /* Classic Theme   */
+/*******************/
+.theme-classic {
+  background-color: #4a4a4a;            /* classic medium gray */
+  --xt-bg: #4a4a4a;
+  --xt-fg: #ffffff;                     /* white text */
+  --xt-a: #ffffff;
+  color: var(--xt-fg);
+}
+
+.theme-classic a {
+  color: var(--xt-a);
+  text-decoration: none;
+}
+
+.theme-classic a:hover {
+  text-decoration: underline;
+}
+
+.theme-classic .help {                 /* help tag */
+  color: #dddddd;                      /* light gray */
+}
+
+.theme-classic .command {              /* help command name */
+  color: #ffffff;
+}
+
+.theme-classic .discription {          /* help command description */
+  color: #bbbbbb;
+}
+
+.theme-classic .hero {                 /* hero section */
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.theme-classic .prmt1 {                /* prompt part1 */
+  color: #ffffff;
+}
+
+.theme-classic .prmt2 {                /* prompt part2 */
+  color: #dddddd;
+}
+
+.theme-classic .edu .header1 {
+  color: #ffffff;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.theme-classic .edu .header2 {
+  color: #bbbbbb;
+  font-weight: 600;
+}
+
+.theme-classic .socials .social-header {
+  text-transform: capitalize;
+  color: #ffffff;
+  font-weight: 700;
+  font-family: monospace;
+}
+
+.theme-classic .socials .social-label {
+  text-transform: capitalize;
+  color: #bbbbbb;
+  font-weight: 500;
+  font-family: monospace;
+}
+
+
+/********************/
+/* PowerShell Theme  */
+/********************/
 .theme-ps {
-  background-color: darkblue;
-  color: cyan;
+  background-color: #001f4d;       /* dark blue background */
+  --xt-bg: #001f4d;
+  --xt-fg: #ffffff;                /* white default text */
+  --xt-a: #3399ff;                 /* bright blue links */
+  color: var(--xt-fg);
+  font-family: Consolas, monospace;
+  font-size: 1rem;
+}
+
+.theme-ps a {
+  color: var(--xt-a);
+  text-decoration: none;
+}
+
+.theme-ps a:hover {
+  text-decoration: underline;
+}
+
+/* Core text types */
+.theme-ps .help {
+  color: #80b3ff;                  /* light blue */
+}
+
+.theme-ps .command {
+  color: #3399ff;                  /* bright blue */
+  font-weight: 600;
+}
+
+.theme-ps .discription {
+  color: #a0c8ff;                  /* softer blue */
+}
+
+.theme-ps .hero {
+  color:  #ffff66;                  /* bright blue */
+  font-weight: 700;
+}
+
+/* Prompt parts */
+.theme-ps .prmt1 {
+  color: #ffffff;                  /* white */
+  font-weight: 700;
+}
+
+.theme-ps .prmt2 {
+  color: #99ccff;                  /* lighter blue */
+  font-weight: 700;
+}
+
+/* Headers */
+.theme-ps .edu .header1 {
+  color: #3399ff;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.theme-ps .edu .header2 {
+  color: #80b3ff;
+  font-weight: 600;
+}
+
+/* Socials */
+.theme-ps .socials .social-header {
+  color: #3399ff;
+  font-weight: 700;
+  font-family: Consolas, monospace;
+  text-transform: capitalize;
+}
+
+.theme-ps .socials .social-label {
+  color: #80b3ff;
+  font-weight: 500;
+  font-family: Consolas, monospace;
+  text-transform: capitalize;
+}
+
+/* PowerShell-like system message colors */
+
+/* Errors in bright red */
+.theme-ps .error {
+  color: #ff4c4c;                 /* bright red */
+  font-weight: 700;
+  background-color: #330000;      /* dark red background */
+  padding: 2px 6px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+/* Warnings in yellow */
+.theme-ps .warning {
+  color: #ffff66;                 /* yellow */
+  font-weight: 700;
+  background-color: #333300;      /* dark yellow background */
+  padding: 2px 6px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+/* Information in light blue */
+.theme-ps .info {
+  color: #80b3ff;                 /* lighter blue */
+  font-weight: 600;
+}
+
+/* Success messages in bright green */
+.theme-ps .success {
+  color: #00ff00;                 /* bright green */
+  font-weight: 700;
+}
+
+/* Disabled or muted text */
+.theme-ps .muted {
+  color: #666666;
+  font-style: italic;
 }

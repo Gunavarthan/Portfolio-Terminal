@@ -36,7 +36,7 @@ function ask() {
         case 'DELIGHT':
             term.write('\n▲ ~ ');
             break;
-        case 'CLASIC':
+        case 'CLASSIC':
             term.write(`\n> `);
             break;
         case 'TERMINAL':
@@ -93,9 +93,10 @@ Click here and Contact Me
 </a>
 `;
 
-var lsttheme = ['SQL','UBUNTU','MATRIX','WHITE','DEFAULT','TERMINAL','CLASIC','PS','hack'];
+var lsttheme = ['SQL','UBUNTU','MATRIX','WHITE','DEFAULT','TERMINAL','CLASSIC','PS','hack'];
 
 function handleInput(command) {
+    command = command.replace(/\s+$/, "");
     if (theme === 'hack')
     {
         clearInterval(interval_id);
@@ -273,7 +274,7 @@ function welcome()
  .\$$    $$ \$$    $$| $$  | $$ \$$    $$   \$$$   \$$    $$| $$        \$$  $$| $$  | $$ \$$    $$| $$  | $$
   \$$$$$$   \$$$$$$  \$$   \$$  \$$$$$$$    \$     \$$$$$$$ \$$         \$$$$  \$$   \$$  \$$$$$$$ \$$   \$$ 
 
-Welcome to my Terminal Portfolio => Terfolip  <3
+Welcome to my Terminal Portfolio => Terfolio  <3
 ---
 <i>For list of available Commads type</i> <b class="help">'help'</b>
 ---
@@ -289,7 +290,7 @@ Welcome to my Terminal Portfolio => Terfolip  <3
 | |___) | |_| | | | / ___ |\ V // ___ | |     | |_| | | / ___ | | | |
 .\_____/|____/|_| |_\_____| \_/ \_____|_|      \__)_| |_\_____|_| |_|                                                                                                                                                                                                                                 
                                                 
-Welcome to my Terminal Portfolio => Terfolip  <3
+Welcome to my Terminal Portfolio => Terfolio  <3
 ---
 <i >For list of available Commads type</i> <b class="help">'help'</b>
 ---
@@ -305,7 +306,7 @@ Welcome to my Terminal Portfolio => Terfolip  <3
 |  |  | | |   | .'| | | .'|  _|  _|   | .'|   |
 |_____|___|_|_|__,|\_/|__,|_| |_| |_|_|__,|_|_|
                                                
-Welcome to my Terminal Portfolio => Terfolip  <3
+Welcome to my Terminal Portfolio => Terfolio  <3
 ---
 <i>For list of available Commads type</i> <b class="help">'help'</b>
 ---
@@ -319,7 +320,7 @@ Welcome to my Terminal Portfolio => Terfolip  <3
 /__   __  _     _  ___|_|_  _ __ 
 \_||_|| |(_|\_/(_| |  |_| |(_|| |
 
-Welcome to my Terminal Portfolio => Terfolip  <3
+Welcome to my Terminal Portfolio => Terfolio  <3
 ---
 <i>For list of available Commads type</i> <b class="help">'help'</b>
 ---
