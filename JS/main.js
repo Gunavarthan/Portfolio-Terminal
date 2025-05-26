@@ -285,8 +285,16 @@ function handleInput(command) {
                     }
                 }
                 break;
+
             case 'open':
-                let ProjectNumber = command.match()
+                let ProjectNumber = command.match(/\b\d+\b/g);
+                if(ProjectNumber) {
+                    OpenProject(ProjectNumber);
+                }
+                else{
+                    term.write(`<lable = "help">Enter the Appropriate Project Number!!</lable>`)
+                }
+                break;
             
             default:
                 let commandList = commands.map(cmd => cmd.c);
@@ -434,6 +442,10 @@ function draw()
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
+
+function OpenProject(ProjectNumber) {
+    
+}
 
 /*term.on('start', (id) => {
     term.writeln(`\n\nstarted...${id}`);        
