@@ -48,6 +48,19 @@ a {
 {
   color: rgb(52, 143, 170);
 }
+
+@media screen and (min-width: 768px) {
+  .theme-default .proj .disc,
+  .theme-sql .proj .disc,
+  .theme-ubuntu .proj .disc,
+  .theme-matrix .proj .disc,
+  .theme-white .proj .disc,
+  .theme-terminal .proj .disc {
+    max-width: 60vw;
+  }
+}
+
+
   /**************/
  /* Hack theme */
 /**************/
@@ -131,6 +144,26 @@ a {
   font-weight: 600;
 }
 
+.theme-default .proj .title {
+  color: rgb(52, 143, 170);
+  font-weight: 700;
+  font-size: 1.1em;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.theme-default .proj .disc {
+  color: rgb(192, 192, 192);
+  font-weight: 500;
+  margin: 0 0 0 1em; /* only left indent */
+  padding: 0;
+  display: block;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+
   /*****************/
  /*   SQL Theme   */
 /*****************/
@@ -195,6 +228,25 @@ a {
   font-weight: 600;
 }
 
+.theme-sql .proj .title {
+  color: #3490aa; /* similar to prmt2 */
+  font-weight: 700;
+  font-size: 1.1em;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.theme-sql .proj .disc {
+  color: #c0c0c0; /* same as discription */
+  font-weight: 500;
+  margin: 0 0 0 1em;
+  padding: 0;
+  display: block;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
 
 
   /*****************/
@@ -252,6 +304,25 @@ a {
   color: #bd93f9; /* Ubuntu gray tone */
 }
 
+.theme-ubuntu .proj .title {
+  color: #8be9fd; /* same as prmt2 */
+  font-weight: 700;
+  font-size: 1.1em;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.theme-ubuntu .proj .disc {
+  color: #bd93f9; /* same as discription */
+  font-weight: 500;
+  margin: 0 0 0 1em;
+  padding: 0;
+  display: block;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
   /*****************/
  /* Matrix Theme  */
 /*****************/
@@ -304,6 +375,25 @@ a {
 .theme-matrix .edu .header2 {
   color: #33ff33;                     /* sub header */
   font-weight: 600;
+}
+
+.theme-matrix .proj .title {
+  color: #32cd32; /* same as prmt2 */
+  font-weight: 700;
+  font-size: 1.1em;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.theme-matrix .proj .disc {
+  color: #98fb98; /* same as discription */
+  font-weight: 500;
+  margin: 0 0 0 1em;
+  padding: 0;
+  display: block;
+  line-height: 1.4;
+  word-wrap: break-word;
 }
 
 
@@ -367,6 +457,25 @@ a {
   text-transform: capitalize;
   color: #6d4c41;                       /* warm grayish-brown tone */
   font-weight: 500;
+}
+
+.theme-white .proj .title {
+  color: #4e342e; /* same as prmt2 */
+  font-weight: 700;
+  font-size: 1.1em;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.theme-white .proj .disc {
+  color: #6d4c41; /* same as discription */
+  font-weight: 500;
+  margin: 0 0 0 1em;
+  padding: 0;
+  display: block;
+  line-height: 1.4;
+  word-wrap: break-word;
 }
 
 
@@ -440,6 +549,24 @@ a {
   font-family: monospace;
 }
 
+.theme-terminal .proj .title {
+  color: #32cd32; /* same as prmt2 */
+  font-weight: 700;
+  font-size: 1.1em;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.theme-terminal .proj .disc {
+  color: #98fb98; /* same as discription */
+  font-weight: 500;
+  margin: 0 0 0 1em;
+  padding: 0;
+  display: block;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
 
   /*******************/
  /* Classic Theme   */
@@ -511,6 +638,25 @@ a {
   font-family: monospace;
 }
 
+.theme-classic .proj .title {
+  color: #dddddd; /* same as prmt2 */
+  font-weight: 700;
+  font-size: 1.1em;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.theme-classic .proj .disc {
+  color: #bbbbbb; /* same as discription */
+  font-weight: 500;
+  margin: 0 0 0 1em;
+  padding: 0;
+  display: block;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
 
 /********************/
 /* PowerShell Theme  */
@@ -552,6 +698,26 @@ a {
   color:  #ffff66;                  /* bright blue */
   font-weight: 700;
 }
+
+.theme-ps .proj .title {
+  color: #99ccff; /* same as prmt2 */
+  font-weight: 700;
+  font-size: 1.1em;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.theme-ps .proj .disc {
+  color: #a0c8ff; /* same as discription */
+  font-weight: 500;
+  margin: 0 0 0 1em;
+  padding: 0;
+  display: block;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
 
 /* Prompt parts */
 .theme-ps .prmt1 {

@@ -80,6 +80,40 @@ var edu = `<label class="edu">
 </label>
 `;
 
+var projects = `<label class="proj">
+ -> Projects<br>
+
+<label class="title">PiEngine (Java Game Engine)</label>
+<label class="disc">
+PiEngine is a simple and flexible 2D game engine made with Java. It uses OpenGL for graphics and has an easy-to-use editor. You can create and edit games in real-time, save and load game scenes, and manage game objects easily.
+</label><br>
+
+<label class="title">Pixel Art Editor (Assembly 8086)</label>
+<label class="disc">
+This pixel art editor is made with Assembly language. It allows drawing using the mouse with a basic color palette (Red, Green, Blue, White, Yellow). It shows how to create graphics and interact with hardware at a low level.
+</label><br>
+
+<label class="title">I-Racing-Sim (AI Racing Game)</label>
+<label class="disc">
+I-Racing-Sim is a racing game built with Python and Pygame. It has AI-controlled cars that learn and race on random tracks. You can watch the AI improve and compete in real-time.
+</label>
+
+<label class="title">Tic Tac Toe Game</label>
+<label class="disc">
+A web-based Tic Tac Toe game with options to play locally, against the computer, or online with friends. It manages game sessions and ensures smooth multiplayer play.
+</label>
+
+<label class="title">Railway Platform Ticket Booking System</label>
+<label class="disc">
+A web app for booking railway tickets and managing platforms. Users can search trains, book tickets with ID verification, and make payments. Admins can manage bookings and view statistics.
+</label>
+
+<label class="disc"> Tip: Type 'open &lt;projectname&gt;' to see full details.</label>
+</label>
+`;
+
+
+
 var social = `<div class="socials">
   <label class="social-header">SOCIALS</label>
   <label><span class="social-label">GitHub    :</span> <a href="https://github.com/Gunavarthan" target="_blank">github.com/Gunavarthan</a></label>
@@ -147,7 +181,12 @@ function handleInput(command) {
                 term.clear();
                 welcome();
                 break;
-    
+                
+            case 'projects':
+            case'project':
+                term.write(projects);  
+                break;
+
             case 'help':
                 if (theme == 'SQL')
                 {
@@ -246,7 +285,8 @@ function handleInput(command) {
                     }
                 }
                 break;
-                
+            case 'open':
+                let ProjectNumber = command.match()
             
             default:
                 let commandList = commands.map(cmd => cmd.c);
