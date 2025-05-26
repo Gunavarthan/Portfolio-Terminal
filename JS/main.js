@@ -20,7 +20,7 @@ function isLargeViewport() {
 }
 
 const state ={  username: 'visitor',hostname:'web' };
-const commands = [{c:'about',d:'About Gunavarthan'},{c:'help',d:'Display all commands'},{c:'hack',d:'Just a Screen Saver'},{c:'whoami',d:'Current user'},{c:'education',d:'Education Qualification'},{c:'projects',d:'Projects Worked on'},{c:'welcome',d:'Hero Section'},{c:'history',d:'List all exicuted Commands'},{c:'theme',d:'Change theme'},{c:'clear',d:'Clear Screen'},{c:'socials',d:'Chech out me here'},{c:'switchuser',d:'Switch Current User'},{c:'email',d:'Contact me'},{c:'echo',d:'Print a String in termnial'},{c:'typo',d:'try it'},{c:'whatis',d:'Not from me'}];
+const commands = [{c:'about',d:'About Gunavarthan'},{c:'help',d:'Display all commands'},{c:'hack',d:'Just a Screen Saver'},{c:'whoami',d:'Current user'},{c:'education',d:'Education Qualification'},{c:'projects',d:'Projects Worked on'},{c:'open',d:'more on each project'},{c:'welcome',d:'Hero Section'},{c:'history',d:'List all exicuted Commands'},{c:'theme',d:'Change theme'},{c:'clear',d:'Clear Screen'},{c:'socials',d:'Chech out me here'},{c:'switchuser',d:'Switch Current User'},{c:'email',d:'Contact me'},{c:'echo',d:'Print a String in termnial'},{c:'typo',d:'try it'},{c:'whatis',d:'Not from me'}];
 var theme = 'DEFAULT';
 var old_theme = theme;
 
@@ -292,7 +292,7 @@ function handleInput(command) {
                     OpenProject(ProjectNumber);
                 }
                 else{
-                    term.write(`<lable = "help">Enter the Appropriate Project Number!!</lable>`)
+                    term.write(`<lable class="help">Enter the Appropriate Project Number!!</lable>`)
                 }
                 break;
             
@@ -444,7 +444,7 @@ function draw()
     });
 
 function OpenProject(ProjectNumber) {
-    
+
 }
 
 /*term.on('start', (id) => {
