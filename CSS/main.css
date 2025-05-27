@@ -7,6 +7,10 @@ a {
   color: white;
 }
 
+label {
+  padding-top: -10%;
+}
+
 #matrixCanvas
 {
   display: none; /* initially hidden */
@@ -163,6 +167,31 @@ a {
   word-wrap: break-word;
 }
 
+.theme-default .ProjectDetailed .title {
+  color: rgb(52, 143, 170);
+  font-weight: 700;
+  /* display: block; */
+}
+
+.theme-default .ProjectDetailed .subtitle {
+  display: block;
+  color: rgb(52, 143, 170); /* Same as .prmt2 */
+  font-weight: 600;
+}
+
+.theme-default .ProjectDetailed .disc {
+  color: rgb(192, 192, 192);
+  font-weight: 500;
+  margin-left: 1em;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+.theme-default .ProjectDetailed .demo-link {
+  color: rgb(192, 192, 192);
+  text-decoration: underline;
+}
+
 
   /*****************/
  /*   SQL Theme   */
@@ -247,7 +276,29 @@ a {
   word-wrap: break-word;
 }
 
+.theme-sql .ProjectDetailed .title {
+  color: #3490aa; /* same as .proj .title */
+  font-weight: 700;
+}
 
+.theme-sql .ProjectDetailed .subtitle {
+  display: block;
+  color: #3490aa; /* same as .prmt2 */
+  font-weight: 600;
+}
+
+.theme-sql .ProjectDetailed .disc {
+  color: #c0c0c0; /* same as .proj .disc */
+  font-weight: 500;
+  margin-left: 1em;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+.theme-sql .ProjectDetailed .demo-link {
+  color: #c0c0c0;
+  text-decoration: underline;
+}
 
   /*****************/
  /* Ubuntu Theme  */
@@ -323,6 +374,30 @@ a {
   word-wrap: break-word;
 }
 
+.theme-ubuntu .ProjectDetailed .title {
+  color: #8be9fd; /* same as .prmt2 */
+  font-weight: 700;
+}
+
+.theme-ubuntu .ProjectDetailed .subtitle {
+  display: block;
+  color: #8be9fd; /* same as .prmt2 */
+  font-weight: 600;
+}
+
+.theme-ubuntu .ProjectDetailed .disc {
+  color: #bd93f9; /* same as .discription */
+  font-weight: 500;
+  margin-left: 1em;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+.theme-ubuntu .ProjectDetailed .demo-link {
+  color: #bd93f9;
+  text-decoration: underline;
+}
+
   /*****************/
  /* Matrix Theme  */
 /*****************/
@@ -395,6 +470,31 @@ a {
   line-height: 1.4;
   word-wrap: break-word;
 }
+
+.theme-matrix .ProjectDetailed .title {
+  color: #32cd32; /* same as .proj .title */
+  font-weight: 700;
+}
+
+.theme-matrix .ProjectDetailed .subtitle {
+  display: block;
+  color: #99ff99; /* same as .prmt2 */
+  font-weight: 600;
+}
+
+.theme-matrix .ProjectDetailed .disc {
+  color: #98fb98; /* same as .discription */
+  font-weight: 500;
+  margin-left: 1em;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+.theme-matrix .ProjectDetailed .demo-link {
+  color: #98fb98;
+  text-decoration: underline;
+}
+
 
 
   /*****************/
@@ -476,6 +576,30 @@ a {
   display: block;
   line-height: 1.4;
   word-wrap: break-word;
+}
+
+.theme-white .ProjectDetailed .title {
+  color: #4e342e; /* same as .prmt2 */
+  font-weight: 700;
+}
+
+.theme-white .ProjectDetailed .subtitle {
+  display: block;
+  color: #4e342e; /* same as .prmt2 */
+  font-weight: 600;
+}
+
+.theme-white .ProjectDetailed .disc {
+  color: #6d4c41; /* same as .discription */
+  font-weight: 500;
+  margin-left: 1em;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+.theme-white .ProjectDetailed .demo-link {
+  color: #6d4c41;
+  text-decoration: underline;
 }
 
 
@@ -568,6 +692,30 @@ a {
   word-wrap: break-word;
 }
 
+.theme-terminal .ProjectDetailed .title {
+  color: #90ee90; /* same as --xt-fg */
+  font-weight: 700;
+}
+
+.theme-terminal .ProjectDetailed .subtitle {
+  display: block;
+  color: #00ff00; /* same as .hero */
+  font-weight: 600;
+}
+
+.theme-terminal .ProjectDetailed .disc {
+  color: #98fb98; /* same as .discription */
+  font-weight: 500;
+  margin-left: 1em;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+.theme-terminal .ProjectDetailed .demo-link {
+  color: #98fb98;
+  text-decoration: underline;
+}
+
   /*******************/
  /* Classic Theme   */
 /*******************/
@@ -657,6 +805,29 @@ a {
   word-wrap: break-word;
 }
 
+.theme-classic .ProjectDetailed .title {
+  color: #dddddd; /* same as --xt-fg */
+  font-weight: 700;
+}
+
+.theme-classic .ProjectDetailed .subtitle {
+  display: block;
+  color: #bbbbbb; /* same as .hero */
+  font-weight: 600;
+}
+
+.theme-classic .ProjectDetailed .disc {
+  color: #b1b1b1; /* same as .discription */
+  font-weight: 500;
+  margin-left: 1em;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+.theme-classic .ProjectDetailed .demo-link {
+  color: #ffffff;
+  text-decoration: underline;
+}
 
 /********************/
 /* PowerShell Theme  */
@@ -716,6 +887,31 @@ a {
   display: block;
   line-height: 1.4;
   word-wrap: break-word;
+}
+
+
+.theme-ps .ProjectDetailed .title {
+  color: #3399ff; /* same as --xt-fg */
+  font-weight: 700;
+}
+
+.theme-ps .ProjectDetailed .subtitle {
+  display: block;
+  color: #52a7fc; /* same as .hero */
+  font-weight: 600;
+}
+
+.theme-ps .ProjectDetailed .disc {
+  color: #e6e6e6; /* same as .discription */
+  font-weight: 500;
+  margin-left: 1em;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+.theme-ps .ProjectDetailed .demo-link {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 

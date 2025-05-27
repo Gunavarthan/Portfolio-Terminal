@@ -83,27 +83,27 @@ var edu = `<label class="edu">
 var projects = `<label class="proj">
  -> Projects<br>
 
-<label class="title">PiEngine (Java Game Engine)</label>
+<label class="title">1 > PiEngine (Java Game Engine)</label>
 <label class="disc">
 PiEngine is a simple and flexible 2D game engine made with Java. It uses OpenGL for graphics and has an easy-to-use editor. You can create and edit games in real-time, save and load game scenes, and manage game objects easily.
 </label><br>
 
-<label class="title">Pixel Art Editor (Assembly 8086)</label>
+<label class="title">2 >  Pixel Art Editor (Assembly 8086)</label>
 <label class="disc">
 This pixel art editor is made with Assembly language. It allows drawing using the mouse with a basic color palette (Red, Green, Blue, White, Yellow). It shows how to create graphics and interact with hardware at a low level.
 </label><br>
 
-<label class="title">I-Racing-Sim (AI Racing Game)</label>
+<label class="title">3 >  AI-Racing-Sim (AI Racing Game)</label>
 <label class="disc">
 I-Racing-Sim is a racing game built with Python and Pygame. It has AI-controlled cars that learn and race on random tracks. You can watch the AI improve and compete in real-time.
 </label>
 
-<label class="title">Tic Tac Toe Game</label>
+<label class="title">4 >  Tic Tac Toe Game</label>
 <label class="disc">
 A web-based Tic Tac Toe game with options to play locally, against the computer, or online with friends. It manages game sessions and ensures smooth multiplayer play.
 </label>
 
-<label class="title">Railway Platform Ticket Booking System</label>
+<label class="title">5 >  Railway Platform Ticket Booking System</label>
 <label class="disc">
 A web app for booking railway tickets and managing platforms. Users can search trains, book tickets with ID verification, and make payments. Admins can manage bookings and view statistics.
 </label>
@@ -112,6 +112,111 @@ A web app for booking railway tickets and managing platforms. Users can search t
 </label>
 `;
 
+var project_detail = [`
+    <label class="ProjectDetailed">
+      <label class="title">Project: PiEngine (Java Game Engine)</label>
+    
+      <label class="subtitle">Description:</label>
+      <label class="disc">PiEngine is a simple and flexible 2D game engine made with Java. It uses OpenGL for graphics and includes a real-time editor for scene and object manipulation.</label>
+      <label class="subtitle">Technologies Used:</label>
+      <label class="disc">- Java
+        - OpenGL (LWJGL)
+      </label><label class="subtitle">Features:</label>
+      <label class="disc">- Real-time game editing
+        - Scene saving/loading
+        - Object transformation and management
+        - Lightweight and modular design
+      </label>
+    
+      <label class="subtitle">GitHub:</label>
+      <a class="demo-link" href="https://github.com/ItsTanPI/Pi-Engine" target="_blank">get to know more</a>
+    </label>
+    `,
+    `
+    <label class="ProjectDetailed">
+      <label class="title">Project: Pixel Art Editor (Assembly 8086)</label>
+    
+      <label class="subtitle">Description:</label>
+      <label class="disc">A simple pixel art editor built using Assembly language. Allows pixel drawing via mouse with a limited color palette and demonstrates low-level graphics programming.
+      </label><label class="subtitle">Technologies Used:</label>
+      <label class="disc">- Assembly 8086
+        - BIOS interrupts for mouse and video
+      </label><label class="subtitle">Features:</label>
+      <label class="disc">- Mouse-based drawing
+        - Color palette (Red, Green, Blue, White, Yellow)
+        - Custom resolution
+        - Graphics mode switching
+      </label><label class="subtitle">Demo:</label>
+      <a class="demo-link" href="https://github.com/Gunavarthan/Pixel-canvas-ASM" target="_blank">Draw here</a>
+    </label>
+    `,
+    `
+    <label class="ProjectDetailed">
+      <label class="title">Project: AI-Racing-Sim (AI Racing Game)</label>
+    
+      <label class="subtitle">Description:</label>
+      <label class="disc">AI-Racing-Sim is a Python-based car racing simulation where AI agents learn to navigate random tracks using reinforcement learning.
+      </label><label class="subtitle">Technologies Used:</label>
+      <label class="disc">- Python
+        - Pygame
+        - OpenAI Gymnasium
+        - PPO (Proximal Policy Optimization)
+      </label><label class="subtitle">Features:</label>
+      <label class="disc">- Random track generation
+        - AI training and live racing
+        - Visual game simulation
+        - Replay and analytics support
+      </label>
+    
+      <label class="subtitle">GitHub:</label>
+      <a class="demo-link" href="https://github.com/ItsTanPI/AI-Racing-Sim" target="_blank">AI powered Car Sim</a>
+    </label>
+    `,
+    `
+    <label class="ProjectDetailed">
+      <label class="title">Project: Tic Tac Toe Game</label>
+    
+      <label class="subtitle">Description:</label>
+      <label class="disc">A web-based Tic Tac Toe game that supports multiple gameplay modes:
+        - Single Player (vs Computer)
+        - Local Co-op (2 Players)
+        - Online Multiplayer Mode with real-time play
+      </label><label class="subtitle">Technologies Used:</label>
+      <label class="disc">- HTML5, CSS3, JavaScript (Frontend)
+        - PHP, AJAX, MySQL (Backend)
+      </label><label class="subtitle">Features:</label>
+      <label class="disc">- Online matchmaking with session management
+        - Auto-expiry of game sessions after 10 minutes
+        - Responsive UI for desktop and mobile
+        - Winner announcement and game reset
+        - Simple and clean UI with animations
+      </label><label class="subtitle">Demo:</label>
+      <a class="demo-link" href="https://gunavarthan.github.io/TicTacToe/HTML/MainMenue.html" target="_blank">Play Game Now !!</a>
+    </label>
+    `,
+    `
+    <label class="ProjectDetailed">
+      <label class="title">Project: Railway Platform Ticket Booking System</label>
+    
+      <label class="subtitle">Description:</label>
+      <label class="disc">A web-based platform ticket booking system with user and admin modes. Includes real-time ticket validation, admin dashboard, and payment simulation.
+      </label><label class="subtitle">Technologies Used:</label>
+      <label class="disc">- HTML5, CSS3, JavaScript
+        - PHP, MySQL, AJAX
+        - QRCode, Chart.js
+      </label><label class="subtitle">Features:</label>
+      <label class="disc">- PNR-based ticket search and validation
+        - Aadhar number verification
+        - QR code generation for tickets
+        - Admin statistics dashboard
+        - Responsive and secure UI
+      </label>
+      <label class="subtitle">GitHub:</label>
+      <a class="demo-link" href="https://github.com/Gunavarthan/Railway-Platform-Ticket-Booking-System" target="_blank">Railway platform ticket booking system </a>
+    </label>
+    `
+    ];
+    
 
 
 var social = `<div class="socials">
@@ -181,6 +286,10 @@ function handleInput(command) {
                 term.clear();
                 welcome();
                 break;
+            
+            case 'open':
+                term.write(`\t\t<lable class="help">open "&lt;project Number&gt;" to open a project \n\n</lable>`);
+                break
                 
             case 'projects':
             case'project':
@@ -292,7 +401,7 @@ function handleInput(command) {
                     OpenProject(ProjectNumber);
                 }
                 else{
-                    term.write(`<lable class="help">Enter the Appropriate Project Number!!</lable>`)
+                    term.write(`<lable class="help">\t\tEnter the Appropriate Project Number!!\n\n</lable>`)
                 }
                 break;
             
@@ -444,7 +553,13 @@ function draw()
     });
 
 function OpenProject(ProjectNumber) {
-
+    if(ProjectNumber > 0 && ProjectNumber < (project_detail.length+1) )
+    {
+        term.write(project_detail[ProjectNumber-1]);
+    }
+    else{
+        term.write(`<lable class="help">\t\tEnter the Appropriate Project Number!!\n\n</lable>`)
+    }
 }
 
 /*term.on('start', (id) => {
