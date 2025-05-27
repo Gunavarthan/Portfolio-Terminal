@@ -20,7 +20,7 @@ function isLargeViewport() {
 }
 
 const state ={  username: 'visitor',hostname:'web' };
-const commands = [{c:'about',d:'About Gunavarthan'},{c:'help',d:'Display all commands'},{c:'hack',d:'Just a Screen Saver'},{c:'whoami',d:'Current user'},{c:'education',d:'Education Qualification'},{c:'projects',d:'Projects Worked on'},{c:'open',d:'more on each project'},{c:'welcome',d:'Hero Section'},{c:'history',d:'List all exicuted Commands'},{c:'theme',d:'Change theme'},{c:'clear',d:'Clear Screen'},{c:'socials',d:'Chech out me here'},{c:'switchuser',d:'Switch Current User'},{c:'email',d:'Contact me'},{c:'echo',d:'Print a String in termnial'},{c:'typo',d:'try it'},{c:'whatis',d:'Not from me'}];
+const commands = [{c:'about',d:'About Gunavarthan'},{c:'help',d:'Display all commands'},{c:'hack',d:'Just a Screen Saver'},{c:'whoami',d:'Current user'},{c:'education',d:'Education Qualification'},{c:'projects',d:'Projects Worked on'},{c:'open',d:'more on each project'},{c:'welcome',d:'Hero Section'},{c:'history',d:'List all exicuted Commands'},{c:'cowsay',d:'speak with a cow'},{c:'catsay',d:'why just cow'},{c:'theme',d:'Change theme'},{c:'clear',d:'Clear Screen'},{c:'socials',d:'Chech out me here'},{c:'email',d:'Contact me'},{c:'echo',d:'Print a String in termnial'},{c:'typo',d:'try it'}];
 var theme = 'DEFAULT';
 var old_theme = theme;
 
@@ -256,6 +256,14 @@ function handleInput(command) {
             case 'clear':
                 term.clear();
                 break;
+            
+            case 'cowsay':
+                term.writeln('Usage: cowsay \'TEXT HERE\'');
+                break;
+
+            case 'catsay':
+                term.writeln('Usage: cowsay \'TEXT HERE\'');
+                break;
     
             case 'history':
                 let history = term.history; 
@@ -394,6 +402,36 @@ function handleInput(command) {
                     }
                 }
                 break;
+            
+            case 'cowsay':
+                let cowmatch = command.match(/'([^']*)'/);
+                if (cowmatch) {
+                    cowsay(match[1]);
+                } else {
+                    cowmatch = command.match(/"([^']*)"/);
+                    if(cowmatch) {
+                        cowsay(cowmatch[1]);
+                    }
+                    else{
+                        term.writeln('Usage: cowsay \'TEXT HERE\'');
+                    }
+                }
+                break;
+
+                case 'catsay':
+                    let catmatch = command.match(/'([^']*)'/);
+                    if (catmatch) {
+                        catsay(catmatch[1]);
+                    } else {
+                        catmatch = command.match(/"([^']*)"/);
+                        if(catmatch) {
+                            catsay(catmatch[1]);
+                        }
+                        else{
+                            term.writeln('Usage: catsay \'TEXT HERE\'');
+                        }
+                    }
+                    break;
 
             case 'open':
                 let ProjectNumber = command.match(/\b\d+\b/g);
@@ -561,6 +599,37 @@ function OpenProject(ProjectNumber) {
         term.write(`<lable class="help">\t\tEnter the Appropriate Project Number!!\n\n</lable>`)
     }
 }
+
+
+function cowsay(message) {
+    const top = " " + "_".repeat(message.length + 2);
+    const bottom = " " + "-".repeat(message.length + 2);
+    const speech = `\
+${top}_
+< ${message} >
+${bottom}-
+        \\   ^__^
+         \\  (oo)\\_______
+            (__)\\       )\\/\\
+                ||----w |
+                ||     ||\n\n`;
+    term.write(speech);
+}
+
+function catsay(message) {
+    const top = " " + "_".repeat(message.length + 2);
+    const bottom = " " + "-".repeat(message.length + 2);
+    const speech = `\
+${top}_
+< ${message} >
+${bottom}-
+        \\     /\\_/\\
+         \\   ( o.o )
+              > ^ <\n\n`;
+    term.write(speech);
+}
+
+
 
 /*term.on('start', (id) => {
     term.writeln(`\n\nstarted...${id}`);        
