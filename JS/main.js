@@ -438,6 +438,7 @@ function handleInput(command) {
                                 }
                             }
                         }
+                        // term.write(prompt);
                         console.log('must be before called me!!');
                     }
                     else{
@@ -464,6 +465,7 @@ function handleInput(command) {
                                     }
                                 }
                             }
+                            // term.write(prompt);
                             console.log('must be before called me!!');
                         }
                         else{
