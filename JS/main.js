@@ -1,6 +1,11 @@
+// import figlet from 'figlet';
 const term = new XTerminal()
 term.mount('#app');
 var interval_id
+
+var Figlet = "JS\\figlet.js".Figlet;
+
+var puts = "sys".puts;
 //term.write('Hello World!\n$ ');
 
 function isExtraSmallViewport() {
@@ -25,6 +30,7 @@ var theme = 'DEFAULT';
 var old_theme = theme;
 
 function ask() {
+    console.log('called me!!')
     switch(theme)
     {
         case 'PS':
@@ -261,6 +267,12 @@ function handleInput(command) {
                 term.writeln('Usage: cowsay \'TEXT HERE\'');
                 break;
 
+            case 'typo':
+                Figlet.write(command, "3-d", function(str) {
+                    term.writeln(str);
+                });    
+                break;
+
             case 'catsay':
                 term.writeln('Usage: cowsay \'TEXT HERE\'');
                 break;
@@ -403,6 +415,42 @@ function handleInput(command) {
                 }
                 break;
             
+            case 'typo':
+                (async () => {
+                    let tmatch = command.match(/'([^']*)'/);
+                    if (tmatch) {
+                        console.log('must be 1st');
+                        let text = tmatch[1];
+                        const output = await Figlet.write(text, "3-d");
+                        console.log("must be 2nd - before terminal write");
+                        await writeToTerminal(term, output);
+                        console.log("must be 3rd - AFTER terminal write");
+                    }
+                })();
+                
+                
+
+                // let tmatch = command.match(/'([^']*)'/);
+                // if (tmatch) {
+                    // console.log(tmatch);
+                    // Figlet.write(command, "3-d", function(str) {
+                        // console.log("inside");
+                        // term.write(str);
+                    // });    
+                // } else {
+                    // tmatch = command.match(/"([^']*)"/);
+                    // if(tmatch) {
+                        // Figlet.write(commad, "3-d", function(str) {
+                            // console.log("inside");
+                            // term.write(str);
+                        // });
+                    // }
+                    // else{
+                        // term.writeln('Usage: typo \'TEXT HERE\'');
+                    // }
+                // }
+                break;
+
             case 'cowsay':
                 let cowmatch = command.match(/'([^']*)'/);
                 if (cowmatch) {
@@ -543,6 +591,13 @@ function setTheme(newTheme) {
     document.body.classList.remove(...lsttheme.map(t => `theme-${t.toLowerCase()}`));
     document.body.classList.add(`theme-${newTheme.toLowerCase()}`);
 
+}
+
+
+function writeToTerminal(term, text) {
+    return new Promise(resolve => {
+        term.write(text, resolve);  // resolve called after terminal writes
+    });
 }
 
 
