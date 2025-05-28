@@ -71,27 +71,32 @@ var Figlet = (typeof exports !== "undefined" ? exports : window).Figlet = {
 		return fontDefn.char[char] = charDefn;
 	},
 
-	write: function(str, font) {
+	write: function(str, font, term) {
 		return new Promise((resolve, reject) => {
 			Figlet.parseFont(font, function() {
 				try {
-					var chars = [], result = "";
-					for (var i = 0, len = str.length; i < len; i++) {
+					let chars = [], result = "\n";
+					for (let i = 0, len = str.length; i < len; i++) {
 						chars[i] = Figlet.parseChar(str.charCodeAt(i), font);
 					}
-					for (i = 0, height = chars[0].length; i < height; i++) {
-						for (var j = 0; j < len; j++) {
+					for (let i = 0, height = chars[0].length; i < height; i++) {
+						for (let j = 0; j < str.length; j++) {
 							result += chars[j][i];
 						}
 						result += "\n";
 					}
-					resolve(result);
+
+					term.write(result, () => {
+						console.log('written to terminal...');
+						resolve(result);
+					});
+	
 				} catch (err) {
 					reject(err);
 				}
 			});
 		});
-	}
+	}	
 };
 
 })();

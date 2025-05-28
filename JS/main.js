@@ -268,9 +268,7 @@ function handleInput(command) {
                 break;
 
             case 'typo':
-                Figlet.write(command, "3-d", function(str) {
-                    term.writeln(str);
-                });    
+                term.writeln('Usage: typo \'TEXT HERE\'');    
                 break;
 
             case 'catsay':
@@ -421,34 +419,58 @@ function handleInput(command) {
                     if (tmatch) {
                         console.log('must be 1st');
                         let text = tmatch[1];
-                        const output = await Figlet.write(text, "3-d");
-                        console.log("must be 2nd - before terminal write");
-                        await writeToTerminal(term, output);
-                        console.log("must be 3rd - AFTER terminal write");
+                        if(isLargeViewport())
+                        {
+                            await Figlet.write(text, "3-d",term);
+                        }else{
+                            if(isMediumViewport())
+                            {
+                                await Figlet.write(text, "rounded",term);
+                            }else{
+                                if(isSmallViewport())
+                                {
+                                    await Figlet.write(text, "chunky",term);
+                                }else{
+                                    if(isExtraSmallViewport)
+                                    {
+                                        await Figlet.write(text, "thin",term);
+                                    };
+                                }
+                            }
+                        }
+                        console.log('must be before called me!!');
+                    }
+                    else{
+                        tmatch = command.match(/"([^']*)"/);
+                        if (tmatch) {
+                            console.log('must be 1st');
+                            let text = tmatch[1];
+                            if(isLargeViewport())
+                            {
+                                await Figlet.write(text, "3-d",term);
+                            }else{
+                                if(isMediumViewport())
+                                {
+                                    await Figlet.write(text, "rounded",term);
+                                }else{
+                                    if(isSmallViewport())
+                                    {
+                                        await Figlet.write(text, "chunky",term);
+                                    }else{
+                                        if(isExtraSmallViewport)
+                                        {
+                                            await Figlet.write(text, "thin",term);
+                                        };
+                                    }
+                                }
+                            }
+                            console.log('must be before called me!!');
+                        }
+                        else{
+                            term.writeln('Usage: typo \'TEXT HERE\'');
+                        }
                     }
                 })();
-                
-                
-
-                // let tmatch = command.match(/'([^']*)'/);
-                // if (tmatch) {
-                    // console.log(tmatch);
-                    // Figlet.write(command, "3-d", function(str) {
-                        // console.log("inside");
-                        // term.write(str);
-                    // });    
-                // } else {
-                    // tmatch = command.match(/"([^']*)"/);
-                    // if(tmatch) {
-                        // Figlet.write(commad, "3-d", function(str) {
-                            // console.log("inside");
-                            // term.write(str);
-                        // });
-                    // }
-                    // else{
-                        // term.writeln('Usage: typo \'TEXT HERE\'');
-                    // }
-                // }
                 break;
 
             case 'cowsay':
@@ -592,14 +614,6 @@ function setTheme(newTheme) {
     document.body.classList.add(`theme-${newTheme.toLowerCase()}`);
 
 }
-
-
-function writeToTerminal(term, text) {
-    return new Promise(resolve => {
-        term.write(text, resolve);  // resolve called after terminal writes
-    });
-}
-
 
 // matrix canvas element
 
