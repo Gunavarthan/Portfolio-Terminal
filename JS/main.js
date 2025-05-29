@@ -13,21 +13,42 @@ function isExtraSmallViewport() {
 }
 
 function isSmallViewport() {
-    return window.innerWidth >= 576 && window.innerWidth < 768;
+    return window.innerWidth >= 576 && window.innerWidth < 920;
 }
 
 function isMediumViewport() {
-    return window.innerWidth >= 768 && window.innerWidth < 992;
+    return window.innerWidth >= 920 && window.innerWidth < 1500;
 }
 
 function isLargeViewport() {
-    return window.innerWidth >= 992;
+    return window.innerWidth >= 1500;
 }
 
 const state ={  username: 'visitor',hostname:'web' };
 const commands = [{c:'about',d:'About Gunavarthan'},{c:'help',d:'Display all commands'},{c:'hack',d:'Just a Screen Saver'},{c:'whoami',d:'Current user'},{c:'education',d:'Education Qualification'},{c:'projects',d:'Projects Worked on'},{c:'open',d:'more on each project'},{c:'welcome',d:'Hero Section'},{c:'history',d:'List all exicuted Commands'},{c:'cowsay',d:'speak with a cow'},{c:'catsay',d:'why just cow'},{c:'theme',d:'Change theme'},{c:'clear',d:'Clear Screen'},{c:'socials',d:'Chech out me here'},{c:'email',d:'Contact me'},{c:'echo',d:'Print a String in termnial'},{c:'typo',d:'try it'}];
 var theme = 'DEFAULT';
 var old_theme = theme;
+var portrait = `                                                                            
+                    ::+xXX$$$$XXx+::              
+                ;x$$$$$$$$$$$$$$$$$$$$x.          
+             ;X$$$$$$$$$$$$$$$$$$$$$$$X:          
+         .X$$$$$$$$$$$$$$$$$$$$$$$$$$$;           
+         :$$$$$X++xX$$$$$$$$$$$$$$$$+             
+         .X$$$$+        ...... .xx:.              
+         :X$$$$x                :                 
+         X$$$$x;                :.                
+         $$$$;         .      . :;                
+         x$$$;      :::::.    :;xx.               
+         ;X;+:.   .:  :X:.: .;:::+:.              
+         +..:.     .     :. .;  .+;.              
+         +.   ;:    .....  ::;..:+:               
+          :;;:+X:      ;xXXXXX;  ;;               
+             :X$$X;  +x.  ::;:.+;;:               
+              :X$$$$$X     ::  :X;                
+                :+X$$$$X++X$$XX$;                 
+                   .;x$$$$$$$$X:                  
+                         ::::.                               
+`;
 
 function ask() {
     console.log('called me!!')
@@ -595,8 +616,12 @@ Welcome to my Terminal Portfolio => Terfolio  <3
 `
     }
     term.write(`<lable class='hero'>${message}</lable>`);
-
-
+    
+    if(isLargeViewport()||isMediumViewport())
+    {
+        term.write(`<lable class='portrait'>${portrait}</lable>`);
+    }
+    
 }
 
 welcome();

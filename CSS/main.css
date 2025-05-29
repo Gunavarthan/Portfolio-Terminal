@@ -43,6 +43,14 @@ label {
   font-weight: 700;
 }
 
+.portrait
+{
+  position: fixed;
+  left: 60%;
+  top: 0;
+  font-weight: 700;
+}
+
 .prmt1
 {
   color: rgb(170, 103, 52);
@@ -113,6 +121,11 @@ label {
 {
   color:rgb(255, 255, 255);
   font-weight: 700;
+}
+
+.theme-default .portrait                         /* hero section */
+{
+  color:rgb(255, 255, 255);
 }
 
 .theme-default .prmt1                          /* prompt part1 */
@@ -236,6 +249,11 @@ label {
   font-weight: 700;
 }
 
+.theme-sql .portrait                         /* hero section */
+{
+  color:rgb(255, 255, 255);
+}
+
 .theme-sql .prmt1                          /* prompt part1 */
 {
   color:#f5f5ee;
@@ -324,6 +342,10 @@ label {
 .theme-ubuntu .hero {                   /* hero section */
   color: #89f045;
   font-weight: 700;
+}
+
+.theme-ubuntu .portrait {                   /* hero section */
+  color: #89f045;
 }
 
 .theme-ubuntu .prmt1 {                  /* prompt part1 */
@@ -433,6 +455,10 @@ label {
   font-weight: 700;
 }
 
+.theme-matrix .portrait {                   /* hero section */
+  color: #66ff66;
+}
+
 .theme-matrix .prmt1 {                  /* prompt part1 */
   color: #00cc00;
 }
@@ -526,6 +552,10 @@ label {
 .theme-white .hero {                   /* hero section */
   color: #d84315;
   font-weight: 700;
+}
+
+.theme-white .portrait {                   /* hero section */
+  color: #d84315;
 }
 
 .theme-white .prmt1 {                  /* prompt part1 */
@@ -637,7 +667,10 @@ label {
 
 .theme-terminal .hero {                /* hero section */
   color: #00ff00;                        /* bright green */
-  font-weight: 700;
+}
+
+.theme-terminal .portrait {                /* hero section */
+  color: #00ff00;                        /* bright green */
 }
 
 .theme-terminal .prmt1 {               /* prompt part1 */
@@ -751,6 +784,10 @@ label {
 .theme-classic .hero {                 /* hero section */
   color: #ffffff;
   font-weight: 700;
+}
+
+.theme-classic .portrait {                 /* hero section */
+  color: #ffffff;
 }
 
 .theme-classic .prmt1 {                /* prompt part1 */
@@ -868,6 +905,10 @@ label {
 .theme-ps .hero {
   color:  #ffff66;                  /* bright blue */
   font-weight: 700;
+}
+
+.theme-ps .portrait {
+  color:  #ffff66;                  /* bright blue */
 }
 
 .theme-ps .proj .title {
