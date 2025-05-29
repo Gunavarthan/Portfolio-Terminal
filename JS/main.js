@@ -25,7 +25,7 @@ function isLargeViewport() {
 }
 
 const state ={  username: 'visitor',hostname:'web' };
-const commands = [{c:'about',d:'About Gunavarthan'},{c:'help',d:'Display all commands'},{c:'hack',d:'Just a Screen Saver'},{c:'whoami',d:'Current user'},{c:'education',d:'Education Qualification'},{c:'projects',d:'Projects Worked on'},{c:'open',d:'more on each project'},{c:'welcome',d:'Hero Section'},{c:'history',d:'List all exicuted Commands'},{c:'cowsay',d:'speak with a cow'},{c:'catsay',d:'why just cow'},{c:'theme',d:'Change theme'},{c:'clear',d:'Clear Screen'},{c:'socials',d:'Chech out me here'},{c:'email',d:'Contact me'},{c:'echo',d:'Print a String in termnial'},{c:'typo',d:'try it'}];
+const commands = [{c:'about',d:'About Gunavarthan'},{c:'education',d:'Education Qualification'},{c:'projects',d:'Projects Worked on'},{c:'open',d:'more on each project'},{c:'welcome',d:'Hero Section'},{c:'history',d:'List all exicuted Commands'},{c:'help',d:'Display all commands'},{c:'hack',d:'Just a Screen Saver'},{c:'whoami',d:'Current user'},{c:'cowsay',d:'speak with a cow'},{c:'catsay',d:'why just cow'},{c:'theme',d:'Change theme'},{c:'clear',d:'Clear Screen'},{c:'echo',d:'Print a String in termnial'},{c:'typo',d:'caligraphy'},{c:'socials',d:'Chech out me here'},{c:'email',d:'Contact me'}];
 var theme = 'DEFAULT';
 var old_theme = theme;
 var portrait = `                                                                            
