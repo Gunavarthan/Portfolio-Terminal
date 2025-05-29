@@ -193,7 +193,7 @@ var project_detail = [
             - Custom resolution
             - Graphics mode switching
           </label><label class="subtitle">Demo:</label>
-          <a class="demo-link" href="https://github.com/Gunavarthan/Pixel-canvas-ASM" target="_blank">Draw here</a>
+          <a class="demo-link" href="https://gunavarthan.github.io/Pixel-canvas-ASM/" target="_blank">Draw here</a>
         </label>
       `
     },
