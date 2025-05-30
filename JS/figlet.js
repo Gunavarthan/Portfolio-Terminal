@@ -15,7 +15,7 @@ var Figlet = (typeof exports !== "undefined" ? exports : window).Figlet = {
 
 	loadFont: async function(name, callback) {
 		$.ajax({
-		  url: "Fonts/"+name.toLowerCase()+".flf.txt",
+		  url: "Assets/Fonts/"+name.toLowerCase()+".flf.txt",
 		  dataType: "text",
 		  success: function(data) {
 			callback(data);
