@@ -702,7 +702,7 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const binary = "01";
+const charlst = "░▒▓█▄▀▌▐■□▲▼◀▶◉◎◆◇¤☯☢☣☠✠✶✳✪✹✺✦✧ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890அஆஇஈஉஊஎஏஐஒஓஔகஙசஜஞடணதநனபமயரலவழளறனஷஸஹアァイィウエェオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモヤユヨラリルレロワヲン";
 const fontSize = 14;
 const columns = Math.floor(canvas.width / fontSize);
 
@@ -719,7 +719,7 @@ function draw()
     ctx.font = fontSize + "px monospace";
 
     for (let i = 0; i < drops.length; i++) {
-        const text = binary[Math.floor(Math.random() * binary.length)];
+        const text = charlst[Math.floor(Math.random() * charlst.length)];
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
         if (drops[i] * fontSize > canvas.height && Math.random() > 0.975)
@@ -728,8 +728,8 @@ function draw()
         }
 
         drops[i]++;
-      }
     }
+}
 
     
 
