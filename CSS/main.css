@@ -1084,3 +1084,110 @@ label {
   color: #666666;
   font-style: italic;
 }
+
+
+
+
+/* Colapsable Bar */
+
+/* Base Styles */
+.terminal-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 300px;
+  max-width: 90%;
+  background-color: #1e1e1e;
+  border-left: 2px solid #00ff00;
+  transition: transform 0.3s ease-in-out;
+  z-index: 9999;
+  padding: 1rem;
+  overflow-y: auto;
+  font-family: monospace;
+  color: #00ff00;
+}
+
+.terminal-panel.collapsed {
+  transform: translateX(100%);
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 310px;
+  background-color: #00ff00;
+  color: #121212;
+  border: none;
+  padding: 8px 12px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10000;
+  transition: right 0.3s ease-in-out;
+  border-radius: 4px;
+}
+
+.terminal-panel.collapsed + .toggle-btn {
+  right: 10px;
+}
+
+.command {
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.command {
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+.command:hover {
+  background-color: #222;
+}
+
+
+/* ✅ Responsive Behavior */
+@media (max-width: 768px) {
+  .terminal-panel {
+    width: 80%;
+  }
+
+  .toggle-btn {
+    right: 80%;
+  }
+
+  .terminal-panel.collapsed + .toggle-btn {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .terminal-panel {
+    width: 100%;
+    left:2px;
+    /* right:2px; */
+    border-left: none;
+    border-top: 2px solid #00ff00;
+    top: auto;
+    bottom: 0;
+    height: 40vh;
+    transform: translateY(0);
+  }
+
+  .terminal-panel.collapsed {
+    transform: translateY(100%);
+  }
+
+  .toggle-btn {
+    top: auto;
+    bottom: 40vh;
+    right: 10px;
+  }
+
+  .terminal-panel.collapsed + .toggle-btn {
+    bottom: 10px;
+  }
+}
+

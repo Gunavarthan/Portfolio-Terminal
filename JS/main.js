@@ -404,6 +404,10 @@ function handleInput(command) {
                 term.writeln(social);
                 break;
 
+            case 'echo':
+                term.writeln('Usage: echo \'TEXT HERE\'');
+                break;
+
             case 'email':
                 term.writeln(email);
                 break;
@@ -657,7 +661,12 @@ Welcome to my Terminal Portfolio => Terfolio  <3
     
 }
 
+
+// where it all starts
+
+
 welcome();
+window.addEventListener('DOMContentLoaded', initiateHelpTab);
 ask();
 
 term.on('data', handleInput);
@@ -691,6 +700,158 @@ function Download(name)
 function getRandomFloat(min, max) {
     return Math.random() * (max - min) + min;
 }
+
+function initiateHelpTab() {
+    const helptab = `
+        <div class="terminal-panel" id="terminalPanel"></div>
+        <button class="toggle-btn" id="toggleBtn">Collapse</button>
+    `;
+
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = helptab;
+
+    const terminalPanel = wrapper.children[0];
+    const toggleBtn = wrapper.children[1];
+
+    document.body.appendChild(terminalPanel);
+    document.body.appendChild(toggleBtn);
+
+    // Render all commands with spacing and click
+    commands.forEach(cmd => {
+        const commandDiv = document.createElement('div');
+        commandDiv.className = 'command';
+        commandDiv.style.padding = '6px 0'; // uniform vertical spacing
+
+        const cmdName = document.createElement('span');
+        cmdName.style.fontWeight = 'bold';
+        cmdName.textContent = `> ${cmd.c}`;
+
+        const cmdDesc = document.createElement('span');
+        cmdDesc.style.marginLeft = '12px';
+        cmdDesc.style.color = '#888';
+        cmdDesc.textContent = cmd.d;
+
+        commandDiv.appendChild(cmdName);
+        commandDiv.appendChild(cmdDesc);
+
+        commandDiv.addEventListener('click', () => {
+            handleCommand(cmd.c);
+        });
+
+        terminalPanel.appendChild(commandDiv);
+    });
+
+    // Toggle functionality
+    const updateToggleLabel = () => {
+        const isMobile = window.innerWidth <= 480;
+        toggleBtn.textContent = terminalPanel.classList.contains('collapsed')
+            ? (isMobile ? '▲' : 'Expand')
+            : (isMobile ? '▼' : 'Collapse');
+    };
+
+    toggleBtn.addEventListener('click', () => {
+        terminalPanel.classList.toggle('collapsed');
+        updateToggleLabel();
+    });
+
+    window.addEventListener('resize', updateToggleLabel);
+    updateToggleLabel();
+
+    // Handle each command
+    function handleCommand(command) {
+        switch (command) {
+            case 'about':
+                term.write("about\n");
+                handleInput('about');
+                break;
+        
+            case 'education':
+                term.write("education\n");
+                handleInput('education');
+                break;
+        
+            case 'projects':
+                term.write("projects\n");
+                handleInput('projects');
+                break;
+        
+            case 'open':
+                term.write("open\n");
+                handleInput('open');
+                break;
+        
+            case 'welcome':
+                term.write("welcome\n");
+                handleInput('welcome');
+                break;
+        
+            case 'history':
+                term.write("history\n");
+                handleInput('history');
+                break;
+        
+            case 'help':
+                term.write("help\n");
+                handleInput('help');
+                break;
+        
+            case 'hack':
+                term.write("hack\n");
+                handleInput('hack');
+                break;
+        
+            case 'whoami':
+                term.write("whoami\n");
+                handleInput('whoami');
+                break;
+        
+            case 'cowsay':
+                term.write("cowsay ");
+                handleInput('cowsay');
+                break;
+        
+            case 'catsay':
+                term.write("catsay\n");
+                handleInput('catsay');
+                break;
+        
+            case 'theme':
+                term.write("theme\n");
+                handleInput('theme');
+                break;
+        
+            case 'clear':
+                term.clear();
+                break;
+        
+            case 'echo':
+                term.write("echo\n");
+                handleInput('echo');
+                break;
+        
+            case 'typo':
+                term.write("typo\n");
+                handleInput('typo');
+                break;
+        
+            case 'socials':
+                term.write("socials\n");
+                handleInput('socials');
+                break;
+        
+            case 'email':
+                term.write("email\n");
+                handleInput('email');
+                break;
+        
+            default:
+                term.write(`${command}\n`);
+                handleInput(command);
+                break;
+        }            
+    }
+}
+
 
 
 
@@ -733,10 +894,10 @@ function draw()
 
     
 
-    window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
 
 async function ListProject() {
     CanAsk = false;
