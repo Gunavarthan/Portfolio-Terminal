@@ -37,6 +37,12 @@ label {
   color: rgb(108, 10, 146);
 }
 
+.projlst
+{
+  z-index: 100;
+  background-color: #000000;
+}
+
 .proj{
   padding-top: 2em;
   font-weight: 700;

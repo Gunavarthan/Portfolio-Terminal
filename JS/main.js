@@ -110,42 +110,42 @@ var edu = `<label class="edu">
 var projectsList = [
     {
       name: "PiEngine (Java Game Engine)",
-      detail: `<div class="proj"><div class="title">1 > PiEngine (Java Game Engine)</div>
+      detail: `<div id=${1} class="proj"><div class="title"> <label class="help"> 1 :</label> PiEngine (Java Game Engine)</div>
       <div class="disc">
       PiEngine is a simple and flexible 2D game engine made with Java. It uses OpenGL for graphics and has an easy-to-use editor. You can create and edit games in real-time, save and load game scenes, and manage game objects easily.
       </div></div><br>`
     },
     {
       name: "Pixel Art Editor (Assembly 8086)",
-      detail: `<div class="proj"><div class="title">2 >  Pixel Art Editor (Assembly 8086)</div>
+      detail: `<div id=${2} class="proj"><div class="title"> <label class="help"> 2 :</label> Pixel Art Editor (Assembly 8086)</div>
       <div class="disc">
       This pixel art editor is made with Assembly language. It allows drawing using the mouse with a basic color palette (Red, Green, Blue, White, Yellow). It shows how to create graphics and interact with hardware at a low level.
       </div></div><br>`
     },
     {
       name: "AI-Racing-Sim (AI Racing Game)",
-      detail: `<div class="proj"><div class="title">3 >  AI-Racing-Sim (AI Racing Game)</div>
+      detail: `<div id=${3} class="proj"><div class="title"> <label class="help"> 3 :</label> AI-Racing-Sim (AI Racing Game)</div>
       <div class="disc">
       I-Racing-Sim is a racing game built with Python and Pygame. It has AI-controlled cars that learn and race on random tracks. You can watch the AI improve and compete in real-time.
       </div></div>`
     },
     {
       name: "Tic Tac Toe Game",
-      detail: `<div class="proj"><div class="title">4 >  Tic Tac Toe Game</div>
+      detail: `<div id=${4} class="proj"><div class="title"> <label class="help"> 4 :</label> Tic Tac Toe Game</div>
       <div class="disc">
       A web-based Tic Tac Toe game with options to play locally, against the computer, or online with friends. It manages game sessions and ensures smooth multiplayer play.
       </div></div>`
     },
     {
       name: "Railway Platform Ticket Booking System",
-      detail: `<div class="proj"><div class="title">5 >  Railway Platform Ticket Booking System</div>
+      detail: `<div id=${5} class="proj"><div class="title"> <label class="help"> 5 :</label>  Railway Platform Ticket Booking System</div>
       <div class="disc">
       A web app for booking railway tickets and managing platforms. Users can search trains, book tickets with ID verification, and make payments. Admins can manage bookings and view statistics.
       </div></div>`
     },
     {
       name: "Tip",
-      detail: `<div class="proj"><div class="disc"> Tip: Type 'open &lt;projectname&gt;' to see full details.</div></div>`
+      detail: `<div id=${6} class="proj"><div class="disc"> <label class="help"> Tip :</label> Type 'open &lt;projectname&gt;' to see full details.</div></div>`
     }
 ]; 
 
@@ -715,6 +715,7 @@ function initiateHelpTab() {
         <button class="toggle-btn" id="toggleBtn">Collapse</button>
     `;
 
+    
     const wrapper = document.createElement('div');
     wrapper.innerHTML = helptab;
 
@@ -753,8 +754,8 @@ function initiateHelpTab() {
     const updateToggleLabel = () => {
         const isMobile = window.innerWidth <= 480;
         toggleBtn.textContent = terminalPanel.classList.contains('collapsed')
-            ? (isMobile ? '▲' : 'Expand')
-            : (isMobile ? '▼' : 'Collapse');
+            ? (isMobile ? '▲' : 'Help')
+            : (isMobile ? '▼' : 'X');
     };
 
     toggleBtn.addEventListener('click', () => {
@@ -909,25 +910,22 @@ window.addEventListener("resize", () => {
 
 async function ListProject() {
     term.pause();
-    const output = document.createElement('div');
-  
+    CanAsk = false;
+    Download("projects-List");
+    await sleep(3000)
+    CanAsk = false;
     for (let i in projectsList) {
-      const wrapper = document.createElement('div');
-      wrapper.innerHTML = projectsList[i].detail;
-      const projDiv = wrapper.querySelector('.proj');
+        
+        term.write(projectsList[i].detail);
       
-      // Attach click listener to open popup
-      projDiv.addEventListener('click', () => {
-        console.log(projectsList[i].name);
-        document.getElementById('pop-up-title').innerHTML = project_detail[i].name;
-        document.getElementById('pop-up-disc').innerHTML = project_detail[i].details;
-        document.getElementById("popup").style.display = "block";
-      });
-  
-      output.appendChild(projDiv);
+        // Attach click listener to open popup
+        // document.getElementById(i+1).addEventListener('click', () => {
+        //     console.log(projectsList[i].name);
+            // document.getElementById('pop-up-title').innerHTML = project_detail[i].name;
+            // document.getElementById('pop-up-disc').innerHTML = project_detail[i].details;
+            // document.getElementById("popup").style.display = "block";
+        // });
     }
-  
-    document.body.appendChild(output);
     term.resume();
 }  
   
@@ -941,17 +939,21 @@ function closePopup() {
 }
 
 async function OpenProject(ProjectNumber) {
-    CanAsk = false;
-    Download(project_detail[ProjectNumber-1].name);
-    await sleep(3000)
-    CanAsk =true;
-    if(ProjectNumber > 0 && ProjectNumber < (project_detail.length+1) )
-    {
-        term.write(project_detail[ProjectNumber-1].details);
-    }
-    else{
-        term.write(`<lable class="help">\t\tEnter the Appropriate Project Number!!\n\n</lable>`)
-    }
+
+    document.getElementById('pop-up-title').innerHTML = project_detail[ProjectNumber].name;
+    document.getElementById('pop-up-disc').innerHTML = project_detail[ProjectNumber].details;
+    document.getElementById("popup").style.display = "block";
+    // CanAsk = false;
+    // Download(project_detail[ProjectNumber-1].name);
+    // await sleep(3000)
+    // CanAsk =true;
+    // if(ProjectNumber > 0 && ProjectNumber < (project_detail.length+1) )
+    // {
+    //     term.write(project_detail[ProjectNumber-1].details);
+    // }
+    // else{
+    //     term.write(`<lable class="help">\t\tEnter the Appropriate Project Number!!\n\n</lable>`)
+    // }
 }
 
 function sleep(ms) {
