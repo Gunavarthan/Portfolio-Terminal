@@ -1,33 +1,36 @@
-// import figlet from 'figlet';
 const term = new XTerminal()
 term.mount('#app');
 var interval_id
 
 var Figlet = "JS\\figlet.js".Figlet;
-
 var puts = "sys".puts;
-//term.write('Hello World!\n$ ');
 
-function isExtraSmallViewport() {
-    return window.innerWidth < 576;
-}
+///////////////
+// Variables //
+///////////////
 
-function isSmallViewport() {
-    return window.innerWidth >= 576 && window.innerWidth < 920;
-}
-
-function isMediumViewport() {
-    return window.innerWidth >= 920 && window.innerWidth < 1500;
-}
-
-function isLargeViewport() {
-    return window.innerWidth >= 1500;
-}
-
-const state ={  username: 'visitor',hostname:'web' };
-const commands = [{c:'about',d:'About Gunavarthan'},{c:'education',d:'Education Qualification'},{c:'projects',d:'Projects Worked on'},{c:'open',d:'more on each project'},{c:'welcome',d:'Hero Section'},{c:'history',d:'List all exicuted Commands'},{c:'help',d:'Display all commands'},{c:'hack',d:'Just a Screen Saver'},{c:'whoami',d:'Current user'},{c:'cowsay',d:'speak with a cow'},{c:'catsay',d:'why just cow'},{c:'theme',d:'Change theme'},{c:'clear',d:'Clear Screen'},{c:'echo',d:'Print a String in termnial'},{c:'typo',d:'caligraphy'},{c:'socials',d:'Chech out me here'},{c:'email',d:'Contact me'}];
+const state ={ username: 'visitor',hostname:'web' };
+const commands = [
+    {c:'about',d:'About Gunavarthan'},
+    {c:'education',d:'Education Qualification'},
+    {c:'projects',d:'Projects Worked on'},                          // Command List
+    {c:'open',d:'more on each project'},
+    {c:'welcome',d:'Hero Section'},
+    {c:'history',d:'List all exicuted Commands'},
+    {c:'help',d:'Display all commands'},
+    {c:'hack',d:'Just a Screen Saver'},
+    {c:'whoami',d:'Current user'},
+    {c:'cowsay',d:'speak with a cow'},
+    {c:'catsay',d:'why just cow'},
+    {c:'theme',d:'Change theme'},
+    {c:'clear',d:'Clear Screen'},
+    {c:'echo',d:'Print a String in termnial'},
+    {c:'typo',d:'caligraphy'},
+    {c:'socials',d:'Chech out me here'},
+    {c:'email',d:'Contact me'}
+];
 var theme = 'DEFAULT';
-var old_theme = theme;
+var old_theme = theme;                                              // YO Its my portrait
 var portrait = `                                                                            
                     ::+xXX$$$$XXx+::              
                 ;x$$$$$$$$$$$$$$$$$$$$x.          
@@ -35,7 +38,7 @@ var portrait = `
          .X$$$$$$$$$$$$$$$$$$$$$$$$$$$;           
          :$$$$$X++xX$$$$$$$$$$$$$$$$+             
          .X$$$$+        ...... .xx:.              
-         :X$$$$x                :                 
+         :X$$$$x                :                                        
          X$$$$x;                :.                
          $$$$;         .      . :;                
          x$$$;      :::::.    :;xx.               
@@ -49,42 +52,6 @@ var portrait = `
                    .;x$$$$$$$$X:                  
                          ::::.                               
 `;
-
-function ask() {
-    console.log('called me!!')
-    switch(theme)
-    {
-        case 'PS':
-            term.write(`\nPS C:\\${state.username}\\${state.hostname}>`);
-            break;
-        case 'SQL':
-            term.write('\n<lable class="prmt1">SQL> </lable>');
-            break;
-        case 'DELIGHT':
-            term.write('\n▲ ~ ');
-            break;
-        case 'CLASSIC':
-            term.write(`\n> `);
-            break;
-        case 'TERMINAL':
-            term.write(`\n<lable class="prmt1">${state.username}</lable><lable class="prmt1">@</lable><lable class="prmt1">${state.hostname}</lable><lable class="prmt1">:~$ </lable> `);
-            break;
-        case 'DEFAULT':
-            term.writeln(`\n<lable class="prmt1">┌[</lable><lable class="prmt2">${state.username}</lable><lable class="prmt1">@</lable><lable class="prmt2">${state.hostname}</lable><lable class="prmt1">]</lable>`);
-            term.write('<lable class="prmt1">└$ </lable>');
-            break;
-        case 'UBUNTU':
-            term.write(`\n<lable class="prmt1">${state.username}@ubuntu:~</lable><lable class="prmt2">${state.hostname}</lable>$ `)
-            break;
-
-    }
-    term.resume();
-    term.focus();
-}
-
-term.on('draw-hack',() => {
-    interval_id = setInterval(draw, 50);
-});
 
 var about = `<lable class="about">Hi, I’m <b>Gunavarthan</b>, \n\n a software developer passionate about technology, problem-solving, and exploring innovative solutions\n\n And as a PC hardware enthusiast, I stay curious and eager to grow in the tech industry.  
 </lable>`;
@@ -145,7 +112,7 @@ var projectsList = [
     },
     {
       name: "Tip",
-      detail: `<div id=${6} class="proj"><div class="disc"> <label class="help"> Tip :</label> Type 'open &lt;projectname&gt;' to see full details.</div></div>`
+      detail: `<div id=${6} class="proj"><div class="disc"> <label class="help"> Tip :</label> Type 'open &lt;project Number&gt;' to see full details.</div></div>`
     }
 ]; 
 
@@ -279,11 +246,8 @@ var project_detail = [
         </label>
       `
     }
-  ];
+];
     
-    
-
-
 var social = `<div class="socials">
   <label class="social-header">SOCIALS</label>
   <label><span class="social-label">GitHub    :</span> <a href="https://github.com/Gunavarthan" target="_blank">github.com/Gunavarthan</a></label>
@@ -293,12 +257,85 @@ var social = `<div class="socials">
 `;
 
 var email = `<a href="https://mail.google.com/mail/?view=cm&fs=1&to=gunavarthan832@gmail.com" target="_blank">
-Click here and Contact Me
+gunavarthan832
 </a>
 `;
 
-var lsttheme = ['SQL','UBUNTU','MATRIX','WHITE','DEFAULT','TERMINAL','CLASSIC','PS','hack'];
+var lsttheme = [
+    'SQL',
+    'UBUNTU',
+    'MATRIX',
+    'WHITE',
+    'DEFAULT',
+    'TERMINAL',
+    'CLASSIC',
+    'PS',
+    'hack'
+];
 
+///////////////
+// functions //
+///////////////
+
+function isExtraSmallViewport() 
+{
+    return window.innerWidth < 576;
+}
+
+function isSmallViewport() 
+{
+    return window.innerWidth >= 576 && window.innerWidth < 920;
+}
+
+function isMediumViewport() 
+{
+    return window.innerWidth >= 920 && window.innerWidth < 1500;
+}
+
+function isLargeViewport() 
+{
+    return window.innerWidth >= 1500;
+}
+
+// prompt desider function //
+function ask() 
+{
+    console.log('called me!!')
+    switch(theme)
+    {
+        case 'PS':
+            term.write(`\nPS C:\\${state.username}\\${state.hostname}>`);
+            break;
+        case 'SQL':
+            term.write('\n<lable class="prmt1">SQL> </lable>');
+            break;
+        case 'DELIGHT':
+            term.write('\n▲ ~ ');
+            break;
+        case 'CLASSIC':
+            term.write(`\n> `);
+            break;
+        case 'TERMINAL':
+            term.write(`\n<lable class="prmt1">${state.username}</lable><lable class="prmt1">@</lable><lable class="prmt1">${state.hostname}</lable><lable class="prmt1">:~$ </lable> `);
+            break;
+        case 'DEFAULT':
+            term.writeln(`\n<lable class="prmt1">┌[</lable><lable class="prmt2">${state.username}</lable><lable class="prmt1">@</lable><lable class="prmt2">${state.hostname}</lable><lable class="prmt1">]</lable>`);
+            term.write('<lable class="prmt1">└$ </lable>');
+            break;
+        case 'UBUNTU':
+            term.write(`\n<lable class="prmt1">${state.username}@ubuntu:~</lable><lable class="prmt2">${state.hostname}</lable>$ `)
+            break;
+
+    }
+    term.resume();
+    term.focus();
+}
+
+term.on('draw-hack',() => {
+    interval_id = setInterval(draw, 50);
+});
+
+// Main Input hadler 
 function handleInput(command) {
     command = command.replace(/\s+$/, "");
     if (theme === 'hack')
@@ -307,10 +344,13 @@ function handleInput(command) {
         canvas.style.display = "none";
         setTheme(old_theme);
     }
+
     var cmd = command.split(' '); 
+    
     if (cmd.length == 1)
     {
-        switch (command) {
+        switch (command) 
+        {
             case 'hack':
                 term.clear();
                 canvas.style.display = "block";
@@ -318,6 +358,7 @@ function handleInput(command) {
                 setTheme(cmd[0]);
                 term.emit('draw-hack');
                 break
+
             case 'clear':
                 term.clear();
                 break;
@@ -331,7 +372,7 @@ function handleInput(command) {
                 break;
 
             case 'catsay':
-                term.writeln('Usage: cowsay \'TEXT HERE\'');
+                term.writeln('Usage: catsay \'TEXT HERE\'');
                 break;
     
             case 'history':
@@ -347,8 +388,7 @@ function handleInput(command) {
                         term.writeln(`|${(parseInt(  a) + 1).toString().toUpperCase().padEnd(5, ' ')}| ${history[a].toString().toUpperCase().padEnd(15, ' ')}|`);
                     } 
                     term.write("+-----+----------------+\n")
-                }
-                else
+                }else
                 {
                     for (var a in history)
                     {
@@ -385,8 +425,7 @@ function handleInput(command) {
                     }
                     term.write("+------------------+-------------------------------+\n")
                     term.writeln(`${commands.length } rows affected; \n`)    
-                }
-                else
+                }else
                 {   
                     for (var a in commands)
                     {
@@ -426,14 +465,15 @@ function handleInput(command) {
             
             default:
                 let commandList = commands.map(cmd => cmd.c);
-                if (commandList.includes(command)) {
+                if (commandList.includes(command)) 
+                {
                     term.writeln(`Command '${command}' is not fully implemented yet`);
-                } else {
+                } else 
+                {
                     term.writeln(`<lable class='illegalcommand' >Illegal Command : '${command}'</lable>\n to list all commands type <lable class="help">help</lable>`);
                 }
                 break;
-        }
-        
+        }   
     }
     else if(cmd.length >= 2)
     {
@@ -447,8 +487,7 @@ function handleInput(command) {
                         if(a != lsttheme.length -1)
                         term.write(`${lsttheme[a]}\t`);
                     }
-                }  
-                else
+                } else
                 {
                     term.writeln('BRUH (-_-!)');
                 }
@@ -463,14 +502,17 @@ function handleInput(command) {
             
             case 'echo':
                 let match = command.match(/'([^']*)'/);
-                if (match) {
+                if (match) 
+                {
                     term.writeln(match[1]);
-                } else {
+                } else
+                {
                     match = command.match(/"([^']*)"/);
-                    if(match) {
+                    if(match)
+                    {
                         term.writeln(match[1]);
-                    }
-                    else{
+                    }else
+                    {
                         term.writeln('Usage: echo \'TEXT HERE\'');
                     }
                 }
@@ -479,21 +521,25 @@ function handleInput(command) {
             case 'typo':
                 (async () => {
                     let tmatch = command.match(/'([^']*)'/);
-                    if (tmatch) {
+                    if (tmatch) 
+                    {
                         console.log('must be 1st');
                         let text = tmatch[1];
                         if(isLargeViewport())
                         {
                             await Figlet.write(text, "3-d",term);
-                        }else{
+                        }else
+                        {
                             if(isMediumViewport())
                             {
                                 await Figlet.write(text, "rounded",term);
-                            }else{
+                            }else
+                            {
                                 if(isSmallViewport())
                                 {
                                     await Figlet.write(text, "chunky",term);
-                                }else{
+                                }else
+                                {
                                     if(isExtraSmallViewport)
                                     {
                                         await Figlet.write(text, "thin",term);
@@ -501,26 +547,29 @@ function handleInput(command) {
                                 }
                             }
                         }
-                        // term.write(prompt);
+                        ask();
                         console.log('must be before called me!!');
-                    }
-                    else{
+                    }else{
                         tmatch = command.match(/"([^']*)"/);
-                        if (tmatch) {
+                        if (tmatch)
+                        {
                             console.log('must be 1st');
                             let text = tmatch[1];
                             if(isLargeViewport())
                             {
                                 await Figlet.write(text, "3-d",term);
-                            }else{
+                            }else
+                            {
                                 if(isMediumViewport())
                                 {
                                     await Figlet.write(text, "rounded",term);
-                                }else{
+                                }else
+                                {
                                     if(isSmallViewport())
                                     {
                                         await Figlet.write(text, "chunky",term);
-                                    }else{
+                                    }else
+                                    {
                                         if(isExtraSmallViewport)
                                         {
                                             await Figlet.write(text, "thin",term);
@@ -529,6 +578,7 @@ function handleInput(command) {
                                 }
                             }
                             // term.write(prompt);
+                            ask();
                             console.log('must be before called me!!');
                         }
                         else{
@@ -540,54 +590,64 @@ function handleInput(command) {
 
             case 'cowsay':
                 let cowmatch = command.match(/'([^']*)'/);
-                if (cowmatch) {
+                if (cowmatch)
+                {
                     cowsay(match[1]);
-                } else {
+                } else
+                {
                     cowmatch = command.match(/"([^']*)"/);
-                    if(cowmatch) {
+                    if(cowmatch)
+                    {
                         cowsay(cowmatch[1]);
-                    }
-                    else{
+                    }else
+                    {
                         term.writeln('Usage: cowsay \'TEXT HERE\'');
                     }
                 }
                 break;
 
-                case 'catsay':
-                    let catmatch = command.match(/'([^']*)'/);
-                    if (catmatch) {
+            case 'catsay':
+                let catmatch = command.match(/'([^']*)'/);
+                if (catmatch) 
+                {
+                    catsay(catmatch[1]);
+                } else
+                {
+                    catmatch = command.match(/"([^']*)"/);
+                    if(catmatch)
+                    {
                         catsay(catmatch[1]);
-                    } else {
-                        catmatch = command.match(/"([^']*)"/);
-                        if(catmatch) {
-                            catsay(catmatch[1]);
-                        }
-                        else{
-                            term.writeln('Usage: catsay \'TEXT HERE\'');
-                        }
+                    }else
+                    {
+                        term.writeln('Usage: catsay \'TEXT HERE\'');
                     }
-                    break;
+                }
+                break;
 
             case 'open':
                 let ProjectNumber = command.match(/\b\d+\b/g);
-                if(ProjectNumber) {
-                    OpenProject(ProjectNumber);
-                }
-                else{
+                if(ProjectNumber)
+                {
+                    OpenProject(ProjectNumber-1);
+                }else 
+                {
                     term.write(`<lable class="help">\t\tEnter the Appropriate Project Number!!\n\n</lable>`)
                 }
                 break;
             
             default:
                 let commandList = commands.map(cmd => cmd.c);
-                if (commandList.includes(command)) {
+                if (commandList.includes(command)) 
+                {
                     term.writeln(`Command '${command}' is not fully implemented yet`);
-                } else {
+                } else
+                {
                     term.writeln(`<lable class='illegalcommand' >Illegal Command : '${command}'</lable>\n to list all commands type <lable class="help">help</lable>`);
                 }
                 break;
         }
     }
+    
     if(CanAsk)
     {
         ask();
@@ -669,19 +729,10 @@ Welcome to my Terminal Portfolio => Terfolio  <3
     
 }
 
-
-// where it all starts
-
-
-welcome();
-window.addEventListener('DOMContentLoaded', initiateHelpTab);
-ask();
-
-term.on('data', handleInput);
-
-
-function setTheme(newTheme) {
-    if (!lsttheme.includes(newTheme)) {
+function setTheme(newTheme) 
+{
+    if (!lsttheme.includes(newTheme))
+    {
         term.writeln('Use <b>lst theme</b> for a list of themes.');
         return;
     }
@@ -689,7 +740,6 @@ function setTheme(newTheme) {
     theme = newTheme;
     document.body.classList.remove(...lsttheme.map(t => `theme-${t.toLowerCase()}`));
     document.body.classList.add(`theme-${newTheme.toLowerCase()}`);
-
 }
 
 function Download(name)
@@ -705,11 +755,13 @@ function Download(name)
     }, 2000);
 }
 
-function getRandomFloat(min, max) {
+function getRandomFloat(min, max) 
+{
     return Math.random() * (max - min) + min;
 }
 
-function initiateHelpTab() {
+function initiateHelpTab() 
+{
     const helptab = `
         <div class="terminal-panel" id="terminalPanel"></div>
         <button class="toggle-btn" id="toggleBtn">Collapse</button>
@@ -767,8 +819,10 @@ function initiateHelpTab() {
     updateToggleLabel();
 
     // Handle each command
-    function handleCommand(command) {
-        switch (command) {
+    function handleCommand(command) 
+    {
+        switch (command) 
+        {
             case 'about':
                 term.write("about\n");
                 handleInput('about');
@@ -861,10 +915,106 @@ function initiateHelpTab() {
     }
 }
 
+function cowsay(message) 
+{
+    const top = " " + "_".repeat(message.length + 2);
+    const bottom = " " + "-".repeat(message.length + 2);
+    const speech = `\
+${top}_
+< ${message} >
+${bottom}-
+        \\   ^__^
+         \\  (oo)\\_______
+            (__)\\       )\\/\\
+                ||----w |
+                ||     ||\n\n`;
+    term.write(speech);
+}
+
+function catsay(message) 
+{
+    const top = " " + "_".repeat(message.length + 2);
+    const bottom = " " + "-".repeat(message.length + 2);
+    const speech = `\
+${top}_
+< ${message} >
+${bottom}-
+        \\     /\\_/\\
+         \\   ( o.o )
+              > ^ <\n\n`;
+    term.write(speech);
+}
+
+async function ListProject() 
+{
+    term.pause();
+    CanAsk = false;
+    Download("projects-List");
+    await sleep(3000)
+    CanAsk = true;
+    for (let i in projectsList) 
+    {
+        term.write(projectsList[i].detail);
+      
+        // Attach click listener to open popup
+        // document.getElementById(i+1).addEventListener('click', () => {
+        //     console.log(projectsList[i].name);
+            // document.getElementById('pop-up-title').innerHTML = project_detail[i].name;
+            // document.getElementById('pop-up-disc').innerHTML = project_detail[i].details;
+            // document.getElementById("popup").style.display = "block";
+        // });
+    }
+    ask();
+    term.resume();
+}  
+  
+function closePopup() 
+{
+    const popup = document.getElementById('popup');
+    popup.classList.add('closing');
+    setTimeout(() => {
+      popup.style.display = 'none';
+      popup.classList.remove('closing');
+    }, 300);
+}
+
+async function OpenProject(ProjectNumber) 
+{
+
+    document.getElementById('pop-up-title').innerHTML = project_detail[ProjectNumber].name;
+    document.getElementById('pop-up-disc').innerHTML = project_detail[ProjectNumber].details;
+    document.getElementById("popup").style.display = "block";
+    // CanAsk = false;
+    // Download(project_detail[ProjectNumber-1].name);
+    // await sleep(3000)
+    // CanAsk =true;
+    // if(ProjectNumber > 0 && ProjectNumber < (project_detail.length+1) )
+    // {
+    //     term.write(project_detail[ProjectNumber-1].details);
+    // }
+    // else{
+    //     term.write(`<lable class="help">\t\tEnter the Appropriate Project Number!!\n\n</lable>`)
+    // }
+}
+
+////////////////////////
+// where it all starts//
+////////////////////////
+
+welcome();
+window.addEventListener('DOMContentLoaded', initiateHelpTab);
+ask();
+
+term.on('data', handleInput);
 
 
 
-// matrix canvas element
+
+
+
+///////////////////////////
+// matrix canvas element //
+///////////////////////////
 
 const canvas = document.getElementById("matrixCanvas");
 const ctx = canvas.getContext("2d");
@@ -908,120 +1058,9 @@ window.addEventListener("resize", () => {
   canvas.height = window.innerHeight;
 });
 
-async function ListProject() {
-    term.pause();
-    CanAsk = false;
-    Download("projects-List");
-    await sleep(3000)
-    CanAsk = false;
-    for (let i in projectsList) {
-        
-        term.write(projectsList[i].detail);
-      
-        // Attach click listener to open popup
-        // document.getElementById(i+1).addEventListener('click', () => {
-        //     console.log(projectsList[i].name);
-            // document.getElementById('pop-up-title').innerHTML = project_detail[i].name;
-            // document.getElementById('pop-up-disc').innerHTML = project_detail[i].details;
-            // document.getElementById("popup").style.display = "block";
-        // });
-    }
-    term.resume();
-}  
-  
-function closePopup() {
-    const popup = document.getElementById('popup');
-    popup.classList.add('closing');
-    setTimeout(() => {
-      popup.style.display = 'none';
-      popup.classList.remove('closing');
-    }, 300);
-}
-
-async function OpenProject(ProjectNumber) {
-
-    document.getElementById('pop-up-title').innerHTML = project_detail[ProjectNumber].name;
-    document.getElementById('pop-up-disc').innerHTML = project_detail[ProjectNumber].details;
-    document.getElementById("popup").style.display = "block";
-    // CanAsk = false;
-    // Download(project_detail[ProjectNumber-1].name);
-    // await sleep(3000)
-    // CanAsk =true;
-    // if(ProjectNumber > 0 && ProjectNumber < (project_detail.length+1) )
-    // {
-    //     term.write(project_detail[ProjectNumber-1].details);
-    // }
-    // else{
-    //     term.write(`<lable class="help">\t\tEnter the Appropriate Project Number!!\n\n</lable>`)
-    // }
-}
-
-function sleep(ms) {
+function sleep(ms) 
+{
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-
-
-function cowsay(message) {
-    const top = " " + "_".repeat(message.length + 2);
-    const bottom = " " + "-".repeat(message.length + 2);
-    const speech = `\
-${top}_
-< ${message} >
-${bottom}-
-        \\   ^__^
-         \\  (oo)\\_______
-            (__)\\       )\\/\\
-                ||----w |
-                ||     ||\n\n`;
-    term.write(speech);
-}
-
-function catsay(message) {
-    const top = " " + "_".repeat(message.length + 2);
-    const bottom = " " + "-".repeat(message.length + 2);
-    const speech = `\
-${top}_
-< ${message} >
-${bottom}-
-        \\     /\\_/\\
-         \\   ( o.o )
-              > ^ <\n\n`;
-    term.write(speech);
-}
-
-
-
-/*term.on('start', (id) => {
-    term.writeln(`\n\nstarted...${id}`);        
-});
-
-term.on('refresh',() =>{
-    term.writeln('Screen Refreshed...\n');
-});
-term.write('<b>Hello </b> <i>Guna</i>');
-term.write('<span class="spinner"></span> Loading...');
-
-setTimeout(() => term.clearLast(), 1000);
-setTimeout(() => {
-    term.write('<span class="loader"></span>');    
-    term.emit('start',1296);     // as the emit emits the event the term on executes
-}, 2000);
-
-term.emit('start',12);
-
-setTimeout(() => term.clear(), 5000);
-
-ask();
-
-const refresh = Symbol('start');
-
-term.emit('refresh');
-
-term.on('data',()=>{
-    term.write('hmm...');
-});*/
-
-// no user interactivity
-//term.pause();
 
 

@@ -3,18 +3,19 @@ body
   background-color:#191a22 ;
 }
 
-a {
+a 
+{
   color: white;
 }
 
-label {
+label
+{
   padding-top: -10%;
 }
 
 #matrixCanvas
 {
   display: none; /* initially hidden */
-
 }
 
 .illegalcommand
@@ -32,23 +33,15 @@ label {
   color: rgb(10, 96, 146);
 }
 
-.discription
+.proj
 {
-  color: rgb(108, 10, 146);
-}
-
-.projlst
-{
-  z-index: 100;
-  background-color: #000000;
-}
-
-.proj{
   padding-top: 2em;
   font-weight: 700;
   font-size: 1.2em;
 }
-.proj .title {
+
+.proj .title 
+{
   font-family: monospace;
   font-weight: bold;   /* make title bolder */
   position: relative;
