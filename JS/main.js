@@ -336,7 +336,7 @@ term.on('draw-hack',() => {
 });
 
 // Main Input hadler 
-function handleInput(command) {
+async function handleInput(command) {
     command = command.replace(/\s+$/, "");
     if (theme === 'hack')
     {
@@ -444,6 +444,10 @@ function handleInput(command) {
                 break;
 
             case 'education':
+                CanAsk = false;
+                Download("Eduational-details");
+                await sleep(3000)
+                CanAsk = true;
                 term.writeln(edu);
                 break;
 
@@ -952,6 +956,7 @@ async function ListProject()
     Download("projects-List");
     await sleep(3000)
     CanAsk = true;
+    term.write("\n\n");
     for (let i in projectsList) 
     {
         term.write(projectsList[i].detail);
