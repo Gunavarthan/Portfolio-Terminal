@@ -1164,6 +1164,22 @@ label
     border-radius: 4px;
   }
 
+  .back-btn {
+    position: fixed;
+    top: 20px;
+    display: none;
+    right: 10px;
+    background-color: #00ff00;
+    color: #121212;
+    border: none;
+    padding: 8px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 999;
+    transition: right 0.3s ease-in-out;
+    border-radius: 4px;
+  }
+
   .terminal-panel.collapsed + .toggle-btn {
     right: 10px;
   }
@@ -1239,7 +1255,7 @@ label
     height: 60vh;
     width: 70vw;
     min-width: 320px;
-    overflow: hidden;
+    /* overflow: hidden; */
     padding: 20px;
     color: rgb(255, 255, 255);
     background-color: #191a22;

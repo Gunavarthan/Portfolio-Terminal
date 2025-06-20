@@ -348,6 +348,11 @@ async function handleInput(command) {
         clearInterval(interval_id);
         canvas.style.display = "none";
         setTheme(old_theme);
+        const toggleBtn = document.getElementById('toggleBtn');
+        if (toggleBtn) toggleBtn.style.display = 'block';
+    
+        const hackBackBtn = document.getElementById('hack-back');
+        if (hackBackBtn) hackBackBtn.style.display = 'none';
     }
 
     var cmd = command.split(' '); 
@@ -362,6 +367,11 @@ async function handleInput(command) {
                 old_theme = theme;
                 setTheme(cmd[0]);
                 term.emit('draw-hack');
+                const toggleBtn = document.getElementById('toggleBtn');
+                if (toggleBtn) toggleBtn.style.display = 'none';
+                toggleBtn.click();
+                const hackBackBtn = document.getElementById('hack-back');
+                if (hackBackBtn) hackBackBtn.style.display = 'block';
                 break
 
             case 'clear':
@@ -465,7 +475,14 @@ async function handleInput(command) {
                 break;
             
             case 'theme':
-                term.writeln('To change the theme use:\n\n\t<b>set theme &lt;theme name&gt;</b>\n\nList all themes: \n\n\t<b>lst themes</b>');
+                term.writeln('To change the theme use:\n\n\t<b>set theme &lt;theme name&gt;</b>\n\n');
+                term.writeln    ('theme names :'); 
+                    for (var a in lsttheme)
+                    {
+                        if(a != lsttheme.length -1)
+                        term.write(`${lsttheme[a]}\t`);
+                    }
+                term.write("\n");
                 break;
             
             default:
@@ -722,7 +739,12 @@ function setTheme(newTheme)
 {
     if (!lsttheme.includes(newTheme))
     {
-        term.writeln('Use <b>lst theme</b> for a list of themes.');
+        term.writeln    ('theme names :'); 
+        for (var a in lsttheme)
+        {
+            if(a != lsttheme.length -1)
+            term.write(`${lsttheme[a]}\t`);
+        }
         return;
     }
 
@@ -754,6 +776,7 @@ function initiateHelpTab()
     const helptab = `
         <div class="terminal-panel" id="terminalPanel"></div>
         <button class="toggle-btn" id="toggleBtn">Collapse</button>
+        <button class="back-btn" id="hack-back">Back</button>
     `;
 
     
@@ -764,9 +787,11 @@ function initiateHelpTab()
     if(isSmallViewport() || isExtraSmallViewport())
     terminalPanel.classList.add('collapsed');   
     const toggleBtn = wrapper.children[1];
+    const hackBackBtn = wrapper.children[2];
 
     document.body.appendChild(terminalPanel);
     document.body.appendChild(toggleBtn);
+    document.body.appendChild(hackBackBtn)
 
     // Render all commands with spacing and click
     commands.forEach(cmd => {
@@ -805,6 +830,10 @@ function initiateHelpTab()
         terminalPanel.classList.toggle('collapsed');
         updateToggleLabel();
     });
+
+    hackBackBtn.addEventListener ('click',()=>{
+        handleInput("welcome");
+    })
 
     window.addEventListener('resize', updateToggleLabel);
     updateToggleLabel();
