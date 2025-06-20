@@ -53,7 +53,7 @@ var portrait = `
                          ::::.                               
 `;
 
-var about = `<div  class="about"><label>Hi, I'm <b>Gunavarthan</b>, \n\n a Computer Science undergraduate and software developer passionate about solving complex problems across all levels of technology. From building 3D AI simulations in Unity to crafting assembly-level pixel art editors, I thrive on tackling challenges that span from low-level programming to full-stack web applications.\n\n My experience encompasses machine learning implementations, systems programming, and modern web development - always driven by curiosity and a love for innovative solutions. As a PC hardware enthusiast, I bring both software expertise and deep hardware understanding to every project.\n\n I'm eager to apply my technical skills and problem-solving mindset in professional environments where I can continue growing and contributing to meaningful technology solutions.
+var about = `<div class="about"><label >Hi, I'm <b>Gunavarthan</b>, \n\n a Computer Science undergraduate and software developer passionate about solving complex problems across all levels of technology. From building 3D AI simulations in Unity to crafting assembly-level pixel art editors, I thrive on tackling challenges that span from low-level programming to full-stack web applications.\n\n My experience encompasses machine learning implementations, systems programming, and modern web development - always driven by curiosity and a love for innovative solutions. As a PC hardware enthusiast, I bring both software expertise and deep hardware understanding to every project.\n\n I'm eager to apply my technical skills and problem-solving mindset in professional environments where I can continue growing and contributing to meaningful technology solutions.
 </label></div>`;
 
 var edu = `<label class="edu">
@@ -679,7 +679,7 @@ Welcome to my Terminal Portfolio => Terfolio  <3
 
     if (isSmallViewport())
     {
-        message = String.raw`  
+        message = String.raw` 
                                                
 ._____                         _   _           
 |   __|_ _ ___ ___ _ _ ___ ___| |_| |_ ___ ___ 
@@ -695,23 +695,25 @@ Welcome to my Terminal Portfolio => Terfolio  <3
     } 
     if (isExtraSmallViewport())
     {
-        message = String.raw`
-.__                              
-/__   __  _     _  ___|_|_  _ __ 
-\_||_|| |(_|\_/(_| |  |_| |(_|| |
+        message = String.raw`<pre>
+
+┏┓　　　　　　　　　　　　　　　　　　　　　　　┓     
+┃┓┓┏┏┓┏┓┓┏┏┓┏┓╋┣┓┏┓┏┓
+┗┛┗┻┛┗┗┻┗┛┗┻┛　┗┛┗┗┻┛┗        
 
 Welcome to my Terminal Portfolio => Terfolio  <3
 ---
 <i>For list of available Commands type</i> <b class="help">'help'</b>
 ---
 
-`
+</pre>`
     }
+    term.write(`<lable class='portrait'>${portrait}</lable>`);
     term.write(`<lable class='hero'>${message}</lable>`);
     
-    if(isLargeViewport()||isMediumViewport())
+    if(true)
     {
-        term.write(`<lable class='portrait'>${portrait}</lable>`);
+        
     }
     
 }
@@ -759,6 +761,8 @@ function initiateHelpTab()
     wrapper.innerHTML = helptab;
 
     const terminalPanel = wrapper.children[0];
+    if(isSmallViewport() || isExtraSmallViewport())
+    terminalPanel.classList.add('collapsed');   
     const toggleBtn = wrapper.children[1];
 
     document.body.appendChild(terminalPanel);
