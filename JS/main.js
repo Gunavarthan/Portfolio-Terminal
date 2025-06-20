@@ -53,8 +53,8 @@ var portrait = `
                          ::::.                               
 `;
 
-var about = `<label class="about">Hi, I'm <b>Gunavarthan</b>, \n\n a Computer Science undergraduate and software developer passionate about solving complex problems across all levels of technology. From building 3D AI simulations in Unity to crafting assembly-level pixel art editors, I thrive on tackling challenges that span from low-level programming to full-stack web applications.\n\n My experience encompasses machine learning implementations, systems programming, and modern web development - always driven by curiosity and a love for innovative solutions. As a PC hardware enthusiast, I bring both software expertise and deep hardware understanding to every project.\n\n I'm eager to apply my technical skills and problem-solving mindset in professional environments where I can continue growing and contributing to meaningful technology solutions.
-</label>`;
+var about = `<div  class="about"><label>Hi, I'm <b>Gunavarthan</b>, \n\n a Computer Science undergraduate and software developer passionate about solving complex problems across all levels of technology. From building 3D AI simulations in Unity to crafting assembly-level pixel art editors, I thrive on tackling challenges that span from low-level programming to full-stack web applications.\n\n My experience encompasses machine learning implementations, systems programming, and modern web development - always driven by curiosity and a love for innovative solutions. As a PC hardware enthusiast, I bring both software expertise and deep hardware understanding to every project.\n\n I'm eager to apply my technical skills and problem-solving mindset in professional environments where I can continue growing and contributing to meaningful technology solutions.
+</label></div>`;
 
 var edu = `<label class="edu">
   <label class="header1">Master of Science in Software Systems</label><br>
@@ -674,7 +674,7 @@ Welcome to my Terminal Portfolio => Terfolio  <3
 ---
 <i >For list of available Commands type</i> <b class="help">'help'</b>
 ---
-        `
+<br><br>        `
     };
 
     if (isSmallViewport())

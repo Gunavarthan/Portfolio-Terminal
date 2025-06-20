@@ -43,6 +43,13 @@ label
   font-weight: 700;
 }
 
+
+.about {
+  width: 60%;
+  position: relative;
+  /* left: 4%; */
+}
+
 .portrait
 {
   position: absolute;
