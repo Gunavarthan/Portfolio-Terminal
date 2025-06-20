@@ -20,7 +20,7 @@ const commands = [
     {c:'help',d:'Display all commands'},
     {c:'hack',d:'Just a Screen Saver'},
     {c:'whoami',d:'Current user'},
-    {c:'cowsay',d:'speak with a cow'},
+    // {c:'cowsay',d:'speak with a cow'},
     {c:'catsay',d:'why just cow'},
     {c:'theme',d:'Change theme'},
     {c:'clear',d:'Clear Screen'},
@@ -141,6 +141,7 @@ var project_detail = [
   
           <label class="subtitle">GitHub:</label>
           <a class="demo-link" href="https://github.com/ItsTanPI/Pi-Engine" target="_blank">get to know more</a>
+          <br><br><br>
         </label>
       `
     },
@@ -164,6 +165,7 @@ var project_detail = [
           </pre>
           <label class="subtitle">Demo:</label>
           <a class="demo-link" href="https://gunavarthan.github.io/Pixel-canvas-ASM/" target="_blank">Draw here</a>
+          <br><br><br>
         </label>
       `
     },
@@ -190,6 +192,7 @@ var project_detail = [
   
           <label class="subtitle">GitHub:</label>
           <a class="demo-link" href="https://github.com/ItsTanPI/AI-Racing-Sim" target="_blank">AI powered Car Sim</a>
+          <br><br><br>
         </label>
       `
     },
@@ -218,6 +221,7 @@ var project_detail = [
           </pre>
           <label class="subtitle">Demo:</label>
           <a class="demo-link" href="https://gunavarthan.github.io/TicTacToe/HTML/MainMenue.html" target="_blank">Play Game Now !!</a>
+          <br><br><br>
         </label>
       `
     },
@@ -243,6 +247,7 @@ var project_detail = [
           </pre>
           <label class="subtitle">GitHub:</label>
           <a class="demo-link" href="https://github.com/Gunavarthan/Railway-Platform-Ticket-Booking-System" target="_blank">Railway platform ticket booking system </a>
+          <br><br><br>
         </label>
       `
     }
@@ -673,7 +678,7 @@ function welcome()
 
 Welcome to my Terminal Portfolio => Terfolio  <3
 ---
-<i>For list of available Commads type</i> <b class="help">'help'</b>
+<i>For list of available Commands type</i> <b class="help">'help'</b>
 ---
 
 `;
@@ -689,7 +694,7 @@ Welcome to my Terminal Portfolio => Terfolio  <3
                                                 
 Welcome to my Terminal Portfolio => Terfolio  <3
 ---
-<i >For list of available Commads type</i> <b class="help">'help'</b>
+<i >For list of available Commands type</i> <b class="help">'help'</b>
 ---
         `
     };
@@ -705,7 +710,7 @@ Welcome to my Terminal Portfolio => Terfolio  <3
                                                
 Welcome to my Terminal Portfolio => Terfolio  <3
 ---
-<i>For list of available Commads type</i> <b class="help">'help'</b>
+<i>For list of available Commands type</i> <b class="help">'help'</b>
 ---
 
 `
@@ -719,7 +724,7 @@ Welcome to my Terminal Portfolio => Terfolio  <3
 
 Welcome to my Terminal Portfolio => Terfolio  <3
 ---
-<i>For list of available Commads type</i> <b class="help">'help'</b>
+<i>For list of available Commands type</i> <b class="help">'help'</b>
 ---
 
 `
