@@ -2,6 +2,11 @@
 /* Basic Component  */
 /********************/
 
+.xterm {
+  scroll-behavior: smooth;
+}
+
+
 body
 {
   background-color:#191a22 ;
@@ -10,6 +15,8 @@ body
 #app.no-scroll {
   overflow: hidden;
   position: fixed;
+  height: 100%;
+  width : 100%;
 }
 
 

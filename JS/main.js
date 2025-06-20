@@ -646,7 +646,7 @@ async function handleInput(command) {
                 break;
         }
     }
-    
+    scrollTerminalToBottom();
     if(CanAsk)
     {
         ask();
@@ -939,6 +939,21 @@ ${bottom}-
               > ^ <\n\n`;
     term.write(speech);
 }
+
+let scrollTimeout;
+function scrollTerminalToBottom() {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+        const terminalEl = document.querySelector('.xterm');
+        if (terminalEl) {
+            terminalEl.scrollTo({
+                top: terminalEl.scrollHeight,
+                behavior: 'smooth'
+            });
+        }
+    }, 1000); // slight delay ensures content is rendered
+}
+
 
 async function ListProject() 
 {
