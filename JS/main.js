@@ -141,7 +141,6 @@ var project_detail = [
   
           <label class="subtitle">GitHub:</label>
           <a class="demo-link" href="https://github.com/ItsTanPI/Pi-Engine" target="_blank">get to know more</a>
-          <br><br><br>
         </label>
       `
     },
@@ -165,7 +164,6 @@ var project_detail = [
           </pre>
           <label class="subtitle">Demo:</label>
           <a class="demo-link" href="https://gunavarthan.github.io/Pixel-canvas-ASM/" target="_blank">Draw here</a>
-          <br><br><br>
         </label>
       `
     },
@@ -192,7 +190,6 @@ var project_detail = [
   
           <label class="subtitle">GitHub:</label>
           <a class="demo-link" href="https://github.com/ItsTanPI/AI-Racing-Sim" target="_blank">AI powered Car Sim</a>
-          <br><br><br>
         </label>
       `
     },
@@ -221,7 +218,6 @@ var project_detail = [
           </pre>
           <label class="subtitle">Demo:</label>
           <a class="demo-link" href="https://gunavarthan.github.io/TicTacToe/HTML/MainMenue.html" target="_blank">Play Game Now !!</a>
-          <br><br><br>
         </label>
       `
     },
@@ -247,7 +243,6 @@ var project_detail = [
           </pre>
           <label class="subtitle">GitHub:</label>
           <a class="demo-link" href="https://github.com/Gunavarthan/Railway-Platform-Ticket-Booking-System" target="_blank">Railway platform ticket booking system </a>
-          <br><br><br>
         </label>
       `
     }
@@ -976,6 +971,7 @@ function closePopup()
     setTimeout(() => {
       popup.style.display = 'none';
       popup.classList.remove('closing');
+      document.getElementById("app").classList.remove('no-scroll');
     }, 300);
 }
 
@@ -985,6 +981,7 @@ async function OpenProject(ProjectNumber)
     document.getElementById('pop-up-title').innerHTML = project_detail[ProjectNumber].name;
     document.getElementById('pop-up-disc').innerHTML = project_detail[ProjectNumber].details;
     document.getElementById("popup").style.display = "block";
+    document.getElementById("app").classList.add('no-scroll');
     // CanAsk = false;
     // Download(project_detail[ProjectNumber-1].name);
     // await sleep(3000)
