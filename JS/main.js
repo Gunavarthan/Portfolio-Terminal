@@ -756,6 +756,7 @@ function Download(name)
     <div class="line">Downloading <span class="filename">${name}</span> (${speed} MB)</div>
     <div class="progress-container"><div class="progress-bar"></div></div><div class="stats"><span class="green">${speed}/${speed} MB</span><span class="red">${(speed-getRandomFloat(0,speed)).toFixed(2)}MB/s</span><span class="dim">eta</span></div>`;
     term.write(loadbar);
+    scrollTerminalToBottom();
     setTimeout(() => {
         term.clearLast();
     }, 2000);
@@ -945,6 +946,10 @@ function scrollTerminalToBottom() {
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
         const terminalEl = document.querySelector('.xterm');
+        if(isExtraSmallViewport()|| isSmallViewport())
+        {
+            terminalPanel.classList.add('collapsed');   
+        }
         if (terminalEl) {
             terminalEl.scrollTo({
                 top: terminalEl.scrollHeight,
