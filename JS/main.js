@@ -175,7 +175,11 @@ var project_detail = [
           <label class="subtitle">Demo:</label>
           <a class="demo-link" href="https://gunavarthan.github.io/Pixel-canvas-ASM/" target="_blank">Draw here</a>
         </label>
-      `
+      `,
+      media: {
+        type: "image",
+        src: "Assets/images/pixel-edit/img-1.png"
+      }
     },
     {
       name: "Project: AI-Racing-Sim (AI Racing Game)",
@@ -1005,25 +1009,36 @@ function closePopup()
     }, 300);
 }
 
-async function OpenProject(ProjectNumber) 
-{
-
-    document.getElementById('pop-up-title').innerHTML = project_detail[ProjectNumber].name;
-    document.getElementById('pop-up-disc').innerHTML = project_detail[ProjectNumber].details;
+async function OpenProject(ProjectNumber) {
+    const project = project_detail[ProjectNumber];
+  
+    const content = document.getElementById('pop-up-disc');
+    content.innerHTML = project.details; // Reset content with description
+  
+    // Append media after description
+    if (project.media) {
+      let mediaHTML = "";
+  
+      if (project.media.type === "image") {
+        mediaHTML = `<img src="${project.media.src}" class="popup-image" alt="Project Image">`;
+      } else if (project.media.type === "video") {
+        mediaHTML = `
+          <video controls class="popup-video">
+            <source src="${project.media.src}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>`;
+      }
+  
+      // Append media to the end of the description
+      content.innerHTML += "<br><br>" + mediaHTML;
+    }
+  
+    document.getElementById("pop-up-title").innerHTML = project.name;
     document.getElementById("popup").style.display = "block";
-    document.getElementById("app").classList.add('no-scroll');
-    // CanAsk = false;
-    // Download(project_detail[ProjectNumber-1].name);
-    // await sleep(3000)
-    // CanAsk =true;
-    // if(ProjectNumber > 0 && ProjectNumber < (project_detail.length+1) )
-    // {
-    //     term.write(project_detail[ProjectNumber-1].details);
-    // }
-    // else{
-    //     term.write(`<lable class="help">\t\tEnter the Appropriate Project Number!!\n\n</lable>`)
-    // }
+    document.getElementById("app").classList.add("no-scroll");
 }
+  
+  
 
 ////////////////////////
 // where it all starts//

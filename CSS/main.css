@@ -1284,6 +1284,28 @@ label
     animation: dropIn 0.4s ease-out;
   }
 
+  .popup-media {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .popup-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid rgba(52, 143, 170, 0.4);
+    box-shadow: 0 0 10px rgba(52, 143, 170, 0.2);
+    border-radius: 8px;
+  }
+  
+  .popup-video {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid rgba(52, 143, 170, 0.4);
+    box-shadow: 0 0 10px rgba(52, 143, 170, 0.2);
+    border-radius: 8px;
+  }
+  
+
   /* Simple drop animation */
   @keyframes dropIn {
     0% {
