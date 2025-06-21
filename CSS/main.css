@@ -1268,6 +1268,7 @@ label
     height: 60vh;
     width: 70vw;
     min-width: 320px;
+    max-width: 90vw;
     /* overflow: hidden; */
     padding: 20px;
     color: rgb(255, 255, 255);
@@ -1276,6 +1277,8 @@ label
     top: 50%;
     translate: -50% -50%;
     z-index: 9999;
+    overflow-x: hidden;   
+    box-sizing: border-box;
     font-family: 'Courier New', monospace;
     border: 2px solid rgba(52, 143, 170, 0.8);
     box-shadow: 
@@ -1284,28 +1287,88 @@ label
     animation: dropIn 0.4s ease-out;
   }
 
-  .popup-media {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .popup-image {
+  #pop-up-disc {
+    position: relative;
     max-width: 100%;
-    height: auto;
-    border: 1px solid rgba(52, 143, 170, 0.4);
-    box-shadow: 0 0 10px rgba(52, 143, 170, 0.2);
-    border-radius: 8px;
-  }
-  
-  .popup-video {
-    max-width: 100%;
-    height: auto;
-    border: 1px solid rgba(52, 143, 170, 0.4);
-    box-shadow: 0 0 10px rgba(52, 143, 170, 0.2);
-    border-radius: 8px;
   }
   
 
+  .popup-media {
+    margin-top: 20px;
+    text-align: center;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 16px;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+  }
+
+  .popup-media-scroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+  }
+  
+  /* Shared style for both images and videos */
+  .popup-media-item {
+    flex: 0 0 auto;
+    object-fit: cover;
+    border: 1px solid rgba(52, 143, 170, 0.4);
+    box-shadow: 0 0 10px rgba(52, 143, 170, 0.2);
+    border-radius: 8px;
+    user-select: none;
+    background: black;
+  
+    width: 80vw;
+    max-width: 300px;
+    height: auto;
+    max-height: 200px;
+  }
+  
+  /* Make media smaller on small screens */
+  @media (max-width: 768px) {
+    .popup-media-item {
+      width: 70vw;
+      max-width: 220px;
+      max-height: 160px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .popup-media-item {
+      width: 90vw;
+      max-width: 180px;
+      max-height: 140px;
+    }
+  }
+  
+
+  /* Make all media items uniform size */
+  .popup-image,
+  .popup-video {
+    position: inherit;
+    max-width: 100%;
+    height: auto;
+    box-shadow: rgba(52, 143, 170, 0.2) 0px 0px 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(52, 143, 170, 0.4);
+    border-image: initial;
+    border-radius: 8px;
+  }
+
+  /* Optional: adjust for smaller screens */
+  @media (max-width: 480px) {
+    .popup-image,
+    .popup-video {
+      width: 200px;
+      height: 113px; /* maintain 16:9 ratio */
+    }
+  }
+
+  
   /* Simple drop animation */
   @keyframes dropIn {
     0% {
@@ -1376,11 +1439,13 @@ label
   }
 
   .popup-content {
+    position: relative;
     padding: 30px;
+    max-width: 10%;
     font-size: 16px;
     color: rgb(192, 192, 192);
     word-wrap: break-word;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
     line-height: 1.6;
     font-family: 'Courier New', monospace;
     height: calc(70%);
@@ -1389,7 +1454,6 @@ label
   }
 
   .popup-content::before {
-    content: '> ';
     color: rgb(52, 143, 170);
     font-weight: bold;
     margin-right: 8px;

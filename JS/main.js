@@ -136,14 +136,14 @@ var project_detail = [
           <label class="title">Project: PiEngine (Java Game Engine)</label>
   
           <label class="subtitle">Description:</label>
-          <pre class="disc">PiEngine is a simple and flexible 2D game engine made with Java. It uses OpenGL for graphics and includes a real-time editor for scene and object manipulation.</pre>
+          <pre class="disc">PiEngine is a simple and flexible 2D game engine made with Java. It uses OpenGL for graphics and \nincludes a real-time editor for scene and object manipulation.</pre>
           <label class="subtitle">Technologies Used:</label>
           <pre class="disc">
   - Java
   - OpenGL (LWJGL)
           </pre>
           <label class="subtitle">Features:</label>
-          <pre class="disc">- Real-time game editing
+          <pre class="disc">  - Real-time game editing
   - Scene saving/loading
   - Object transformation and management
   - Lightweight and modular design
@@ -152,7 +152,11 @@ var project_detail = [
           <label class="subtitle">GitHub:</label>
           <a class="demo-link" href="https://github.com/ItsTanPI/Pi-Engine" target="_blank">get to know more</a>
         </label>
-      `
+      `,
+      media: [
+        { type: "image", src: "Assets/images/pi-engine/img-1.png" },
+        { type: "image", src: "Assets/images/pi-engine/img-2.png" }
+      ]
     },
     {
       name: "Project: Pixel Art Editor (Assembly 8086)",
@@ -161,13 +165,13 @@ var project_detail = [
           <label class="title">Project: Pixel Art Editor (Assembly 8086)</label>
   
           <label class="subtitle">Description:</label>
-          <pre class="disc">A simple pixel art editor built using Assembly language. Allows pixel drawing via mouse with a limited color palette and demonstrates low-level graphics programming.</pre>
+          <pre class="disc">A simple pixel art editor built using Assembly language. Allows pixel drawing via mouse \nwith a limited color palette and demonstrates low-level graphics programming.</pre>
           <label class="subtitle">Technologies Used:</label>
-          <pre class="disc">- Assembly 8086
+          <pre class="disc">  - Assembly 8086
   - BIOS interrupts for mouse and video
           </pre>
           <label class="subtitle">Features:</label>
-          <pre class="disc">- Mouse-based drawing
+          <pre class="disc">  - Mouse-based drawing
   - Color palette (Red, Green, Blue, White, Yellow)
   - Custom resolution
   - Graphics mode switching
@@ -176,10 +180,10 @@ var project_detail = [
           <a class="demo-link" href="https://gunavarthan.github.io/Pixel-canvas-ASM/" target="_blank">Draw here</a>
         </label>
       `,
-      media: {
-        type: "image",
-        src: "Assets/images/pixel-edit/img-1.png"
-      }
+      media: [
+        { type: "image", src: "Assets/images/pixel-edit/img-1.png" },
+        { type: "image", src: "Assets/images/pixel-edit/img-2.png" }
+      ]
     },
     {
       name: "Project: AI-Racing-Sim (AI Racing Game)",
@@ -188,15 +192,15 @@ var project_detail = [
           <label class="title">Project: AI-Racing-Sim (AI Racing Game)</label>
   
           <label class="subtitle">Description:</label>
-          <pre class="disc">AI-Racing-Sim is a Python-based car racing simulation where AI agents learn to navigate random tracks using reinforcement learning.</pre>
+          <pre class="disc">AI-Racing-Sim is a Python-based car racing simulation where AI agents learn to\n navigate random tracks using reinforcement learning.</pre>
           <label class="subtitle">Technologies Used:</label>
-          <pre class="disc">- Python
+          <pre class="disc">  - Python
   - Pygame
   - OpenAI Gymnasium
   - PPO (Proximal Policy Optimization)
           </pre>
           <label class="subtitle">Features:</label>
-          <pre class="disc">- Random track generation
+          <pre class="disc">  - Random track generation
   - AI training and live racing
   - Visual game simulation
   - Replay and analytics support
@@ -205,7 +209,11 @@ var project_detail = [
           <label class="subtitle">GitHub:</label>
           <a class="demo-link" href="https://github.com/ItsTanPI/AI-Racing-Sim" target="_blank">AI powered Car Sim</a>
         </label>
-      `
+      `,
+      media: [
+        { type: "video", src: "Assets/images/Ai-RacingSIm/vid-1.mp4" },
+        { type: "image", src: "Assets/images/Ai-RacingSIm/img-1.png" }
+      ]
     },
     {
       name: "Project: Tic Tac Toe Game",
@@ -220,11 +228,11 @@ var project_detail = [
   - Online Multiplayer Mode with real-time play
           </pre>
           <label class="subtitle">Technologies Used:</label>
-          <pre class="disc">- HTML5, CSS3, JavaScript (Frontend)
+          <pre class="disc">  - HTML5, CSS3, JavaScript (Frontend)
   - PHP, AJAX, MySQL (Backend)
           </pre>
           <label class="subtitle">Features:</label>
-          <pre class="disc">- Online matchmaking with session management
+          <pre class="disc">  - Online matchmaking with session management
   - Auto-expiry of game sessions after 10 minutes
   - Responsive UI for desktop and mobile
   - Winner announcement and game reset
@@ -233,7 +241,10 @@ var project_detail = [
           <label class="subtitle">Demo:</label>
           <a class="demo-link" href="https://gunavarthan.github.io/TicTacToe/HTML/MainMenue.html" target="_blank">Play Game Now !!</a>
         </label>
-      `
+      `,
+      media: [
+        { type: "video", src: "Assets/images/TicTacToe/vid-1.mp4" }
+      ]
     },
     {
       name: "Project: Railway Platform Ticket Booking System",
@@ -242,14 +253,14 @@ var project_detail = [
           <label class="title">Project: Railway Platform Ticket Booking System</label>
   
           <label class="subtitle">Description:</label>
-          <pre class="disc">A web-based platform ticket booking system with user and admin modes. Includes real-time ticket validation, admin dashboard, and payment simulation.</pre>
+          <pre class="disc">A web-based platform ticket booking system with user and admin modes. Includes real-time ticket validation,\n admin dashboard, and payment simulation.</pre>
           <label class="subtitle">Technologies Used:</label>
-          <pre class="disc">- HTML5, CSS3, JavaScript
+          <pre class="disc">  - HTML5, CSS3, JavaScript
   - PHP, MySQL, AJAX
   - QRCode, Chart.js
           </pre>
           <label class="subtitle">Features:</label>
-          <pre class="disc">- PNR-based ticket search and validation
+          <pre class="disc">  - PNR-based ticket search and validation
   - Aadhar number verification
   - QR code generation for tickets
   - Admin statistics dashboard
@@ -368,6 +379,11 @@ async function handleInput(command) {
     
     if (cmd.length == 1)
     {
+        //just number to open projects
+        // if(cmd in String(1,2,3,4,5))
+        // {
+        //     op
+        // }
         switch (command) 
         {
             case 'hack':
@@ -1011,32 +1027,46 @@ function closePopup()
 
 async function OpenProject(ProjectNumber) {
     const project = project_detail[ProjectNumber];
+    const content = document.getElementById("pop-up-disc");
   
-    const content = document.getElementById('pop-up-disc');
-    content.innerHTML = project.details; // Reset content with description
+    // Clear content and add description
+    content.innerHTML = `<p>${project.details}</p>`;
   
-    // Append media after description
-    if (project.media) {
-      let mediaHTML = "";
+    if (project.media && project.media.length > 0) {
+      // Create horizontal scroll container
+      const mediaContainer = document.createElement("div");
+      mediaContainer.classList.add("popup-media-scroll");
   
-      if (project.media.type === "image") {
-        mediaHTML = `<img src="${project.media.src}" class="popup-image" alt="Project Image">`;
-      } else if (project.media.type === "video") {
-        mediaHTML = `
-          <video controls class="popup-video">
-            <source src="${project.media.src}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>`;
-      }
+      project.media.forEach(item => {
+        let mediaEl;
+        if (item.type === "image") {
+          mediaEl = document.createElement("img");
+          mediaEl.src = item.src;
+          mediaEl.alt = "Project Image";
+        } else if (item.type === "video") {
+          mediaEl = document.createElement("video");
+            mediaEl.controls = false;
+            mediaEl.autoplay = true;
+            mediaEl.muted = true;           
+            mediaEl.playsInline = true;     
+            mediaEl.loop = true;
+          const source = document.createElement("source");
+          source.src = item.src;
+          source.type = "video/mp4";
+          mediaEl.appendChild(source);
+        }
+        mediaEl.classList.add("popup-media-item");
+        mediaContainer.appendChild(mediaEl);
+      });
   
-      // Append media to the end of the description
-      content.innerHTML += "<br><br>" + mediaHTML;
+      content.appendChild(mediaContainer);
     }
   
     document.getElementById("pop-up-title").innerHTML = project.name;
     document.getElementById("popup").style.display = "block";
     document.getElementById("app").classList.add("no-scroll");
 }
+     
   
   
 
