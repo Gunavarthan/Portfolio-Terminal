@@ -709,16 +709,16 @@ Welcome to my Terminal Portfolio => Terfolio  <3
     {
         message = String.raw`<pre>
 
-┏┓　　　　　　　　　　　　　　　　　　　　　　　┓     
+┏┓　　　　　　  ┓      
 ┃┓┓┏┏┓┏┓┓┏┏┓┏┓╋┣┓┏┓┏┓
-┗┛┗┻┛┗┗┻┗┛┗┻┛　┗┛┗┗┻┛┗        
-
+┗┛┗┻┛┗┗┻┗┛┗┻┛　┗┛┗┗┻┛┗    
+</pre>
 Welcome to my Terminal Portfolio => Terfolio  <3
 ---
 <i>For list of available Commands type</i> <b class="help">'help'</b>
 ---
 
-</pre>`
+`
     }
     term.write(`<lable class='portrait'>${portrait}</lable>`);
     term.write(`<lable class='hero'>${message}</lable>`);
