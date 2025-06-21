@@ -709,9 +709,9 @@ Welcome to my Terminal Portfolio => Terfolio  <3
     {
         message = String.raw`<pre>
 
-┏┓               ┓      
+┏┓                     
 ┃┓┓┏┏┓┏┓┓┏┏┓┏┓╋┣┓┏┓┏┓
-┗┛┗┻┛┗┗┻┗┛┗┻┛　┗┛┗┗┻┛┗    
+┗┛┗┻┛┗┗┻┗┛┗┻┛ ┗┛┗┗┻┛┗    
 </pre>
 Welcome to my Terminal Portfolio => Terfolio  <3
 ---
