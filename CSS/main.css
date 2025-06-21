@@ -93,9 +93,9 @@ label
     white-space: pre;  
     top:0;
     left: 0%;
-    /* text-align: center; */
-    /* font-size: .8rem;  */
-    /* font-stretch:narrower; */
+    text-align: center; 
+    font-size: .8rem; 
+    font-stretch:narrower;
   }
 }
 
