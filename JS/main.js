@@ -363,7 +363,7 @@ async function dismissMobileKeyboard() {
     await new Promise(resolve => setTimeout(resolve, 3000)); // Wait 1 second
 
     if (isSmallViewport() || isExtraSmallViewport()) {
-        const activeElement = document.querySelector('.xterm textarea');
+        const activeElement = document.querySelector('.xt-stdin input');
         if (activeElement && typeof activeElement.blur === 'function') {
             activeElement.blur();
         }
