@@ -691,10 +691,10 @@ async function handleInput(command) {
         }
     }
     scrollTerminalToBottom();
-    dismissMobileKeyboard()
     if(CanAsk)
     {
         ask();
+        dismissMobileKeyboard();
     }
 }
 
