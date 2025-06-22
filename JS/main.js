@@ -356,6 +356,16 @@ function ask()
     term.focus();
 }
 
+function dismissMobileKeyboard() {
+    if (isSmallViewport() || isExtraSmallViewport()) {
+        const activeElement = document.activeElement;
+        if (activeElement && typeof activeElement.blur === 'function') {
+            activeElement.blur();
+        }
+    }
+}
+
+
 term.on('draw-hack',() => {
     interval_id = setInterval(draw, 50);
 });
@@ -677,6 +687,7 @@ async function handleInput(command) {
         }
     }
     scrollTerminalToBottom();
+    dismissMobileKeyboard()
     if(CanAsk)
     {
         ask();
