@@ -1322,9 +1322,9 @@ label
     background: black;
   
     width: 80vw;
-    max-width: 300px;
+    max-width: 600px;
     height: auto;
-    max-height: 200px;
+    max-height: 400px;
   }
   
   /* Make media smaller on small screens */
@@ -1443,7 +1443,7 @@ label
     padding: 30px;
     max-width: 10%;
     font-size: 16px;
-    color: rgb(192, 192, 192);
+    color: rgb(255, 255, 255);
     word-wrap: break-word;
     overflow-wrap: anywhere;
     line-height: 1.6;
