@@ -359,7 +359,9 @@ function ask()
     }
 }
 
-function dismissMobileKeyboard() {
+async function dismissMobileKeyboard() {
+    await new Promise(resolve => setTimeout(resolve, 1000)); // Wait 1 second
+
     if (isSmallViewport() || isExtraSmallViewport()) {
         const activeElement = document.activeElement;
         if (activeElement && typeof activeElement.blur === 'function') {
@@ -367,6 +369,7 @@ function dismissMobileKeyboard() {
         }
     }
 }
+
 
 
 term.on('draw-hack',() => {
