@@ -360,7 +360,7 @@ function ask()
 }
 
 async function dismissMobileKeyboard() {
-    await new Promise(resolve => setTimeout(resolve, 1000)); // Wait 1 second
+    await new Promise(resolve => setTimeout(resolve, 3000)); // Wait 1 second
 
     if (isSmallViewport() || isExtraSmallViewport()) {
         const activeElement = document.activeElement;
@@ -694,10 +694,10 @@ async function handleInput(command) {
         }
     }
     scrollTerminalToBottom();
+    dismissMobileKeyboard();
     if(CanAsk)
     {
         ask();
-        dismissMobileKeyboard();
     }
 }
 
@@ -1013,6 +1013,7 @@ async function ListProject()
     term.pause();
     CanAsk = false;
     Download("projects-List");
+    scrollTerminalToBottom();
     await sleep(3000)
     CanAsk = true;
     term.write("\n\n");
