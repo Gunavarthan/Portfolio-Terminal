@@ -1013,7 +1013,6 @@ async function ListProject()
     term.pause();
     CanAsk = false;
     Download("projects-List");
-    term.focus();
     scrollTerminalToBottom();
     await sleep(3000)
     CanAsk = true;
