@@ -360,8 +360,8 @@ function ask()
 }
 
 async function dismissMobileKeyboard() {
-    await new Promise(resolve => setTimeout(resolve, 3000)); // Wait 1 second
-
+    await new Promise(resolve => setTimeout(resolve, 1000)); // Wait 1 second
+    scrollTerminalToBottom();
     if (isSmallViewport() || isExtraSmallViewport()) {
         const activeElement = document.querySelector('.xt-stdin input');
         if (activeElement && typeof activeElement.blur === 'function') {
