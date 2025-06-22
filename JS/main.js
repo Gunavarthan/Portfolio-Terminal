@@ -353,7 +353,10 @@ function ask()
 
     }
     term.resume();
-    term.focus();
+    if(isLargeViewport()|| isMediumViewport())
+    {
+        term.focus();
+    }
 }
 
 function dismissMobileKeyboard() {
@@ -605,7 +608,7 @@ async function handleInput(command) {
                             }
                         }
                         ask();
-                        console.log('must be before called me!!');
+                        // console.log('must be before called me!!');
                     }else{
                         tmatch = command.match(/"([^']*)"/);
                         if (tmatch)
@@ -636,13 +639,14 @@ async function handleInput(command) {
                             }
                             // term.write(prompt);
                             ask();
-                            console.log('must be before called me!!');
+                            // console.log('must be before called me!!');
                         }
                         else{
                             term.writeln('Usage: typo \'TEXT HERE\'');
                         }
                     }
                 })();
+                scrollTerminalToBottom();
                 break;
 
             case 'catsay':
