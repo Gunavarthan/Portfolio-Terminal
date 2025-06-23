@@ -90,35 +90,35 @@ var projectsList = [
       detail: `<div id=${1} class="proj"><div class="title"> <label class="help"> 1 :</label> PiEngine (Java Game Engine)</div>
       <div class="disc">
       PiEngine is a simple and flexible 2D game engine built with Java. It uses OpenGL for graphics and has an easy-to-use editor. You can create and edit games in real-time, save and load game scenes, and manage game objects easily.
-      </div></div><br>`
+      <br><a class="demo-link" href="https://github.com/ItsTanPI/Pi-Engine" target="_blank">GitHub Repo</a></div></div>`
     },
     {
       name: "Pixel Art Editor (Assembly 8086)",
       detail: `<div id=${2} class="proj"><div class="title"> <label class="help"> 2 :</label> Pixel Art Editor (Assembly 8086)</div>
       <div class="disc">
       This pixel art editor is built with Assembly language. It allows drawing using the mouse with a basic color palette including red, green, blue, white, and yellow. It demonstrates how to create graphics and interact with hardware at a low level.
-      </div></div><br>`
+      <br><a class="demo-link" href="https://gunavarthan.github.io/Pixel-canvas-ASM/" target="_blank">GitHub Repo</a></div></div>`
     },
     {
       name: "AI-Racing-Sim (AI Racing Game)",
       detail: `<div id=${3} class="proj"><div class="title"> <label class="help"> 3 :</label> AI-Racing-Sim (AI Racing Game)</div>
       <div class="disc">
       AI-Racing-Sim is a racing game built with Python and Pygame. It features AI-controlled cars that learn and race on random tracks. You can watch the AI improve and compete in real-time.
-      </div></div>`
+      <br><a class="demo-link" href="https://github.com/ItsTanPI/AI-Racing-Sim" target="_blank">GitHub Repo</a></div></div>`
     },
     {
       name: "Tic Tac Toe Game",
       detail: `<div id=${4} class="proj"><div class="title"> <label class="help"> 4 :</label> Tic Tac Toe Game</div>
       <div class="disc">
       A web-based Tic Tac Toe game with options to play locally, against the computer, or online with friends. It manages game sessions and ensures smooth multiplayer gameplay.
-      </div></div>`
+      <br><a class="demo-link" href="https://gunavarthan.github.io/TicTacToe/HTML/MainMenue.html" target="_blank">GitHub Repo</a></div></div>`
     },
     {
       name: "Railway Platform Ticket Booking System",
       detail: `<div id=${5} class="proj"><div class="title"> <label class="help"> 5 :</label> Railway Platform Ticket Booking System</div>
       <div class="disc">
       A web application for booking railway tickets and managing platforms. Users can search for trains, book tickets with ID verification, and make payments. Admins can manage bookings and view statistics.
-      </div></div>`
+      <br><a class="demo-link" href="https://github.com/Gunavarthan/Railway-Platform-Ticket-Booking-System" target="_blank">GitHub Repo</a></div></div><br>`
     },
     {
       name: "Tip",
