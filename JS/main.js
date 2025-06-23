@@ -12,21 +12,21 @@ var puts = "sys".puts;
 const state ={ username: 'visitor',hostname:'web' };
 const commands = [
     {c:'about',d:'About Gunavarthan'},
-    {c:'education',d:'Education Qualification'},
-    {c:'projects',d:'Projects Worked on'},                          // Command List
-    {c:'open',d:'more on each project'},
-    {c:'welcome',d:'Hero Section'},
-    {c:'history',d:'List all exicuted Commands'},
+    {c:'education',d:'Education qualifications'},
+    {c:'projects',d:'Projects worked on'},                          // Command List
+    {c:'open',d:'More details on each project'},
+    {c:'welcome',d:'Hero section'},
+    {c:'history',d:'List all executed commands'},
     {c:'help',d:'Display all commands'},
-    {c:'hack',d:'Just a Screen Saver'},
+    {c:'hack',d:'Just a screen saver'},
     {c:'whoami',d:'Current user'},
     // {c:'cowsay',d:'speak with a cow'},
-    {c:'catsay',d:'why just cow'},
+    {c:'catsay',d:'Why just cow'},
     {c:'theme',d:'Change theme'},
-    {c:'clear',d:'Clear Screen'},
-    {c:'echo',d:'Print a String in termnial'},
-    {c:'typo',d:'caligraphy'},
-    {c:'socials',d:'Chech out me here'},
+    {c:'clear',d:'Clear screen'},
+    {c:'echo',d:'Print a string in terminal'},
+    {c:'typo',d:'Calligraphy'},
+    {c:'socials',d:'Check out me here'},
     {c:'email',d:'Contact me'}
 ];
 var theme = 'DEFAULT';
@@ -73,12 +73,12 @@ var edu = `<label class="edu">
   <label class="header2">CGPA        :</label> 8.35 / 10<br>
 
   <label class="header1">Higher Secondary Education (HSC)</label><br>
-  <label class="header2">Institution :</label> Mahatma Akkamma CBSE ,Madurai
+  <label class="header2">Institution :</label> Mahatma Akkamma CBSE, Madurai
   <label class="header2">Year        :</label> 2023
   <label class="header2">Percentage  :</label> 86%<br>
 
-  <label class="header1">Secondary School Education (SSLC)</label>
-  <label class="header2">Institution :</label> Lakshmi School ICSE ,Madurai
+  <label class="header1">Secondary School Education (SSLC)</label><br>
+  <label class="header2">Institution :</label> Lakshmi School ICSE, Madurai
   <label class="header2">Year        :</label> 2020
   <label class="header2">Percentage  :</label> 75%
 </label>
@@ -89,42 +89,42 @@ var projectsList = [
       name: "PiEngine (Java Game Engine)",
       detail: `<div id=${1} class="proj"><div class="title"> <label class="help"> 1 :</label> PiEngine (Java Game Engine)</div>
       <div class="disc">
-      PiEngine is a simple and flexible 2D game engine made with Java. It uses OpenGL for graphics and has an easy-to-use editor. You can create and edit games in real-time, save and load game scenes, and manage game objects easily.
+      PiEngine is a simple and flexible 2D game engine built with Java. It uses OpenGL for graphics and has an easy-to-use editor. You can create and edit games in real-time, save and load game scenes, and manage game objects easily.
       </div></div><br>`
     },
     {
       name: "Pixel Art Editor (Assembly 8086)",
       detail: `<div id=${2} class="proj"><div class="title"> <label class="help"> 2 :</label> Pixel Art Editor (Assembly 8086)</div>
       <div class="disc">
-      This pixel art editor is made with Assembly language. It allows drawing using the mouse with a basic color palette (Red, Green, Blue, White, Yellow). It shows how to create graphics and interact with hardware at a low level.
+      This pixel art editor is built with Assembly language. It allows drawing using the mouse with a basic color palette including red, green, blue, white, and yellow. It demonstrates how to create graphics and interact with hardware at a low level.
       </div></div><br>`
     },
     {
       name: "AI-Racing-Sim (AI Racing Game)",
       detail: `<div id=${3} class="proj"><div class="title"> <label class="help"> 3 :</label> AI-Racing-Sim (AI Racing Game)</div>
       <div class="disc">
-      I-Racing-Sim is a racing game built with Python and Pygame. It has AI-controlled cars that learn and race on random tracks. You can watch the AI improve and compete in real-time.
+      AI-Racing-Sim is a racing game built with Python and Pygame. It features AI-controlled cars that learn and race on random tracks. You can watch the AI improve and compete in real-time.
       </div></div>`
     },
     {
       name: "Tic Tac Toe Game",
       detail: `<div id=${4} class="proj"><div class="title"> <label class="help"> 4 :</label> Tic Tac Toe Game</div>
       <div class="disc">
-      A web-based Tic Tac Toe game with options to play locally, against the computer, or online with friends. It manages game sessions and ensures smooth multiplayer play.
+      A web-based Tic Tac Toe game with options to play locally, against the computer, or online with friends. It manages game sessions and ensures smooth multiplayer gameplay.
       </div></div>`
     },
     {
       name: "Railway Platform Ticket Booking System",
-      detail: `<div id=${5} class="proj"><div class="title"> <label class="help"> 5 :</label>  Railway Platform Ticket Booking System</div>
+      detail: `<div id=${5} class="proj"><div class="title"> <label class="help"> 5 :</label> Railway Platform Ticket Booking System</div>
       <div class="disc">
-      A web app for booking railway tickets and managing platforms. Users can search trains, book tickets with ID verification, and make payments. Admins can manage bookings and view statistics.
+      A web application for booking railway tickets and managing platforms. Users can search for trains, book tickets with ID verification, and make payments. Admins can manage bookings and view statistics.
       </div></div>`
     },
     {
       name: "Tip",
-      detail: `<div id=${6} class="proj"><div class="disc"> <label class="help"> Tip :</label> Type 'open &lt;project Number&gt;' to see full details.</div></div>`
+      detail: `<div id=${6} class="proj"><div class="disc"> <label class="help"> Tip :</label> Type 'open &lt;project number&gt;' to see full details.</div></div>`
     }
-]; 
+];
 
 var CanAsk = true;
 
@@ -136,7 +136,7 @@ var project_detail = [
           <label class="title">Project: PiEngine (Java Game Engine)</label>
   
           <label class="subtitle">Description:</label>
-          <pre class="disc">PiEngine is a simple and flexible 2D game engine made with Java. It uses OpenGL for graphics and \nincludes a real-time editor for scene and object manipulation.</pre>
+          <pre class="disc">PiEngine is a simple and flexible 2D game engine built with Java. It uses OpenGL for graphics and includes a real-time editor for scene and object manipulation.</pre>
           <label class="subtitle">Technologies Used:</label>
           <pre class="disc">
   - Java
@@ -144,13 +144,13 @@ var project_detail = [
           </pre>
           <label class="subtitle">Features:</label>
           <pre class="disc">  - Real-time game editing
-  - Scene saving/loading
+  - Scene saving and loading
   - Object transformation and management
   - Lightweight and modular design
           </pre>
   
           <label class="subtitle">GitHub:</label>
-          <a class="demo-link" href="https://github.com/ItsTanPI/Pi-Engine" target="_blank">get to know more</a>
+          <a class="demo-link" href="https://github.com/ItsTanPI/Pi-Engine" target="_blank">Get to know more</a>
         </label>
       `,
       media: [
@@ -165,7 +165,7 @@ var project_detail = [
           <label class="title">Project: Pixel Art Editor (Assembly 8086)</label>
   
           <label class="subtitle">Description:</label>
-          <pre class="disc">A simple pixel art editor built using Assembly language. Allows pixel drawing via mouse \nwith a limited color palette and demonstrates low-level graphics programming.</pre>
+          <pre class="disc">A simple pixel art editor built using Assembly language. It allows pixel drawing via mouse with a limited color palette and demonstrates low-level graphics programming.</pre>
           <label class="subtitle">Technologies Used:</label>
           <pre class="disc">  - Assembly 8086
   - BIOS interrupts for mouse and video
@@ -192,7 +192,7 @@ var project_detail = [
           <label class="title">Project: AI-Racing-Sim (AI Racing Game)</label>
   
           <label class="subtitle">Description:</label>
-          <pre class="disc">AI-Racing-Sim is a Python-based car racing simulation where AI agents learn to\n navigate random tracks using reinforcement learning.</pre>
+          <pre class="disc">AI-Racing-Sim is a Python-based car racing simulation where AI agents learn to navigate random tracks using reinforcement learning.</pre>
           <label class="subtitle">Technologies Used:</label>
           <pre class="disc">  - Python
   - Pygame
@@ -207,7 +207,7 @@ var project_detail = [
           </pre>
   
           <label class="subtitle">GitHub:</label>
-          <a class="demo-link" href="https://github.com/ItsTanPI/AI-Racing-Sim" target="_blank">AI powered Car Sim</a>
+          <a class="demo-link" href="https://github.com/ItsTanPI/AI-Racing-Sim" target="_blank">AI-powered car simulation</a>
         </label>
       `,
       media: [
@@ -222,11 +222,7 @@ var project_detail = [
           <label class="title">Project: Tic Tac Toe Game</label>
   
           <label class="subtitle">Description:</label>
-          <pre class="disc">A web-based Tic Tac Toe game that supports multiple gameplay modes:
-  - Single Player (vs Computer)
-  - Local Co-op (2 Players)
-  - Online Multiplayer Mode with real-time play
-          </pre>
+          <pre class="disc">A web-based Tic Tac Toe game that supports multiple gameplay modes including single player versus computer, local co-op for two players, and online multiplayer mode with real-time play.</pre>
           <label class="subtitle">Technologies Used:</label>
           <pre class="disc">  - HTML5, CSS3, JavaScript (Frontend)
   - PHP, AJAX, MySQL (Backend)
@@ -239,7 +235,7 @@ var project_detail = [
   - Simple and clean UI with animations
           </pre>
           <label class="subtitle">Demo:</label>
-          <a class="demo-link" href="https://gunavarthan.github.io/TicTacToe/HTML/MainMenue.html" target="_blank">Play Game Now !!</a>
+          <a class="demo-link" href="https://gunavarthan.github.io/TicTacToe/HTML/MainMenue.html" target="_blank">Play game now!</a>
         </label>
       `,
       media: [
@@ -253,7 +249,7 @@ var project_detail = [
           <label class="title">Project: Railway Platform Ticket Booking System</label>
   
           <label class="subtitle">Description:</label>
-          <pre class="disc">A web-based platform ticket booking system with user and admin modes. Includes real-time ticket validation,\n admin dashboard, and payment simulation.</pre>
+          <pre class="disc">A web-based platform ticket booking system with user and admin modes. It includes real-time ticket validation, admin dashboard, and payment simulation.</pre>
           <label class="subtitle">Technologies Used:</label>
           <pre class="disc">  - HTML5, CSS3, JavaScript
   - PHP, MySQL, AJAX
@@ -261,13 +257,13 @@ var project_detail = [
           </pre>
           <label class="subtitle">Features:</label>
           <pre class="disc">  - PNR-based ticket search and validation
-  - Aadhar number verification
+  - Aadhaar number verification
   - QR code generation for tickets
   - Admin statistics dashboard
   - Responsive and secure UI
           </pre>
           <label class="subtitle">GitHub:</label>
-          <a class="demo-link" href="https://github.com/Gunavarthan/Railway-Platform-Ticket-Booking-System" target="_blank">Railway platform ticket booking system </a>
+          <a class="demo-link" href="https://github.com/Gunavarthan/Railway-Platform-Ticket-Booking-System" target="_blank">Railway platform ticket booking system</a>
         </label>
       `
     }
@@ -990,22 +986,29 @@ ${bottom}-
 }
 
 let scrollTimeout;
+
 function scrollTerminalToBottom() {
     clearTimeout(scrollTimeout);
+
     scrollTimeout = setTimeout(() => {
         const terminalEl = document.querySelector('.xterm');
-        if(isExtraSmallViewport()|| isSmallViewport())
-        {
-            terminalPanel.classList.add('collapsed');   
+        const terminalPanel = document.querySelector('.terminal-panel'); // Fix here
+
+        if (isExtraSmallViewport() || isSmallViewport()) {
+            if (terminalPanel) {
+                terminalPanel.classList.add('collapsed');
+            }
         }
+
         if (terminalEl) {
             terminalEl.scrollTo({
                 top: terminalEl.scrollHeight,
                 behavior: 'smooth'
             });
         }
-    }, 1000); // slight delay ensures content is rendered
+    }, 1000);
 }
+
 
 
 async function ListProject() 
@@ -1042,6 +1045,7 @@ function closePopup()
       popup.classList.remove('closing');
       document.getElementById("app").classList.remove('no-scroll');
     }, 300);
+    scrollTerminalToBottom();
 }
 
 async function OpenProject(ProjectNumber) {
