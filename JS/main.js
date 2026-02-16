@@ -100,29 +100,36 @@ var projectsList = [
       <br><a class="demo-link" href="https://gunavarthan.github.io/Pixel-canvas-ASM/" target="_blank">GitHub Repo</a></div></div>`
     },
     {
+      name: "ML-Bike-Agent (Reinforcement Learning Simulation)",
+      detail: `<div id=${3} class="proj"><div class="title"> <label class="help"> 3 :</label> ML-Bike-Agent (Reinforcement Learning Simulation)</div>
+        <div class="disc">
+        ML-Bike-Agent is a reinforcement learning project where an AI agent learns to control and balance a bike through reward-based training. It demonstrates neural network learning, simulation control, and agent optimization over time.
+        <br><a class="demo-link" href="https://github.com/Gunavarthan/ML-Bike-Agent" target="_blank">GitHub Repo</a></div></div>`
+    },
+    {
       name: "AI-Racing-Sim (AI Racing Game)",
-      detail: `<div id=${3} class="proj"><div class="title"> <label class="help"> 3 :</label> AI-Racing-Sim (AI Racing Game)</div>
+      detail: `<div id=${4} class="proj"><div class="title"> <label class="help"> 4 :</label> AI-Racing-Sim (AI Racing Game)</div>
       <div class="disc">
       AI-Racing-Sim is a racing game built with Python and Pygame. It features AI-controlled cars that learn and race on random tracks. You can watch the AI improve and compete in real-time.
       <br><a class="demo-link" href="https://github.com/ItsTanPI/AI-Racing-Sim" target="_blank">GitHub Repo</a></div></div>`
     },
     {
       name: "Tic Tac Toe Game",
-      detail: `<div id=${4} class="proj"><div class="title"> <label class="help"> 4 :</label> Tic Tac Toe Game</div>
+      detail: `<div id=${5} class="proj"><div class="title"> <label class="help"> 5 :</label> Tic Tac Toe Game</div>
       <div class="disc">
       A web-based Tic Tac Toe game with options to play locally, against the computer, or online with friends. It manages game sessions and ensures smooth multiplayer gameplay.
       <br><a class="demo-link" href="https://gunavarthan.github.io/TicTacToe/HTML/MainMenue.html" target="_blank">GitHub Repo</a></div></div>`
     },
     {
       name: "Railway Platform Ticket Booking System",
-      detail: `<div id=${5} class="proj"><div class="title"> <label class="help"> 5 :</label> Railway Platform Ticket Booking System</div>
+      detail: `<div id=${6} class="proj"><div class="title"> <label class="help"> 6 :</label> Railway Platform Ticket Booking System</div>
       <div class="disc">
       A web application for booking railway tickets and managing platforms. Users can search for trains, book tickets with ID verification, and make payments. Admins can manage bookings and view statistics.
       <br><a class="demo-link" href="https://github.com/Gunavarthan/Railway-Platform-Ticket-Booking-System" target="_blank">GitHub Repo</a></div></div><br>`
     },
     {
       name: "Tip",
-      detail: `<div id=${6} class="proj"><div class="disc"> <label class="help"> Tip :</label> Type 'open &lt;project number&gt;' to see full details.</div></div>`
+      detail: `<div id=${7} class="proj"><div class="disc"> <label class="help"> Tip :</label> Type 'open &lt;project number&gt;' to see full details.</div></div>`
     }
 ];
 
@@ -184,6 +191,41 @@ var project_detail = [
         { type: "image", src: "Assets/images/pixel-edit/img-1.png" },
         { type: "image", src: "Assets/images/pixel-edit/img-2.png" }
       ]
+    },
+    {
+      name: "ML-Bike-Agent (Reinforcement Learning Simulation)",
+      details: `
+          <label class="ProjectDetailed">
+            <label class="title">ML-Bike-Agent (Reinforcement Learning Simulation)</label>
+
+            <label class="subtitle">Description:</label>
+            <pre class="disc">ML-Bike-Agent is a machine learning-based simulation where an AI agent learns to control a 
+bike using reinforcement learning techniques.</pre>
+          <label class="subtitle">Technologies Used:</label>
+          <pre class="disc">
+      - Python
+      - Reinforcement Learning
+      - Neural Networks
+      - Simulation Environment
+          </pre>
+
+          <label class="subtitle">Features:</label>
+          <pre class="disc">
+      - AI-based bike balancing
+      - Reward-driven learning
+      - Training visualization
+      - Performance improvement over episodes
+          </pre>
+
+          <label class="subtitle">GitHub:</label>
+          <a class="demo-link" href="https://github.com/Gunavarthan/ML-Bike-Agent" target="_blank">
+              ML Bike Agent Repository
+          </a>
+          </label>
+        `,
+    media: [
+        { type: "video", src: "Assets/images/Bicycle/vid-1.mp4" }
+    ]
     },
     {
       name: "Project: AI-Racing-Sim (AI Racing Game)",
