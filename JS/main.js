@@ -93,43 +93,50 @@ var projectsList = [
       <br><a class="demo-link" href="https://github.com/ItsTanPI/Pi-Engine" target="_blank">GitHub Repo</a></div></div>`
     },
     {
+    name: "PCB Defect Classifier (YOLOv8-based)",
+    detail: `<div id=${2} class="proj"><div class="title"><label class="help"> 2 :</label> PCB Defect Classifier (YOLOv8-based)</div>
+      <div class="disc">
+      A YOLOv8-powered system for detecting and classifying common defects on printed circuit boards (PCBs), such as missing holes, open circuits, shorts, spurs, mouse bites, and spurious copper, with support for real-time inference and visualization.
+      <br><a class="demo-link" href="https://github.com/Gunavarthan/PCB-Defect-Classifier" target="_blank">GitHub Repo</a></div></div>`
+    },
+    {
       name: "Pixel Art Editor (Assembly 8086)",
-      detail: `<div id=${2} class="proj"><div class="title"> <label class="help"> 2 :</label> Pixel Art Editor (Assembly 8086)</div>
+      detail: `<div id=${3} class="proj"><div class="title"> <label class="help"> 3 :</label> Pixel Art Editor (Assembly 8086)</div>
       <div class="disc">
       This pixel art editor is built with Assembly language. It allows drawing using the mouse with a basic color palette including red, green, blue, white, and yellow. It demonstrates how to create graphics and interact with hardware at a low level.
       <br><a class="demo-link" href="https://gunavarthan.github.io/Pixel-canvas-ASM/" target="_blank">GitHub Repo</a></div></div>`
     },
     {
       name: "ML-Bike-Agent (Reinforcement Learning Simulation)",
-      detail: `<div id=${3} class="proj"><div class="title"> <label class="help"> 3 :</label> ML-Bike-Agent (Reinforcement Learning Simulation)</div>
+      detail: `<div id=${4} class="proj"><div class="title"> <label class="help"> 4 :</label> ML-Bike-Agent (Reinforcement Learning Simulation)</div>
         <div class="disc">
         ML-Bike-Agent is a reinforcement learning project where an AI agent learns to control and balance a bike through reward-based training. It demonstrates neural network learning, simulation control, and agent optimization over time.
         <br><a class="demo-link" href="https://github.com/Gunavarthan/ML-Bike-Agent" target="_blank">GitHub Repo</a></div></div>`
     },
     {
       name: "AI-Racing-Sim (AI Racing Game)",
-      detail: `<div id=${4} class="proj"><div class="title"> <label class="help"> 4 :</label> AI-Racing-Sim (AI Racing Game)</div>
+      detail: `<div id=${5} class="proj"><div class="title"> <label class="help"> 5 :</label> AI-Racing-Sim (AI Racing Game)</div>
       <div class="disc">
       AI-Racing-Sim is a racing game built with Python and Pygame. It features AI-controlled cars that learn and race on random tracks. You can watch the AI improve and compete in real-time.
       <br><a class="demo-link" href="https://github.com/ItsTanPI/AI-Racing-Sim" target="_blank">GitHub Repo</a></div></div>`
     },
     {
       name: "Tic Tac Toe Game",
-      detail: `<div id=${5} class="proj"><div class="title"> <label class="help"> 5 :</label> Tic Tac Toe Game</div>
+      detail: `<div id=${6} class="proj"><div class="title"> <label class="help"> 6 :</label> Tic Tac Toe Game</div>
       <div class="disc">
       A web-based Tic Tac Toe game with options to play locally, against the computer, or online with friends. It manages game sessions and ensures smooth multiplayer gameplay.
       <br><a class="demo-link" href="https://gunavarthan.github.io/TicTacToe/HTML/MainMenue.html" target="_blank">GitHub Repo</a></div></div>`
     },
     {
       name: "Railway Platform Ticket Booking System",
-      detail: `<div id=${6} class="proj"><div class="title"> <label class="help"> 6 :</label> Railway Platform Ticket Booking System</div>
+      detail: `<div id=${7} class="proj"><div class="title"> <label class="help"> 7 :</label> Railway Platform Ticket Booking System</div>
       <div class="disc">
       A web application for booking railway tickets and managing platforms. Users can search for trains, book tickets with ID verification, and make payments. Admins can manage bookings and view statistics.
       <br><a class="demo-link" href="https://github.com/Gunavarthan/Railway-Platform-Ticket-Booking-System" target="_blank">GitHub Repo</a></div></div><br>`
     },
     {
       name: "Tip",
-      detail: `<div id=${7} class="proj"><div class="disc"> <label class="help"> Tip :</label> Type 'open &lt;project number&gt;' to see full details.</div></div>`
+      detail: `<div id=${8} class="proj"><div class="disc"> <label class="help"> Tip :</label> Type 'open &lt;project number&gt;' to see full details.</div></div>`
     }
 ];
 
@@ -165,6 +172,38 @@ var project_detail = [
         { type: "image", src: "Assets/images/pi-engine/img-2.png" }
       ]
     },
+    {
+      name: "Project: PCB Defect Classifier",
+      details: `
+        <label class="ProjectDetailed">
+          <label class="title">Project: PCB Defect Classifier</label>
+
+          <label class="subtitle">Description:</label>
+          <pre class="disc">PCB Defect Classifier is designed to automatically detect and classify defects in printed circuit boards (PCBs) using image processing techniques. It aims to improve quality control in PCB manufacturing by providing accurate and efficient defect identification.</pre>
+          <label class="subtitle">Technologies Used:</label>
+          <pre class="disc">
+  - Python
+  - TensorFlow / Keras
+  - OpenCV
+  - NumPy
+          </pre>
+          <label class="subtitle">Features:</label>
+          <pre class="disc">
+  - Automated PCB defect detection
+  - Image preprocessing and augmentation
+  - Deep learning-based classification
+  - Model training and evaluation pipeline
+          </pre>
+
+          <label class="subtitle">GitHub:</label>
+          <a class="demo-link" href="https://github.com/Gunavarthan/PCB-Defect-Classifier" target="_blank">Get to know more</a>
+        </label>
+      `,
+      media: [
+        { type: "video", src: "Assets/images/PCB/Vid-1.mp4" }
+      ]
+    },
+
     {
       name: "Project: Pixel Art Editor (Assembly 8086)",
       details: `
