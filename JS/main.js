@@ -179,7 +179,9 @@ var project_detail = [
           <label class="title">Project: PCB Defect Classifier</label>
 
           <label class="subtitle">Description:</label>
-          <pre class="disc">PCB Defect Classifier is designed to automatically detect and classify defects in printed circuit boards (PCBs) using image processing techniques. It aims to improve quality control in PCB manufacturing by providing accurate and efficient defect identification.</pre>
+          <pre class="disc">PCB Defect Classifier is designed to automatically detect and classify defects in printed circuit boards (PCBs) using 
+image processing techniques. It aims to improve quality control in PCB manufacturing by providing 
+accurate and efficient defect identification.</pre>
           <label class="subtitle">Technologies Used:</label>
           <pre class="disc">
   - Python
