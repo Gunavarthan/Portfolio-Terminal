@@ -69,7 +69,7 @@ var about = `<div class="about">
 var edu = `<label class="edu">
   <label class="header1">Master of Science in Software Systems</label><br>
   <label class="header2">Institution :</label> Coimbatore Institute of Technology
-  <label class="header2">Duration    :</label> 2023 - 2025
+  <label class="header2">Duration    :</label> 2023 - 2028
   <label class="header2">CGPA        :</label> 8.35 / 10<br>
 
   <label class="header1">Higher Secondary Education (HSC)</label><br>
