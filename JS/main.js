@@ -360,8 +360,8 @@ var social = `<div class="socials">
 </div>
 `;
 
-var email = `<a href="https://mail.google.com/mail/?view=cm&fs=1&to=gunavarthan832@gmail.com" target="_blank">
-gunavarthan832
+var email = `<a href="https://mail.google.com/mail/?view=cm&fs=1&to=gunavarthan83@gmail.com" target="_blank">
+gunavarthan83
 </a>
 `;
 
